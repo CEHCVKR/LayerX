@@ -243,16 +243,26 @@ class EmbeddingTests:
     def test_embedding_extraction():
         """Test basic embedding and extraction"""
         from a5_embedding_extraction import embed_in_dwt_bands, extract_from_dwt_bands
+        from a3_image_processing import read_image, dwt_decompose, dwt_reconstruct
         import numpy as np
-        
+
         if os.path.exists('test_lena.png'):
+            # Load image and perform DWT
+            img = read_image('test_lena.png')
+            bands = dwt_decompose(img)
+            
+            # Prepare payload
             data = b"Test payload"
+            payload_bits = ''.join(format(byte, '08b') for byte in data)
             
-            stego_img = embed_in_dwt_bands('test_lena.png', data)
-            assert stego_img is not None, "Embedding failed"
+            # Embed payload
+            stego_bands = embed_in_dwt_bands(payload_bits, bands)
+            assert stego_bands is not None, "Embedding failed"
             
-            extracted = extract_from_dwt_bands(stego_img, len(data))
-            assert extracted == data, "Extraction failed"
+            # Extract payload
+            extracted_bits = extract_from_dwt_bands(stego_bands, len(payload_bits))
+            extracted_data = bytes(int(extracted_bits[i:i+8], 2) for i in range(0, len(extracted_bits), 8))
+            assert extracted_data == data, "Extraction failed"
 
 
 class PerformanceTests:
@@ -262,30 +272,37 @@ class PerformanceTests:
     def test_encryption_speed():
         """Test encryption speed"""
         from a1_encryption import encrypt_message
-        
+
         password = "TestPassword123"
         message = "X" * 1000
-        
+
         start = time.time()
         for _ in range(100):
             encrypt_message(message, password)
         duration = time.time() - start
-        
+
         avg_time = duration / 100
         assert avg_time < 0.15, f"Encryption too slow: {avg_time:.3f}s"
-    
+
     @staticmethod
     def test_embedding_speed():
         """Test embedding speed"""
         if os.path.exists('test_lena.png'):
             from a5_embedding_extraction import embed_in_dwt_bands
+            from a3_image_processing import read_image, dwt_decompose
             
+            # Load image and perform DWT once
+            img = read_image('test_lena.png')
+            bands = dwt_decompose(img)
+            
+            # Prepare payload
             data = b"X" * 1000
-            
+            payload_bits = ''.join(format(byte, '08b') for byte in data)
+
             start = time.time()
-            embed_in_dwt_bands('test_lena.png', data)
+            embed_in_dwt_bands(payload_bits, bands)
             duration = time.time() - start
-            
+
             assert duration < 1.0, f"Embedding too slow: {duration:.3f}s"
 
 
