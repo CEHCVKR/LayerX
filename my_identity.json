@@ -1,0 +1,8 @@
+{
+  "username": "alice",
+  "ip": "192.168.100.6",
+  "signing_private": "PyDZ5i7tGIAqqaH/TLw6vtQCVKQnTPDntcN5/lhbx7Q=",
+  "signing_public": "+mfr+tn9FeVHfSlBFdSi65Qgma+81LrakXQeIZiMZdY=",
+  "x25519_private": "tGzIakvU5Ux2eIkKMYJZxL2YBN81vXjm87JFbZvEg6U=",
+  "x25519_public": "y/D/AMRPb1SLC3EB7qouutOxfkkhncdvlg8irWsa0Uc="
+}
