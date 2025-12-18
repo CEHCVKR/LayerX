@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Project specific
+my_identity.json
+*_private.pem
+*_public.pem
+*.backup
+*.bak
+
+# Temporary files
+temp_*.png
+test_*.txt
+*.log
+
+# Outputs (keep demo_outputs folder structure)
+demo_outputs/*.png
+!demo_outputs/.gitkeep

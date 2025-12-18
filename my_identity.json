@@ -1,8 +1,7 @@
 {
   "username": "alice",
-  "ip": "192.168.100.6",
-  "signing_private": "PyDZ5i7tGIAqqaH/TLw6vtQCVKQnTPDntcN5/lhbx7Q=",
-  "signing_public": "+mfr+tn9FeVHfSlBFdSi65Qgma+81LrakXQeIZiMZdY=",
-  "x25519_private": "tGzIakvU5Ux2eIkKMYJZxL2YBN81vXjm87JFbZvEg6U=",
-  "x25519_public": "y/D/AMRPb1SLC3EB7qouutOxfkkhncdvlg8irWsa0Uc="
+  "address": "23F5498ADC86B772",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQglOy2muyfWlQ9U7Rh\nrSTOs+VPfGj9cHHSMPOlIPm6K4ChRANCAATC6REE8HQK9wSUVM33isibPnLvwpos\nBixTypOaShiWWYw9Okq26PYVN6YTae51Z8/w6jBThH9qvyNdmbgulE/Y\n-----END PRIVATE KEY-----\n",
+  "public_key": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEwukRBPB0CvcElFTN94rImz5y78Ka\nLAYsU8qTmkoYllmMPTpKtuj2FTemE2nudWfP8OowU4R/ar8jXZm4LpRP2A==\n-----END PUBLIC KEY-----\n",
+  "created": "2025-12-18T23:08:07.050114"
 }
