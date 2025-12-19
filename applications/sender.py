@@ -258,38 +258,27 @@ def send_encrypted_message(identity, cover_image_path):
     payload = create_payload(ciphertext, tree, compressed)
     print(f"      [+] Compressed: {len(ciphertext)} -> {len(payload)} bytes")
     
-    # Step 5: DWT + DCT TRANSFORM
-    print("[3/5] DWT + DCT TRANSFORM...")
+    # Step 5: DWT DECOMPOSITION
+    print("[3/5] DWT DECOMPOSITION...")
     img = read_image(cover_image_path)
     bands = dwt_decompose(img, levels=2)
-    
-    # Apply DCT to embedding bands (keep original bands structure for reconstruction)
-    dct_bands = bands.copy()  # Preserve original_shape and LL1_shape metadata
-    for band_name in ['LH1', 'HL1', 'LH2', 'HL2', 'HH1', 'HH2', 'LL2']:
-        if band_name in bands:
-            dct_bands[band_name] = apply_dct(bands[band_name])
-    print(f"      [+] Transformed: 7 frequency bands ready")
+    print(f"      [+] Decomposed: 7 frequency bands ready")
     
     # Step 6: OPTIMIZATION (ACO)
     print("[4/5] OPTIMIZATION (ACO - Ant Colony)...")
     # Select robust coefficients using ACO
     payload_bits = bytes_to_bits(payload)
-    optimized_coeffs = optimize_coefficients_aco(dct_bands, len(payload_bits))
+    optimized_coeffs = optimize_coefficients_aco(bands, len(payload_bits))
     print(f"      [+] Optimized: {len(optimized_coeffs)} coefficients selected")
     
 
     # Step 7: EMBEDDING
     print("[5/5] EMBEDDING INTO IMAGE...")
     
-    # Embed with fixed optimization (deterministic position-based selection)
-    modified_bands = embed_in_dwt_bands(payload_bits, dct_bands, optimization='fixed')
+    # Embed directly in DWT bands (no DCT/IDCT needed)
+    modified_bands = embed_in_dwt_bands(payload_bits, bands, optimization='fixed')
     
-    # Inverse DCT on embedded bands
-    for band_name in ['LH1', 'HL1', 'LH2', 'HL2', 'HH1', 'HH2', 'LL2']:
-        if band_name in modified_bands:
-            modified_bands[band_name] = apply_idct(modified_bands[band_name])
-    
-    # Inverse DWT
+    # Inverse DWT to reconstruct image
     stego_img = dwt_reconstruct(modified_bands)
     
     # Calculate PSNR

@@ -253,17 +253,11 @@ def receive_encrypted_message_auto(stego_image_path, salt, iv, payload_bits_leng
         # Step 1: READ STEGO IMAGE
         stego_img = read_image(stego_image_path)
         
-        # Step 2: DWT + DCT TRANSFORM
+        # Step 2: DWT DECOMPOSITION
         bands = dwt_decompose(stego_img, levels=2)
         
-        # Apply DCT to bands
-        dct_bands = {}
-        for band_name in ['LH1', 'HL1', 'LH2', 'HL2', 'HH1', 'HH2', 'LL2']:
-            if band_name in bands:
-                dct_bands[band_name] = apply_dct(bands[band_name])
-        
-        # Step 3: EXTRACTION
-        extracted_bits = extract_from_dwt_bands(dct_bands, payload_bits_length, optimization='fixed')
+        # Step 3: EXTRACTION (directly from DWT bands - no DCT needed)
+        extracted_bits = extract_from_dwt_bands(bands, payload_bits_length, optimization='fixed')
         extracted_payload = bits_to_bytes(extracted_bits)
         
         # Step 4: DECOMPRESSION

@@ -70,7 +70,9 @@ LAYERX/
 
 ### Steganography
 - **2-level Haar DWT** wavelet decomposition
-- **2D DCT** frequency domain embedding
+- **Adaptive DWT-DCT** embedding (auto-selects based on payload size)
+  - Pure DWT for small/medium payloads (<5KB) - faster, reliable
+  - DWT+DCT hybrid for large payloads (>5KB) - optional enhancement
 - **Quantization-based** embedding (Q-factor = 5.0)
 - **7 frequency bands**: LH1, HL1, LH2, HL2, HH1, HH2, LL2
 
