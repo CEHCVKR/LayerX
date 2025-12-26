@@ -1,18 +1,17 @@
-# LayerX Steganographic Security Framework
-## Research Paper & Presentation Material
+# LayerX: High-Fidelity DWT Steganography System
+## Complete Research Paper Material
 
 ---
 
-## RESEARCH PAPER OUTLINE
+## TITLE
 
-### Title
-**LayerX: A Multi-Layer Steganographic Security Framework with Adaptive Quality Optimization and Automated Peer Discovery**
+**LayerX: A High-Fidelity DWT-Based Steganographic System with Adaptive Quantization for Secure P2P Communication**
 
 ### Authors
-[Your Names], [Institution]
+Team 08, [Your Institution]
 
 ### Keywords
-Steganography, DWT-DCT, Cryptography, NaCl Encryption, Peer-to-Peer Communication, Adaptive Quality Optimization, Network Security
+Steganography, Discrete Wavelet Transform (DWT), PSNR Optimization, AES-256 Encryption, Reed-Solomon ECC, Peer-to-Peer Communication, Secure Messaging, Image Steganography
 
 ---
 

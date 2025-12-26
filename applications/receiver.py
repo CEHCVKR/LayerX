@@ -24,10 +24,10 @@ sys.path.append('06. Optimization Module')
 
 from a1_encryption import decrypt_message
 from a2_key_management import generate_ecc_keypair, serialize_public_key, serialize_private_key
-from a3_image_processing import read_image, dwt_decompose, dwt_reconstruct
+from a3_image_processing_color import read_image_color, dwt_decompose_color, dwt_reconstruct_color
 from scipy.fftpack import dct, idct
 from a4_compression import decompress_huffman, parse_payload
-from a5_embedding_extraction import extract_from_dwt_bands, bits_to_bytes
+from a5_embedding_extraction import extract_from_dwt_bands_color, bits_to_bytes
 import numpy as np
 import cv2
 
@@ -138,15 +138,42 @@ def peer_discovery_announcer(identity):
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
     
+    # Try to bind to specific interface (helps with Windows)
+    try:
+        sock.bind(('', 0))  # Bind to any available port
+    except:
+        pass
+    
     announcement = json.dumps({
         'username': identity['username'],
         'address': identity['address'],
         'public_key': identity['public_key']
     }).encode('utf-8')
     
+    # Use 255.255.255.255 for cross-subnet discovery (works across different subnets)
+    broadcast_addresses = ['255.255.255.255']
+    
+    # Also try subnet-specific broadcast as backup
+    try:
+        import socket as sock_module
+        hostname = sock_module.gethostbyname(socket.gethostname())
+        # Calculate broadcast for common /24 network
+        ip_parts = hostname.split('.')
+        if len(ip_parts) == 4:
+            broadcast_addresses.append(f"{ip_parts[0]}.{ip_parts[1]}.{ip_parts[2]}.255")
+    except:
+        pass
+    
+    print(f"[*] Broadcasting to: {', '.join(broadcast_addresses)}")
+    
     while running:
         try:
-            sock.sendto(announcement, ('<broadcast>', BROADCAST_PORT))
+            # Try broadcasting to multiple addresses
+            for broadcast_addr in broadcast_addresses:
+                try:
+                    sock.sendto(announcement, (broadcast_addr, BROADCAST_PORT))
+                except:
+                    pass  # Continue to next address
             
             # Clean up stale peers (not seen in 20 seconds)
             with peers_lock:
@@ -250,14 +277,14 @@ def list_peers():
 def receive_encrypted_message_auto(stego_image_path, salt, iv, payload_bits_length):
     """Auto-decrypt received message (called by file listener)"""
     try:
-        # Step 1: READ STEGO IMAGE
-        stego_img = read_image(stego_image_path)
+        # Step 1: READ STEGO IMAGE (COLOR)
+        stego_img = read_image_color(stego_image_path)
         
-        # Step 2: DWT DECOMPOSITION
-        bands = dwt_decompose(stego_img, levels=2)
+        # Step 2: DWT DECOMPOSITION (COLOR)
+        bands = dwt_decompose_color(stego_img, levels=2)
         
         # Step 3: EXTRACTION (directly from DWT bands - no DCT needed)
-        extracted_bits = extract_from_dwt_bands(bands, payload_bits_length, optimization='fixed')
+        extracted_bits = extract_from_dwt_bands_color(bands, payload_bits_length, Q_factor=5.0)
         extracted_payload = bits_to_bytes(extracted_bits)
         
         # Step 4: DECOMPRESSION
@@ -290,14 +317,14 @@ def receive_encrypted_message(identity, stego_image_path, salt_hex, iv_hex):
         salt = bytes.fromhex(salt_hex)
         iv = bytes.fromhex(iv_hex)
         
-        # Step 1: READ STEGO IMAGE
+        # Step 1: READ STEGO IMAGE (COLOR)
         print("[1/5] READING STEGO IMAGE...")
-        stego_img = read_image(stego_image_path)
+        stego_img = read_image_color(stego_image_path)
         print(f"      [+] Loaded: {stego_image_path}")
         
-        # Step 2: DWT + DCT TRANSFORM
+        # Step 2: DWT + DCT TRANSFORM (COLOR)
         print("[2/5] DWT + DCT TRANSFORM...")
-        bands = dwt_decompose(stego_img, levels=2)
+        bands = dwt_decompose_color(stego_img, levels=2)
         
         # Apply DCT to extraction bands
         dct_bands = {}
@@ -335,7 +362,7 @@ def receive_encrypted_message(identity, stego_image_path, salt_hex, iv_hex):
         print(f"      [+] Payload length: {payload_length // 8} bytes")
         
         # Extract full payload
-        extracted_bits = extract_from_dwt_bands(dct_bands, payload_length)
+        extracted_bits = extract_from_dwt_bands_color(dct_bands, payload_length)
         payload = bits_to_bytes(extracted_bits)
         print(f"      [+] Extracted: {len(payload)} bytes")
         

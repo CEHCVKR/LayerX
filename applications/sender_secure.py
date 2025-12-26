@@ -1,9 +1,10 @@
 """
-LayerX Sender - Complete Steganographic Pipeline with Peer Discovery
+LayerX Sender - Enhanced Security Version
 Features:
-- Automatic peer discovery (UDP broadcast every 5 seconds)
-- Username + automatic ECC key generation
-- Full pipeline: Message → Encryption → DWT+DCT → Optimization → Embed
+- ECDH key exchange (Perfect Forward Secrecy)
+- Digital signatures for authenticity
+- AES-256-GCM encryption
+- Self-destruct message support
 """
 
 import sys
@@ -23,14 +24,24 @@ sys.path.append('05. Embedding and Extraction Module')
 sys.path.append('06. Optimization Module')
 
 from a1_encryption import encrypt_message
-from a2_key_management import generate_ecc_keypair, serialize_public_key, serialize_private_key, deserialize_public_key
+from a2_key_management import (
+    generate_ecc_keypair, serialize_public_key, serialize_private_key,
+    deserialize_public_key, deserialize_private_key
+)
 from a3_image_processing_color import read_image_color, dwt_decompose_color, dwt_reconstruct_color, psnr_color
 from scipy.fftpack import dct, idct
 from a4_compression import compress_huffman, create_payload
 from a5_embedding_extraction import embed_in_dwt_bands_color, bytes_to_bits
 from a6_optimization import optimize_coefficients_aco, select_coefficients_chaos
+from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives.asymmetric import ec
+from cryptography.hazmat.primitives.kdf.hkdf import HKDF
+from cryptography.hazmat.backends import default_backend
+from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 import numpy as np
 import cv2
+import base64
+import struct
 
 # Helper functions
 def apply_dct(band):
@@ -48,8 +59,8 @@ def write_image(path, img):
 # Configuration
 IDENTITY_FILE = "my_identity.json"
 BROADCAST_PORT = 37020
-DISCOVERY_INTERVAL = 5  # seconds
-peers_list = {}  # {username: {ip, public_key, last_seen}}
+DISCOVERY_INTERVAL = 5
+peers_list = {}
 peers_lock = threading.Lock()
 running = True
 
@@ -71,11 +82,9 @@ def load_or_create_identity():
         print("\n[*] Generating your ECC keypair (SECP256R1)...")
         private_key, public_key = generate_ecc_keypair()
         
-        # Serialize keys
         private_pem = serialize_private_key(private_key)
         public_pem = serialize_public_key(public_key)
         
-        # Create unique address (first 8 chars of public key hash)
         import hashlib
         address = hashlib.sha256(public_pem).hexdigest()[:16].upper()
         
@@ -93,7 +102,6 @@ def load_or_create_identity():
         print(f"\n✅ Identity created!")
         print(f"   Username: {username}")
         print(f"   Address:  {address}")
-        print(f"   Keys saved to: {IDENTITY_FILE}")
         
         return identity
 
@@ -105,49 +113,42 @@ def peer_discovery_listener(identity):
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     sock.bind(('', BROADCAST_PORT))
-    sock.settimeout(1.0)
-    
-    print(f"[*] Peer discovery active on port {BROADCAST_PORT}")
+    sock.settimeout(1)
     
     while running:
         try:
             data, addr = sock.recvfrom(4096)
-            peer_info = json.loads(data.decode('utf-8'))
+            announcement = json.loads(data.decode('utf-8'))
             
-            # Ignore self
-            if peer_info['address'] == identity['address']:
+            if announcement['username'] == identity['username']:
                 continue
             
+            username = announcement['username']
+            
             with peers_lock:
-                username = peer_info['username']
                 if username not in peers_list:
-                    print(f"\n[+] NEW PEER DISCOVERED: {username} ({peer_info['address']}) at {addr[0]}")
+                    print(f"\n[+] New peer discovered: {username} @ {addr[0]}")
                 
                 peers_list[username] = {
                     'ip': addr[0],
-                    'address': peer_info['address'],
-                    'public_key': peer_info['public_key'],
+                    'address': announcement['address'],
+                    'public_key': announcement['public_key'],
                     'last_seen': time.time()
                 }
+        
         except socket.timeout:
             continue
         except Exception as e:
             if running:
-                pass  # Suppress errors during shutdown
+                print(f"[!] Discovery error: {e}")
     
     sock.close()
 
 
 def peer_discovery_announcer(identity):
-    """Broadcast presence every 5 seconds"""
+    """Broadcast presence to network"""
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
-    
-    # Try to bind to specific interface (helps with Windows)
-    try:
-        sock.bind(('', 0))  # Bind to any available port
-    except:
-        pass
     
     announcement = json.dumps({
         'username': identity['username'],
@@ -155,46 +156,116 @@ def peer_discovery_announcer(identity):
         'public_key': identity['public_key']
     }).encode('utf-8')
     
-    # Use 255.255.255.255 for cross-subnet discovery (works across different subnets)
-    broadcast_addresses = ['255.255.255.255']
-    
-    # Also try subnet-specific broadcast as backup
-    try:
-        import socket as sock_module
-        hostname = sock_module.gethostname()
-        local_ip = sock_module.gethostbyname(hostname)
-        # Calculate broadcast for common /24 network
-        ip_parts = local_ip.split('.')
-        if len(ip_parts) == 4:
-            broadcast_addresses.append(f"{ip_parts[0]}.{ip_parts[1]}.{ip_parts[2]}.255")
-    except:
-        pass
-    
-    print(f"[*] Broadcasting to: {', '.join(broadcast_addresses)}")
-    
     while running:
         try:
-            # Try broadcasting to multiple addresses
-            for broadcast_addr in broadcast_addresses:
-                try:
-                    sock.sendto(announcement, (broadcast_addr, BROADCAST_PORT))
-                except:
-                    pass  # Continue to next address
-            
-            # Clean up stale peers (not seen in 20 seconds)
-            with peers_lock:
-                current_time = time.time()
-                stale = [u for u, p in peers_list.items() if current_time - p['last_seen'] > 20]
-                for username in stale:
-                    print(f"\n[-] Peer {username} went offline")
-                    del peers_list[username]
-            
+            sock.sendto(announcement, ('<broadcast>', BROADCAST_PORT))
             time.sleep(DISCOVERY_INTERVAL)
         except Exception as e:
             if running:
-                pass  # Suppress errors during shutdown
+                print(f"[!] Broadcast error: {e}")
     
     sock.close()
+
+
+def create_secure_metadata_package(salt, iv, payload_bits_length, stego_filename, 
+                                    sender_identity, receiver_public_key_pem,
+                                    self_destruct_config=None):
+    """
+    Create encrypted metadata with ECDH + Digital Signature
+    """
+    # Load sender's private key
+    sender_private_key = deserialize_private_key(sender_identity['private_key'].encode('utf-8'))
+    sender_public_key_pem = sender_identity['public_key'].encode('utf-8')
+    
+    # 1. Generate ephemeral keypair (Perfect Forward Secrecy)
+    ephemeral_private_key, ephemeral_public_key = generate_ecc_keypair()
+    
+    # 2. Perform ECDH with receiver's public key
+    receiver_pub_key = deserialize_public_key(receiver_public_key_pem.encode('utf-8'))
+    shared_secret = ephemeral_private_key.exchange(ec.ECDH(), receiver_pub_key)
+    
+    # 3. Derive encryption key using HKDF
+    derived_key = HKDF(
+        algorithm=hashes.SHA256(),
+        length=32,
+        salt=None,
+        info=b'layerx-metadata-v2',
+        backend=default_backend()
+    ).derive(shared_secret)
+    
+    # 4. Create metadata
+    metadata = {
+        'stego_image': stego_filename,
+        'salt': base64.b64encode(salt).decode('utf-8'),
+        'iv': base64.b64encode(iv).decode('utf-8'),
+        'payload_bits_length': payload_bits_length,
+        'sender_username': sender_identity['username'],
+        'sender_address': sender_identity['address'],
+        'timestamp': datetime.now().isoformat()
+    }
+    
+    # Add self-destruct configuration if specified
+    if self_destruct_config:
+        metadata['self_destruct'] = self_destruct_config
+    
+    metadata_json = json.dumps(metadata).encode('utf-8')
+    
+    # 5. Encrypt with AES-GCM
+    aes_iv = os.urandom(12)  # GCM recommended IV size
+    cipher = Cipher(algorithms.AES(derived_key), modes.GCM(aes_iv), backend=default_backend())
+    encryptor = cipher.encryptor()
+    ciphertext = encryptor.update(metadata_json) + encryptor.finalize()
+    auth_tag = encryptor.tag
+    
+    # 6. Create digital signature
+    signature_data = ciphertext + aes_iv + auth_tag
+    signature = sender_private_key.sign(signature_data, ec.ECDSA(hashes.SHA256()))
+    
+    # 7. Build encrypted package
+    package = {
+        'version': '2.0',
+        'protocol': 'ECDH-AES256-GCM',
+        'encrypted_data': base64.b64encode(ciphertext).decode('utf-8'),
+        'aes_iv': base64.b64encode(aes_iv).decode('utf-8'),
+        'auth_tag': base64.b64encode(auth_tag).decode('utf-8'),
+        'ephemeral_public_key': base64.b64encode(serialize_public_key(ephemeral_public_key)).decode('utf-8'),
+        'sender_public_key': base64.b64encode(sender_public_key_pem).decode('utf-8'),
+        'sender_username': sender_identity['username'],
+        'sender_address': sender_identity['address'],
+        'signature': base64.b64encode(signature).decode('utf-8'),
+        'timestamp': datetime.now().isoformat()
+    }
+    
+    return package
+
+
+def send_secure_file(peer_ip, stego_path, metadata_package, port=37021):
+    """Send stego image and encrypted metadata"""
+    try:
+        # Read stego image
+        with open(stego_path, 'rb') as f:
+            image_data = f.read()
+        
+        # Serialize metadata package
+        metadata_json = json.dumps(metadata_package).encode('utf-8')
+        
+        # Create packet: [metadata_size][metadata][image_size][image]
+        packet = struct.pack('!I', len(metadata_json))
+        packet += metadata_json
+        packet += struct.pack('!I', len(image_data))
+        packet += image_data
+        
+        # Connect and send
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        sock.settimeout(15)
+        sock.connect((peer_ip, port))
+        sock.sendall(packet)
+        sock.close()
+        
+        return True
+        
+    except Exception as e:
+        raise Exception(f"Secure transfer failed: {str(e)}")
 
 
 def list_peers():
@@ -214,50 +285,13 @@ def list_peers():
         return list(peers_list.keys())
 
 
-def send_file_to_peer(peer_ip, stego_path, salt, iv, payload_bits_length, port=37021):
-    """Send stego image and metadata to peer via TCP"""
-    try:
-        # Read stego image
-        with open(stego_path, 'rb') as f:
-            image_data = f.read()
-        
-        # Create metadata packet
-        import struct
-        metadata = struct.pack('!I', len(salt))  # Salt length
-        metadata += salt
-        metadata += struct.pack('!I', len(iv))   # IV length
-        metadata += iv
-        metadata += struct.pack('!I', payload_bits_length)  # Payload bits length
-        metadata += struct.pack('!I', len(image_data))  # Image size
-        
-        # Connect to receiver
-        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        sock.settimeout(10)
-        sock.connect((peer_ip, port))
-        
-        # Send metadata first
-        sock.sendall(metadata)
-        time.sleep(0.1)  # Give receiver time to process
-        
-        # Send image data in chunks
-        chunk_size = 4096
-        for i in range(0, len(image_data), chunk_size):
-            sock.sendall(image_data[i:i+chunk_size])
-        
-        sock.close()
-        return True
-        
-    except Exception as e:
-        raise Exception(f"File transfer failed: {str(e)}")
-
-
 def send_encrypted_message(identity, cover_image_path):
-    """Complete sender pipeline"""
+    """Complete sender pipeline with enhanced security"""
     print("\n" + "="*70)
-    print("LAYERX SENDER - COMPLETE STEGANOGRAPHIC PIPELINE")
+    print("LAYERX SENDER - SECURE STEGANOGRAPHIC PIPELINE")
     print("="*70)
     
-    # Step 1: Select peer
+    # Select peer
     peer_usernames = list_peers()
     if not peer_usernames:
         return
@@ -269,84 +303,92 @@ def send_encrypted_message(identity, cover_image_path):
     
     receiver_username = peer_usernames[choice]
     receiver_info = peers_list[receiver_username]
-    receiver_public_key = deserialize_public_key(receiver_info['public_key'].encode('utf-8'))
     
-    # Step 2: Get message
+    # Get message
     print(f"\n[*] Sending to: {receiver_username}")
     message = input("Enter your secret message: ")
     
-    # Step 3: ENCRYPTION (AES-256)
+    # Self-destruct options
+    print("\n[?] Self-destruct options:")
+    print("  1. No self-destruct")
+    print("  2. Delete after reading (1 view)")
+    print("  3. Delete after time (minutes)")
+    print("  4. Delete after N views")
+    
+    sd_choice = input("Choose option (1-4): ").strip()
+    self_destruct_config = None
+    
+    if sd_choice == '2':
+        self_destruct_config = {'type': 'view_count', 'max_views': 1}
+    elif sd_choice == '3':
+        minutes = int(input("Delete after how many minutes? "))
+        self_destruct_config = {'type': 'timer', 'minutes': minutes}
+    elif sd_choice == '4':
+        max_views = int(input("Delete after how many views? "))
+        self_destruct_config = {'type': 'view_count', 'max_views': max_views}
+    
+    # Encryption pipeline
     print("\n[1/5] ENCRYPTION (AES-256)...")
     ciphertext, salt, iv = encrypt_message(message, "temp_password")
     print(f"      [+] Encrypted: {len(message)} chars -> {len(ciphertext)} bytes")
     
-    # Step 4: COMPRESSION (Huffman)
     print("[2/5] COMPRESSION (Huffman)...")
     compressed, tree = compress_huffman(ciphertext)
     payload = create_payload(ciphertext, tree, compressed)
     print(f"      [+] Compressed: {len(ciphertext)} -> {len(payload)} bytes")
     
-    # Step 5: DWT DECOMPOSITION
     print("[3/5] DWT DECOMPOSITION...")
     img = read_image_color(cover_image_path)
     bands = dwt_decompose_color(img, levels=2)
     print(f"      [+] Decomposed: 7 frequency bands ready")
     
-    # Step 6: OPTIMIZATION (ACO) - Skip for color (uses deterministic selection)
-    print("[4/5] OPTIMIZATION (Color Mode - Deterministic)...")
-    # Color embedding uses deterministic position selection internally
+    print("[4/5] OPTIMIZATION...")
     payload_bits = bytes_to_bits(payload)
     print(f"      [+] Prepared: {len(payload_bits)} bits for embedding")
     
-
-    # Step 7: EMBEDDING
     print("[5/5] EMBEDDING INTO IMAGE...")
-    
-    # Embed directly in DWT bands (no DCT/IDCT needed)
     modified_bands = embed_in_dwt_bands_color(payload_bits, bands, Q_factor=5.0)
-    
-    # Inverse DWT to reconstruct image
     stego_img = dwt_reconstruct_color(modified_bands)
-    
-    # Calculate PSNR
     psnr_value = psnr_color(img, stego_img)
     
-    # Save stego image
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     stego_path = f"stego_to_{receiver_username}_{timestamp}.png"
     write_image(stego_path, stego_img)
     
+    print(f"\n[6/6] CREATING SECURE METADATA PACKAGE...")
+    metadata_package = create_secure_metadata_package(
+        salt, iv, len(payload_bits), stego_path,
+        identity, receiver_info['public_key'],
+        self_destruct_config
+    )
+    
     print(f"\n{'='*70}")
-    print("[SUCCESS] MESSAGE EMBEDDED SUCCESSFULLY!")
+    print("[SUCCESS] MESSAGE EMBEDDED WITH ENHANCED SECURITY!")
     print(f"{'='*70}")
     print(f"[*] PSNR Quality: {psnr_value:.2f} dB")
-    print(f"[*] Payload Size: {len(payload)} bytes")
+    print(f"[*] Encryption: ECDH + AES-256-GCM")
+    print(f"[*] Digital Signature: ECDSA-SHA256")
+    print(f"[*] Perfect Forward Secrecy: ✓")
+    if self_destruct_config:
+        print(f"[*] Self-Destruct: {self_destruct_config['type']}")
     print(f"[*] Stego Image: {stego_path}")
-    print(f"\n[*] Sending to {receiver_username} at {receiver_info['ip']}...")
     
-    # Send file automatically to receiver
+    # Send securely
     try:
-        send_file_to_peer(receiver_info['ip'], stego_path, salt, iv, len(payload_bits))
-        print(f"[SUCCESS] File sent to {receiver_username}!")
+        print(f"\n[*] Sending to {receiver_username} at {receiver_info['ip']}...")
+        send_secure_file(receiver_info['ip'], stego_path, metadata_package)
+        print(f"[SUCCESS] Secure transfer complete!")
         print(f"{'='*70}")
     except Exception as e:
-        print(f"[!] Failed to send file: {e}")
-        print(f"\n[*] MANUAL TRANSFER REQUIRED:")
-        print(f"   Salt: {salt.hex()}")
-        print(f"   IV:   {iv.hex()}")
-        print(f"   Payload Bits: {len(payload_bits)} bits")
-        print(f"   File: {stego_path}")
-        print(f"{'='*70}")
+        print(f"[!] Transfer failed: {e}")
 
 
 def main():
     """Main sender application"""
     global running
     
-    # Load or create identity
     identity = load_or_create_identity()
     
-    # Start peer discovery threads
     listener_thread = threading.Thread(target=peer_discovery_listener, args=(identity,), daemon=True)
     announcer_thread = threading.Thread(target=peer_discovery_announcer, args=(identity,), daemon=True)
     
@@ -354,12 +396,9 @@ def main():
     announcer_thread.start()
     
     print("\n" + "="*60)
-    print("LAYERX SENDER - Ready to send encrypted messages")
+    print("LAYERX SECURE SENDER - Ready")
     print("="*60)
-    print("Commands:")
-    print("  send   - Send encrypted message to peer")
-    print("  peers  - List discovered peers")
-    print("  quit   - Exit application")
+    print("Commands: send, peers, quit")
     print("="*60)
     
     try:
@@ -380,10 +419,10 @@ def main():
                 break
             
             else:
-                print("[!] Unknown command. Use: send, peers, quit")
+                print("[!] Unknown command")
     
     except KeyboardInterrupt:
-        print("\n\n[!] Interrupted by user")
+        print("\n\n[!] Interrupted")
     
     finally:
         running = False
