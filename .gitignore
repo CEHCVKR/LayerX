@@ -31,18 +31,28 @@ wheels/
 *~
 .DS_Store
 
-# Project specific
+# Project specific - User data
 my_identity.json
+layerx_pin.txt
 *_private.pem
 *_public.pem
-*.backup
-*.bak
+
+# Received/Sent messages (generated during use)
+received_*.png
+received_*_metadata.json
+stego_to_*.png
+stego_from_*.png
 
 # Temporary files
+*.backup
+*.bak
 temp_*.png
 test_*.txt
 *.log
 
-# Outputs (keep demo_outputs folder structure)
+# Keep folder structure but ignore contents
 demo_outputs/*.png
 !demo_outputs/.gitkeep
+keys/*.json
+keys/*.pem
+!keys/.gitkeep

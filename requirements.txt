@@ -1,62 +1,31 @@
-# LayerX Steganographic Security Framework
-# Adaptive DWT-DCT Steganography with Self-Destruct Features
+# LayerX - P2P Encrypted Steganography System
 # Install with: pip install -r requirements.txt
 
 # ============================================
 # CORE DEPENDENCIES
 # ============================================
 
-# Cryptographic operations (AES-256, RSA)
-pycryptodome>=3.18.0
+# Cryptography (ECC, AES-256, Digital Signatures)
 cryptography>=41.0.0
 
-# Image processing and steganography
+# Image Processing & Steganography
+opencv-python>=4.8.0
 Pillow>=10.0.0
 numpy>=1.24.0
-opencv-python>=4.8.0
-pywavelets>=1.4.1
-scikit-image>=0.21.0
+PyWavelets>=1.4.1
 
-# Signal processing (DCT/IDCT transforms)
+# Signal Processing (DCT/IDCT, Statistical Analysis)
 scipy>=1.10.0
 
-# GUI Framework (Tkinter included in Python)
-# tkinter - bundled with Python
+# GUI Framework (tkinter is bundled with Python - no install needed)
 
 # ============================================
-# NETWORKING & COMMUNICATION
-# ============================================
-
-# P2P communication
-PyNaCl>=1.5.0
-
-# Error correction codes
-reedsolo>=1.7.0
-
-# ============================================
-# DEVELOPMENT & TESTING
-# ============================================
-
-# Testing framework
-pytest>=7.4.0
-
-# ============================================
-# PLATFORM-SPECIFIC (WINDOWS)
-# ============================================
-
-# Windows authentication (optional)
-pywin32>=306; sys_platform == 'win32'
-
-# ============================================
-# INSTALLATION INSTRUCTIONS
+# INSTALLATION
 # ============================================
 # 
-# Basic installation:
+# Install all dependencies:
 #   pip install -r requirements.txt
 #
-# Development installation:
-#   pip install -r requirements.txt --upgrade
-#
 # Verify installation:
-#   python -c "import cv2, numpy, pywt, scipy, PIL; print('✓ All packages installed')"
+#   python -c "import cv2, pywt, cryptography; print('✓ All dependencies installed')"
 #

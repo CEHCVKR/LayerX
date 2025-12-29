@@ -1,191 +1,279 @@
-# LayerX Steganographic Security Framework
+# LayerX - P2P Encrypted Steganography System
 
-A comprehensive peer-to-peer secure messaging system using advanced steganography, encryption, and optimization techniques.
+A secure peer-to-peer steganography system with ECC encryption, self-destruct messages, and automatic network discovery.
 
-## 🚀 Quick Start
+## Features
 
-1. **Install Dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-2. **Run Sender (Alice's device):**
-   ```bash
-   python applications/sender.py
-   ```
-
-3. **Run Receiver (Bob's device):**
-   ```bash
-   python applications/receiver.py
-   ```
-
-4. **Send a Message:**
-   - Peers auto-discover every 5 seconds
-   - Type `send` and follow prompts
-   - Message automatically transfers and decrypts!
-
-## 📁 Project Structure
-
-```
-LAYERX/
-├── core_modules/          # Core steganography & encryption modules
-│   ├── a1_encryption.py              # AES-256-CBC encryption
-│   ├── a2_key_management.py          # ECC SECP256R1 key management
-│   ├── a3_image_processing.py        # DWT decomposition & PSNR
-│   ├── a4_compression.py             # Huffman compression
-│   ├── a5_embedding_extraction.py    # DWT+DCT steganography
-│   ├── a6_optimization.py            # ACO & chaos optimization
-│   ├── a7_communication.py           # Network protocols
-│   └── a8_scanning_detection.py      # Steganalysis detection
-│
-├── applications/          # User-facing applications
-│   ├── sender.py         # P2P sender with auto file transfer
-│   ├── receiver.py       # P2P receiver with auto decryption
-│   └── generate_keys.py  # ECC keypair generator
-│
-├── tests/                # Test suite
-│   ├── test_complete_system.py      # Full system integration tests
-│   ├── test_sender_workflow.py      # Sender pipeline tests
-│   └── test_q_factor_analysis.py    # PSNR quality tests
-│
-├── analytics/            # Performance analytics
-│   ├── analytics_psnr.py            # Quick PSNR tests
-│   ├── generate_psnr_report.py      # Detailed report generator
-│   └── PSNR_ANALYTICS_REPORT.md     # Full analytics report
-│
-├── documentation/        # Project documentation
-├── demo_outputs/         # Demo images and outputs
-├── legacy/              # Archive of old versions
-├── cover.png            # Default cover image (512x512)
-├── requirements.txt     # Python dependencies
-└── README.md           # This file
-```
-
-## 🔧 Core Features
-
-### Security
-- **AES-256-CBC** encryption with PBKDF2 key derivation
-- **ECC SECP256R1** public key cryptography
-- **Reed-Solomon** error correction for robust data recovery
-
-### Steganography
-- **2-level Haar DWT** wavelet decomposition
-- **Adaptive DWT-DCT** embedding (auto-selects based on payload size)
-  - Pure DWT for small/medium payloads (<5KB) - faster, reliable
-  - DWT+DCT hybrid for large payloads (>5KB) - optional enhancement
-- **Quantization-based** embedding (Q-factor = 5.0)
-- **7 frequency bands**: LH1, HL1, LH2, HL2, HH1, HH2, LL2
-
-### Optimization
-- **Fixed** position-based coefficient selection (deterministic)
-- **ACO** (Ant Colony Optimization) for robust coefficient selection
-- **Chaos** logistic map for pseudo-random selection
-
-### Networking
-- **UDP broadcast** peer discovery (port 37020, every 5 sec)
-- **TCP file transfer** automatic stego image delivery (port 37021)
-- **Auto-decryption** no manual salt/IV input needed
-
-## 📊 Performance Metrics
-
-| Message Size | Payload | PSNR | Quality |
-|--------------|---------|------|---------|
-| 2 chars | 1KB | 50.85 dB | Excellent |
-| 50 chars | 5KB | 44.67 dB | Good |
-| 200 chars | 12KB | 40.75 dB | Acceptable |
-| 1000 chars | 22KB | 38.16 dB | Poor |
-
-**Recommended:** Keep messages under 200 characters for PSNR >40 dB
-
-## 🧪 Testing
-
-Run complete system tests:
-```bash
-python tests/test_complete_system.py
-```
-
-Run sender workflow tests:
-```bash
-python tests/test_sender_workflow.py
-```
-
-Generate PSNR analytics:
-```bash
-python analytics/generate_psnr_report.py
-```
-
-## 📡 Network Requirements
-
-- **Ports:** 37020 (UDP), 37021 (TCP)
-- **Firewall:** Allow both ports for peer discovery and file transfer
-- **Network:** Devices must be on same LAN
-- **Protocol:** UDP broadcast for discovery, TCP for file transfer
-
-## 🔐 Identity Management
-
-On first run, each application creates `my_identity.json`:
-```json
-{
-  "username": "alice",
-  "address": "9DAA6BF262666E80",
-  "private_key": "-----BEGIN EC PRIVATE KEY-----...",
-  "public_key": "-----BEGIN PUBLIC KEY-----...",
-  "created": "2025-12-18T23:00:00"
-}
-```
-
-## 🎯 Usage Example
-
-**Alice (Sender):**
-```
-> send
-Select peer: 1. bob @ 192.168.31.214
-Enter message: Hello Bob!
-
-[SUCCESS] MESSAGE EMBEDDED!
-PSNR: 50.92 dB
-File sent to bob!
-```
-
-**Bob (Receiver):**
-```
-[+] INCOMING FILE from 192.168.31.170...
-[*] Auto-decrypting...
-
-[SUCCESS] MESSAGE DECRYPTED!
->>> Hello Bob!
-```
-
-## 📦 Dependencies
-
-- numpy >= 1.21.0
-- opencv-python >= 4.5.0
-- PyWavelets >= 1.1.0
-- scikit-image >= 0.18.0
-- scipy >= 1.7.0
-- pycryptodome >= 3.15.0
-- PyNaCl >= 1.5.0
-- reedsolo >= 1.7.0
-
-## 🏆 Key Achievements
-
-✅ **7/7 system tests passing**  
-✅ **10/10 Q-factor tests passing**  
-✅ **Peer-to-peer tested on 2 physical devices**  
-✅ **Automatic file transfer working**  
-✅ **PSNR >50 dB for small payloads**  
-✅ **12/12 abstract requirements satisfied**
-
-## 📝 License
-
-Academic Project - Team 08
-
-## 👥 Authors
-
-- Member A: Encryption, Compression, Communication
-- Member B: Image Processing, Optimization, Steganography
+✅ **End-to-End Encryption** - ECC (Elliptic Curve Cryptography) with AES-256  
+✅ **Steganography** - Hide messages in images using DWT/DCT  
+✅ **P2P Network** - Automatic peer discovery on local network  
+✅ **Digital Signatures** - Verify message authenticity  
+✅ **Self-Destruct Messages** - One-time view, timer-based, or view-count limits  
+✅ **High Image Quality** - PSNR > 50dB  
+✅ **User-Friendly GUI** - Modern dark/light theme viewer  
 
 ---
 
-**Last Updated:** December 18, 2025
+## Installation
+
+### 1. Install Python Requirements
+
+```bash
+pip install -r requirements.txt
+```
+
+### 2. Verify Installation
+
+```bash
+python -c "import cv2, pywt, cryptography; print('✓ All dependencies installed')"
+```
+
+---
+
+## Quick Start
+
+### **Sender (Alice)**
+
+1. **Start the transceiver:**
+   ```bash
+   python transceiver.py
+   ```
+
+2. **First time setup:**
+   - Enter your username (e.g., `alice`)
+   - ECC keypair will be generated automatically
+
+3. **Send a message:**
+   - Wait for peer discovery (Bob appears)
+   - Type `send`
+   - Select peer number
+   - Enter your message
+   - Choose self-destruct option:
+     - `1` - No self-destruct (default)
+     - `2` - Delete after reading (1 view)
+     - `3` - Delete after N minutes
+     - `4` - Delete after N views
+   - Press Enter to use default cover image
+
+### **Receiver (Bob)**
+
+1. **Start the transceiver:**
+   ```bash
+   python transceiver.py
+   ```
+
+2. **Setup your identity:**
+   - Enter your username (e.g., `bob`)
+
+3. **Receive messages:**
+   - Messages are automatically received
+   - Saved as `received_stego_*.png` with metadata
+
+4. **Decrypt and view:**
+   ```bash
+   cd applications
+   python stego_viewer.py
+   ```
+   - Load the received image (Ctrl+O)
+   - Metadata auto-detects
+   - Press Ctrl+R to reveal message
+   - Enter PIN (default: 1234)
+
+---
+
+## Directory Structure
+
+```
+LayerX/
+├── core_modules/           # Core steganography & encryption modules
+│   ├── a1_encryption.py
+│   ├── a2_key_management.py
+│   ├── a3_image_processing_color.py
+│   ├── a4_compression.py
+│   └── a5_embedding_extraction.py
+├── applications/           # User applications
+│   ├── stego_viewer.py    # GUI message viewer
+│   ├── sender.py          # Standalone sender
+│   ├── receiver.py        # Standalone receiver
+│   └── generate_keys.py   # Key generation tool
+├── tests/                  # Test scripts
+├── cover.png              # Default cover image
+├── transceiver.py         # Main P2P application
+├── requirements.txt       # Python dependencies
+└── README.md             # This file
+```
+
+---
+
+## Usage Guide
+
+### Transceiver Commands
+
+| Command | Description |
+|---------|-------------|
+| `send` | Send encrypted message as stego image |
+| `peers` | List available peers on network |
+| `list` | List received stego images |
+| `quit` | Exit application |
+
+### Stego Viewer Shortcuts
+
+| Shortcut | Action |
+|----------|--------|
+| Ctrl+O | Load image |
+| Ctrl+M | Load metadata |
+| Ctrl+R | Reveal message |
+| Ctrl+T | Toggle dark/light theme |
+| Ctrl+Q | Quit viewer |
+
+### Self-Destruct Options
+
+**1. One-Time View**
+- Message deleted after viewing
+- Deleted when loading another image or closing viewer
+
+**2. Timer-Based**
+- Message deleted after N minutes
+- Countdown shown in viewer
+- Deleted automatically when timer expires
+
+**3. View Count**
+- Message deleted after N views
+- View counter increments each time
+- Deleted when max views reached
+
+---
+
+## Security Features
+
+### Encryption
+- **ECC**: secp256r1 curve for key exchange
+- **AES-256**: Session key encryption
+- **Random IV/Salt**: Unique per message
+
+### Digital Signatures
+- ECDSA signatures verify sender identity
+- Detects tampering attempts
+- Rejects unverified messages
+
+### Steganography
+- **DWT (Discrete Wavelet Transform)** + **DCT (Discrete Cosine Transform)**
+- 7800+ bits capacity per image
+- PSNR > 50dB (imperceptible changes)
+- Huffman compression for efficiency
+
+---
+
+## Network Configuration
+
+### Default Ports
+- **Peer Discovery**: 37020 (UDP broadcast)
+- **File Transfer**: 37021 (TCP)
+
+### Firewall Rules (if needed)
+```bash
+# Windows
+netsh advfirewall firewall add rule name="LayerX Discovery" dir=in action=allow protocol=UDP localport=37020
+netsh advfirewall firewall add rule name="LayerX Transfer" dir=in action=allow protocol=TCP localport=37021
+```
+
+---
+
+## Troubleshooting
+
+### Peer not discovered?
+- Check if both devices are on same network
+- Verify firewall allows UDP port 37020
+- Restart both transceivers
+
+### Message won't decrypt?
+- Verify you're using correct identity (same as receiver)
+- Check if PIN is set correctly (use `applications/set_pin.py`)
+- Ensure metadata file exists alongside image
+
+### Self-destruct not working?
+- One-time messages delete when loading another image or closing viewer
+- Timer messages need viewer to stay open for countdown
+- Check console for deletion messages
+
+---
+
+## Advanced Usage
+
+### Custom Cover Image
+```bash
+# When prompted for cover image:
+Enter cover image path: path/to/your/image.png
+```
+
+### Set Custom PIN
+```bash
+python applications/set_pin.py
+# Enter new PIN when prompted
+```
+
+### Generate New Identity
+```bash
+# Delete old identity
+rm my_identity.json
+# Restart transceiver - new identity created
+python transceiver.py
+```
+
+---
+
+## Technical Specifications
+
+| Feature | Specification |
+|---------|--------------|
+| Encryption | ECC (secp256r1) + AES-256-CFB |
+| Steganography | DWT-DCT Hybrid |
+| Image Quality | PSNR > 50dB |
+| Capacity | 7800+ bits per 512x512 image |
+| Compression | Huffman encoding |
+| Network | P2P UDP broadcast + TCP transfer |
+
+---
+
+## File Formats
+
+### Identity File (`my_identity.json`)
+```json
+{
+  "username": "alice",
+  "address": "B6E7105A322215A6",
+  "private_key": "-----BEGIN PRIVATE KEY-----...",
+  "public_key": "-----BEGIN PUBLIC KEY-----...",
+  "created": "2025-12-29T19:00:00"
+}
+```
+
+### Metadata File (`received_stego_*_metadata.json`)
+```json
+{
+  "sender": "alice",
+  "sender_address": "B6E7105A322215A6",
+  "encrypted_aes_key": "hex_encoded_key",
+  "salt": "hex_encoded_salt",
+  "iv": "hex_encoded_iv",
+  "payload_bits_length": 7800,
+  "timestamp": "2025-12-29T19:21:47",
+  "self_destruct": {
+    "type": "one_time",
+    "max_views": 1
+  }
+}
+```
+
+---
+
+## License
+
+Educational and research use only.
+
+---
+
+## Credits
+
+Developed with advanced steganography and cryptography techniques.
 

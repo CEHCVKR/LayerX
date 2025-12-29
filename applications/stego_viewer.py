@@ -19,13 +19,16 @@ import threading
 from datetime import datetime, timedelta
 
 # Add module paths
+sys.path.append('core_modules')
+sys.path.append(os.path.join(os.path.dirname(os.path.dirname(__file__)), 'core_modules'))
 sys.path.append('01. Encryption Module')
 sys.path.append('02. Key Management Module')
 sys.path.append('03. Image Processing Module')
 sys.path.append('04. Compression Module')
 sys.path.append('05. Embedding and Extraction Module')
 
-from a1_encryption import decrypt_message
+from a1_encryption import decrypt_message, decrypt_with_aes_key
+from a2_key_management import decrypt_aes_key_with_ecc, deserialize_private_key
 from a3_image_processing_color import read_image_color, dwt_decompose_color
 from a4_compression import decompress_huffman, parse_payload
 from a5_embedding_extraction import extract_from_dwt_bands_color, bits_to_bytes
@@ -33,8 +36,20 @@ from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.backends import default_backend
 
 
-def extract_hidden_message(stego_image_path, salt, iv, payload_bits_length):
-    """Extract and decrypt hidden message from stego image"""
+def extract_hidden_message(stego_image_path, salt, iv, payload_bits_length, encrypted_session_key=None, receiver_private_key=None):
+    """Extract and decrypt hidden message from stego image
+    
+    Args:
+        stego_image_path: Path to stego image
+        salt: Salt for AES decryption
+        iv: IV for AES decryption
+        payload_bits_length: Length of embedded payload in bits
+        encrypted_session_key: ECC-encrypted AES session key (optional, for ECC mode)
+        receiver_private_key: Receiver's ECC private key (optional, for ECC mode)
+    
+    Returns:
+        Decrypted message string
+    """
     stego_img = read_image_color(stego_image_path)
     bands = dwt_decompose_color(stego_img, levels=2)
     extracted_bits = extract_from_dwt_bands_color(bands, payload_bits_length, Q_factor=5.0)
@@ -42,7 +57,15 @@ def extract_hidden_message(stego_image_path, salt, iv, payload_bits_length):
     
     msg_len, tree, compressed = parse_payload(extracted_payload)
     decrypted_ciphertext = decompress_huffman(compressed, tree)
-    message = decrypt_message(decrypted_ciphertext, "temp_password", salt, iv)
+    
+    # Decrypt session key if ECC mode
+    if encrypted_session_key and receiver_private_key:
+        # ECC mode: decrypt the session key first, then use direct AES
+        aes_session_key = decrypt_aes_key_with_ecc(encrypted_session_key, receiver_private_key)
+        message = decrypt_with_aes_key(decrypted_ciphertext, aes_session_key, salt, iv)
+    else:
+        # Legacy mode: use hardcoded password for backward compatibility
+        message = decrypt_message(decrypted_ciphertext, "temp_password", salt, iv)
     
     return message
 
@@ -151,16 +174,11 @@ class StegoViewerApp:
         # New format: username_timestamp_ip.png -> username_timestamp_ip.json
         # Old format: received_stego_timestamp.png -> encrypted_metadata_timestamp.json
         
-        print(f"[DEBUG] auto_detect_metadata called for: {image_path}")
         base_name = os.path.splitext(os.path.basename(image_path))[0]
         img_dir = os.path.dirname(image_path)
-        print(f"[DEBUG] Looking for metadata in: {img_dir}")
-        print(f"[DEBUG] Base name: {base_name}")
         
-        # First try: Same base name (new format)
-        metadata_file = os.path.join(img_dir, f"{base_name}.json")
-        print(f"[DEBUG] Checking for: {metadata_file}")
-        print(f"[DEBUG] File exists: {os.path.exists(metadata_file)}")
+        # First try: With _metadata suffix (transceiver.py format)
+        metadata_file = os.path.join(img_dir, f"{base_name}_metadata.json")
         
         if os.path.exists(metadata_file):
             print(f"[+] Auto-detected metadata: {metadata_file}")
@@ -170,10 +188,20 @@ class StegoViewerApp:
                 fg=self.get_theme_color('title_fg')
             )
             return
-        else:
-            print(f"[DEBUG] Metadata file not found at expected path")
         
-        # Second try: Old naming pattern (backward compatibility)
+        # Second try: Same base name without suffix (legacy format)
+        metadata_file_alt = os.path.join(img_dir, f"{base_name}.json")
+        
+        if os.path.exists(metadata_file_alt):
+            print(f"[+] Auto-detected metadata: {metadata_file_alt}")
+            self.load_metadata_file(metadata_file_alt)
+            self.status_label.config(
+                text=f"✓ Auto-loaded metadata: {os.path.basename(metadata_file_alt)}",
+                fg=self.get_theme_color('title_fg')
+            )
+            return
+        
+        # Third try: Old naming pattern (backward compatibility)
         import re
         match = re.search(r'(\d{8}_\d{6})', base_name)
         if match:
@@ -500,11 +528,6 @@ class StegoViewerApp:
     def load_image_file(self, filepath):
         """Load and display image file"""
         try:
-            print(f"\n[DEBUG] ===== LOADING NEW IMAGE: {os.path.basename(filepath)} =====")
-            print(f"[DEBUG] Previous image path: {self.stego_image_path}")
-            print(f"[DEBUG] Previous metadata: {self.metadata is not None}")
-            print(f"[DEBUG] Button state before reset: {self.secret_reveal_btn.cget('state')}")
-            
             # Cancel any running self-destruct timer
             if self.timer_active:
                 self.timer_active = False
@@ -522,15 +545,21 @@ class StegoViewerApp:
                     # Delete image file
                     if os.path.exists(self.stego_image_path):
                         os.remove(self.stego_image_path)
-                        print(f"[DEBUG] Deleted 1-time view image: {self.stego_image_path}")
+                        print(f"[🔥] Deleted self-destruct image: {self.stego_image_path}")
                     
-                    # Delete metadata JSON
-                    json_file = os.path.join(img_dir, f"{base_name}.json")
+                    # Delete metadata JSON (try both formats)
+                    json_file = os.path.join(img_dir, f"{base_name}_metadata.json")
                     if os.path.exists(json_file):
                         os.remove(json_file)
-                        print(f"[DEBUG] Deleted 1-time view metadata: {json_file}")
+                        print(f"[🔥] Deleted self-destruct metadata: {json_file}")
+                    else:
+                        # Try legacy format
+                        json_file_alt = os.path.join(img_dir, f"{base_name}.json")
+                        if os.path.exists(json_file_alt):
+                            os.remove(json_file_alt)
+                            print(f"[🔥] Deleted self-destruct metadata: {json_file_alt}")
                 except Exception as e:
-                    print(f"Error deleting previous 1-time view files: {e}")
+                    print(f"[!] Error deleting self-destruct files: {e}")
             
             # Reset everything for new image
             self.secret_reveal_btn.config(state=tk.DISABLED)
@@ -539,7 +568,6 @@ class StegoViewerApp:
             self.delete_on_close = False
             self.psnr_value = None
             self._already_authenticated = False  # Reset authentication for new image
-            print(f"[DEBUG] State reset - metadata=None, button=DISABLED, auth reset")
             
             # Clear message display
             self.update_message_display("Waiting for metadata...", "", "", "")
@@ -581,7 +609,12 @@ class StegoViewerApp:
     def decrypt_metadata(self, encrypted_package):
         """Decrypt metadata using AES"""
         try:
-            # Handle both old and new formats
+            # Check if this is ECC-encrypted format from transceiver.py (has encrypted_aes_key)
+            if 'encrypted_aes_key' in encrypted_package:
+                # This is the new ECC format - return as-is (metadata is not encrypted, only the message)
+                return encrypted_package
+            
+            # Handle both old and new AES-encrypted formats
             if 'encrypted_package' in encrypted_package:
                 # New format with nested structure
                 pkg = encrypted_package['encrypted_package']
@@ -608,12 +641,10 @@ class StegoViewerApp:
     def load_metadata_file(self, filepath):
         """Load metadata from file"""
         try:
-            print(f"[DEBUG] load_metadata_file called: {filepath}")
             # Reset button state for new metadata
             self.secret_reveal_btn.config(state=tk.DISABLED)
             self.decrypted_message = None
             self.delete_on_close = False
-            print(f"[DEBUG] Button set to DISABLED in load_metadata_file")
             
             with open(filepath, 'r') as f:
                 encrypted_package = json.load(f)
@@ -621,7 +652,6 @@ class StegoViewerApp:
             # Decrypt metadata
             metadata = self.decrypt_metadata(encrypted_package)
             self.metadata = metadata
-            print(f"[DEBUG] Metadata loaded successfully, self.metadata is now: {self.metadata is not None}")
             
             # Extract PSNR if available
             if 'psnr' in metadata:
@@ -649,18 +679,10 @@ class StegoViewerApp:
     
     def check_enable_reveal_button(self):
         """Enable secret reveal button when both image and metadata are loaded"""
-        print(f"[DEBUG] check_enable_reveal_button called")
-        print(f"[DEBUG]   - self.stego_image_path: {self.stego_image_path}")
-        print(f"[DEBUG]   - self.metadata: {self.metadata is not None}")
-        
         if self.stego_image_path and self.metadata:
             self.secret_reveal_btn.config(state=tk.NORMAL)
-            print(f"[DEBUG]   - Button set to NORMAL")
-            print(f"[DEBUG]   - Button state after set: {self.secret_reveal_btn.cget('state')}")
             self.status_label.config(text="✓ Ready | Press Ctrl+R to reveal message", fg='#00ff88')
             self.status_indicator.config(fg='#00ff88')
-        else:
-            print(f"[DEBUG]   - Conditions NOT met, button stays DISABLED")
     
     def update_psnr_display(self):
         """Update PSNR indicator in status bar"""
@@ -790,16 +812,40 @@ class StegoViewerApp:
             self.secret_button.config(state=tk.DISABLED)
             self.root.update()
             
-            # Decode salt and IV
-            salt = base64.b64decode(self.metadata['salt'])
-            iv = base64.b64decode(self.metadata['iv'])
+            # Decode salt and IV (handle both hex and base64 formats)
+            try:
+                # Try hex format first (from transceiver.py)
+                salt = bytes.fromhex(self.metadata['salt'])
+                iv = bytes.fromhex(self.metadata['iv'])
+            except ValueError:
+                # Fallback to base64 format (legacy)
+                salt = base64.b64decode(self.metadata['salt'])
+                iv = base64.b64decode(self.metadata['iv'])
+            
+            # Check if ECC encryption is used
+            encrypted_session_key = None
+            receiver_private_key = None
+            
+            if 'encrypted_aes_key' in self.metadata:
+                # ECC mode: decrypt session key with receiver's private key
+                if not self.identity or 'private_key' not in self.identity:
+                    messagebox.showerror("Error", "ECC-encrypted message requires identity with private key!")
+                    self.status_label.config(text="❌ Missing private key", fg='#ff0000')
+                    self.secret_button.config(state=tk.NORMAL)
+                    return
+                
+                encrypted_session_key = bytes.fromhex(self.metadata['encrypted_aes_key'])
+                receiver_private_key = deserialize_private_key(self.identity['private_key'].encode('utf-8'))
+                print(f"\n[*] Using ECC decryption with receiver's private key")
             
             # Extract message
             message = extract_hidden_message(
                 self.metadata['stego_image'],
                 salt,
                 iv,
-                self.metadata['payload_bits_length']
+                self.metadata['payload_bits_length'],
+                encrypted_session_key,
+                receiver_private_key
             )
             
             # Display message in the right panel
@@ -827,19 +873,9 @@ class StegoViewerApp:
             self.secret_button.config(state=tk.NORMAL)
     
     def handle_ctrl_r(self):
-        """Handle Ctrl+R keyboard shortcut with debugging"""
-        print(f"\n[DEBUG] ===== Ctrl+R PRESSED =====")
-        print(f"[DEBUG] Button state: {self.secret_reveal_btn.cget('state')}")
-        print(f"[DEBUG] Image path: {self.stego_image_path}")
-        print(f"[DEBUG] Metadata: {self.metadata is not None}")
-        
+        """Handle Ctrl+R keyboard shortcut"""
         if self.secret_reveal_btn.cget('state') == tk.NORMAL:
-            print(f"[DEBUG] Button is NORMAL - calling authenticate_and_reveal()")
             self.authenticate_and_reveal()
-        else:
-            print(f"[DEBUG] Button is DISABLED - Ctrl+R blocked!")
-            print(f"[DEBUG] Image loaded: {bool(self.stego_image_path)}")
-            print(f"[DEBUG] Metadata loaded: {bool(self.metadata)}")
     
     def setup_keyboard_shortcuts(self):
         """Setup keyboard shortcuts for quick actions"""
@@ -953,7 +989,14 @@ class StegoViewerApp:
         sd = self.metadata['self_destruct']
         sd_type = sd.get('type')
         
-        if sd_type == 'timer':
+        if sd_type == 'one_time':
+            # One-time view - delete immediately after reading
+            self.delete_on_close = True
+            self.status_label.config(
+                text=f"⚠️ One-time message - will delete on close",
+                fg='#ff5555'
+            )
+        elif sd_type == 'timer':
             # Timer-based destruction - delete when window closes OR timer expires
             seconds = sd.get('seconds', sd.get('minutes', 5) * 60)  # Support both formats
             self.start_destruction_timer(seconds)
@@ -1022,9 +1065,6 @@ class StegoViewerApp:
     def destroy_message_by_path(self, image_path, reason):
         """Destroy message and associated files for a specific path"""
         try:
-            # Show warning notification (non-blocking)
-            messagebox.showwarning("Self-Destruct", f"Message will self-destruct!\n\nReason: {reason}")
-            
             # Delete files immediately without confirmation
             if image_path and os.path.exists(image_path):
                 # Get the directory and base filename
@@ -1035,11 +1075,16 @@ class StegoViewerApp:
                 os.remove(image_path)
                 print(f"[🔥] Deleted stego image: {image_path}")
                 
-                # Delete metadata JSON
-                json_file = os.path.join(img_dir, f"{base_name}.json")
+                # Delete metadata JSON (try both formats)
+                json_file = os.path.join(img_dir, f"{base_name}_metadata.json")
                 if os.path.exists(json_file):
                     os.remove(json_file)
                     print(f"[🔥] Deleted metadata: {json_file}")
+                else:
+                    json_file_alt = os.path.join(img_dir, f"{base_name}.json")
+                    if os.path.exists(json_file_alt):
+                        os.remove(json_file_alt)
+                        print(f"[🔥] Deleted metadata: {json_file_alt}")
                 
                 # Clear display if this was the current image
                 if image_path == self.stego_image_path:
@@ -1055,9 +1100,6 @@ class StegoViewerApp:
     def destroy_message(self, reason):
         """Destroy current message and associated files"""
         try:
-            # Show warning notification (non-blocking)
-            messagebox.showwarning("Self-Destruct", f"Message will self-destruct!\n\nReason: {reason}")
-            
             # Delete files immediately without confirmation
             if self.stego_image_path and os.path.exists(self.stego_image_path):
                 # Get the directory and base filename
@@ -1066,13 +1108,18 @@ class StegoViewerApp:
                 
                 # Delete image
                 os.remove(self.stego_image_path)
-                print(f"[🗑️] Deleted: {self.stego_image_path}")
+                print(f"[🔥] Deleted: {self.stego_image_path}")
                 
-                # Delete metadata JSON
-                json_file = os.path.join(img_dir, f"{base_name}.json")
+                # Delete metadata JSON (try both formats)
+                json_file = os.path.join(img_dir, f"{base_name}_metadata.json")
                 if os.path.exists(json_file):
                     os.remove(json_file)
-                    print(f"[🗑️] Deleted: {json_file}")
+                    print(f"[🔥] Deleted: {json_file}")
+                else:
+                    json_file_alt = os.path.join(img_dir, f"{base_name}.json")
+                    if os.path.exists(json_file_alt):
+                        os.remove(json_file_alt)
+                        print(f"[🔥] Deleted: {json_file_alt}")
             
             # Clear UI
             self.image_label.config(image='', text="🔥 Message Self-Destructed")
@@ -1103,13 +1150,19 @@ class StegoViewerApp:
                     
                     # Delete image
                     os.remove(self.stego_image_path)
-                    print(f"[🗑️] Self-destruct on close: Deleted {self.stego_image_path}")
+                    print(f"[�] Self-destruct on close: Deleted {self.stego_image_path}")
                     
-                    # Delete metadata JSON
-                    json_file = os.path.join(img_dir, f"{base_name}.json")
+                    # Delete metadata JSON (try both formats)
+                    json_file = os.path.join(img_dir, f"{base_name}_metadata.json")
                     if os.path.exists(json_file):
                         os.remove(json_file)
-                        print(f"[🗑️] Self-destruct on close: Deleted {json_file}")
+                        print(f"[🔥] Self-destruct on close: Deleted {json_file}")
+                    else:
+                        # Try legacy format
+                        json_file_alt = os.path.join(img_dir, f"{base_name}.json")
+                        if os.path.exists(json_file_alt):
+                            os.remove(json_file_alt)
+                            print(f"[🔥] Self-destruct on close: Deleted {json_file_alt}")
                 
                 print("[✓] Self-destruct complete - files deleted on window close")
             except Exception as e:

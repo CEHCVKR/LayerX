@@ -7,6 +7,8 @@ Dependencies: pycryptodome (install: pip install pycryptodome)
 Functions:
 - encrypt_message(plaintext: str, password: str) → (ciphertext: bytes, salt: bytes, iv: bytes)
 - decrypt_message(ciphertext: bytes, password: str, salt: bytes, iv: bytes) → plaintext: str
+- encrypt_with_aes_key(plaintext: str, aes_key: bytes) → (ciphertext: bytes, salt: bytes, iv: bytes)
+- decrypt_with_aes_key(ciphertext: bytes, aes_key: bytes, salt: bytes, iv: bytes) → plaintext: str
 """
 
 import os
@@ -83,6 +85,75 @@ def decrypt_message(ciphertext: bytes, password: str, salt: bytes, iv: bytes) ->
         
         # Create AES cipher in CBC mode
         cipher = AES.new(key, AES.MODE_CBC, iv)
+        
+        # Decrypt and unpad
+        padded_data = cipher.decrypt(ciphertext)
+        data = unpad(padded_data, AES.block_size)
+        
+        # Convert back to string
+        return data.decode('utf-8')
+        
+    except Exception as e:
+        raise RuntimeError(f"Decryption failed: {str(e)}")
+
+
+def encrypt_with_aes_key(plaintext: str, aes_key: bytes) -> tuple[bytes, bytes, bytes]:
+    """
+    Encrypts plaintext using direct AES-256-CBC (no PBKDF2).
+    For ECC mode where we already have a random AES key.
+    
+    Args:
+        plaintext (str): Message to encrypt
+        aes_key (bytes): 32-byte AES-256 key
+        
+    Returns:
+        tuple: (ciphertext: bytes, salt: bytes, iv: bytes)
+              Note: salt is empty (b'') since no PBKDF2 is used
+    """
+    try:
+        if len(aes_key) != 32:
+            raise ValueError("AES key must be 32 bytes for AES-256")
+        
+        # Convert plaintext to bytes
+        data = plaintext.encode('utf-8')
+        
+        # Generate random IV (no salt needed for direct AES)
+        iv = secrets.token_bytes(16)
+        salt = b''  # Empty salt - not used in direct AES mode
+        
+        # Create AES cipher in CBC mode
+        cipher = AES.new(aes_key, AES.MODE_CBC, iv)
+        
+        # Pad data and encrypt
+        padded_data = pad(data, AES.block_size)
+        ciphertext = cipher.encrypt(padded_data)
+        
+        return ciphertext, salt, iv
+        
+    except Exception as e:
+        raise RuntimeError(f"Encryption failed: {str(e)}")
+
+
+def decrypt_with_aes_key(ciphertext: bytes, aes_key: bytes, salt: bytes, iv: bytes) -> str:
+    """
+    Decrypts ciphertext using direct AES-256-CBC (no PBKDF2).
+    For ECC mode where we decrypt the AES key from the ECC-encrypted package.
+    
+    Args:
+        ciphertext (bytes): Encrypted data
+        aes_key (bytes): 32-byte AES-256 key
+        salt (bytes): Ignored (for compatibility)
+        iv (bytes): 16-byte initialization vector
+        
+    Returns:
+        str: Decrypted plaintext message
+    """
+    try:
+        if len(aes_key) != 32:
+            raise ValueError("AES key must be 32 bytes for AES-256")
+        
+        # Create AES cipher in CBC mode
+        cipher = AES.new(aes_key, AES.MODE_CBC, iv)
         
         # Decrypt and unpad
         padded_data = cipher.decrypt(ciphertext)
