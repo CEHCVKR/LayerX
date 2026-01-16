@@ -118,33 +118,15 @@ def peer_discovery_listener(identity):
 def peer_discovery_announcer(identity):
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
-    # Try to bind to any available port (helps on Windows)
-    try:
-        sock.bind(('', 0))
-    except:
-        pass
-
+    
     announcement = json.dumps({
         'username': identity['username'],
         'address': identity['address'],
         'public_key': identity['public_key']
     }).encode('utf-8')
-
-    # Use 255.255.255.255 for cross-subnet discovery
+    
     broadcast_addresses = ['255.255.255.255']
-
-    # Also attempt subnet-specific broadcast address as a fallback
-    try:
-        import socket as _sockmod
-        hostname = _sockmod.gethostbyname(socket.gethostname())
-        ip_parts = hostname.split('.')
-        if len(ip_parts) == 4:
-            broadcast_addresses.append(f"{ip_parts[0]}.{ip_parts[1]}.{ip_parts[2]}.255")
-    except:
-        pass
-
-    print(f"[*] Broadcasting to: {', '.join(broadcast_addresses)}")
-
+    
     while running:
         try:
             for broadcast_addr in broadcast_addresses:
@@ -152,14 +134,14 @@ def peer_discovery_announcer(identity):
                     sock.sendto(announcement, (broadcast_addr, BROADCAST_PORT))
                 except:
                     pass
-
+            
             with peers_lock:
                 current_time = time.time()
                 stale = [u for u, p in peers_list.items() if current_time - p['last_seen'] > 20]
                 for username in stale:
                     print(f"\n[-] Peer {username} went offline")
                     del peers_list[username]
-
+            
             time.sleep(DISCOVERY_INTERVAL)
         except Exception:
             if running:
@@ -335,52 +317,8 @@ def send_file_to_peer(peer_ip, filepath, sender_name, sender_identity, metadata_
         return False
 
 
-def validate_image_for_embedding(image_path):
-    """
-    Validate image can be used for embedding and return basic info.
-    """
-    try:
-        img = cv2.imread(image_path)
-        if img is None:
-            raise ValueError(f"Could not load image: {image_path}")
-        
-        height, width = img.shape[:2]
-        channels = img.shape[2] if len(img.shape) == 3 else 1
-        
-        # Check minimum size requirements for DWT (needs to be divisible by 4 for 2-level DWT)
-        if width < 32 or height < 32:
-            raise ValueError(f"Image too small for DWT: {width}x{height} (minimum 32x32)")
-        
-        # Ensure dimensions are even numbers for DWT compatibility
-        if width % 2 != 0 or height % 2 != 0:
-            print(f"[*] Adjusting dimensions for DWT compatibility: {width}x{height}")
-            # Crop by 1 pixel if odd
-            new_width = width - (width % 2)
-            new_height = height - (height % 2)
-            img_cropped = img[:new_height, :new_width]
-            
-            # Save the adjusted image temporarily
-            name, ext = os.path.splitext(image_path)
-            temp_path = f"{name}_dwt_compatible{ext}"
-            cv2.imwrite(temp_path, img_cropped)
-            print(f"[*] Created DWT-compatible image: {temp_path} ({new_width}x{new_height})")
-            return temp_path, new_width, new_height, channels
-        
-        print(f"[*] Image validated: {width}x{height}x{channels}")
-        return image_path, width, height, channels
-        
-    except Exception as e:
-        print(f"[!] Error validating image {image_path}: {e}")
-        # Try to use a default cover image instead
-        if image_path != "cover.png" and os.path.exists("cover.png"):
-            print("[*] Falling back to cover.png")
-            return validate_image_for_embedding("cover.png")
-        else:
-            raise ValueError(f"Could not validate image {image_path} and no fallback available")
-
-
 def create_stego_image_with_ecc(message, receiver_public_key_pem, cover_path, output_path):
-    """Create stego image with ECC-encrypted message - preserves original image dimensions"""
+    """Create stego image with ECC-encrypted message"""
     print("\n[*] Creating stego image with ECC encryption...")
     
     # Generate random AES session key
@@ -402,47 +340,17 @@ def create_stego_image_with_ecc(message, receiver_public_key_pem, cover_path, ou
     payload_bits = bytes_to_bits(payload)
     payload_bit_length = len(payload_bits)
     
-    # Validate and potentially adjust image for DWT compatibility
-    temp_image_created = False
-    try:
-        processed_cover_path, width, height, channels = validate_image_for_embedding(cover_path)
-        if processed_cover_path != cover_path:
-            temp_image_created = True
-        
-        # Embed in image (preserving original dimensions)
-        cover_img = read_image_color(processed_cover_path)
-        bands = dwt_decompose_color(cover_img, levels=2)
-        stego_bands = embed_in_dwt_bands_color(payload_bits, bands, Q_factor=5.0)
-        stego_img = dwt_reconstruct_color(stego_bands)
-        
-        # Ensure output has same dimensions as processed image
-        if stego_img.shape[:2] != (height, width):
-            print(f"[*] Adjusting output dimensions: {stego_img.shape[:2]} -> {height}x{width}")
-            stego_img = cv2.resize(stego_img, (width, height), interpolation=cv2.INTER_LANCZOS4)
-        
-        write_image(output_path, stego_img)
-        
-        psnr_val = psnr_color(cover_img, stego_img)
-        print(f"[OK] PSNR: {psnr_val:.2f} dB | Output: {output_path} ({width}x{height})")
-        
-        # Clean up temporary DWT-compatible image if created
-        if temp_image_created and processed_cover_path.endswith("_dwt_compatible.png"):
-            try:
-                os.remove(processed_cover_path)
-                print(f"[*] Cleaned up temporary file: {processed_cover_path}")
-            except:
-                pass  # Ignore cleanup errors
-                
-        return encrypted_aes_key, salt, iv, payload_bit_length
-        
-    except Exception as e:
-        # Clean up temp file if there was an error
-        if temp_image_created and 'processed_cover_path' in locals():
-            try:
-                os.remove(processed_cover_path)
-            except:
-                pass
-        raise Exception(f"Image processing failed: {str(e)}")
+    # Embed in image
+    cover_img = read_image_color(cover_path)
+    bands = dwt_decompose_color(cover_img, levels=2)
+    stego_bands = embed_in_dwt_bands_color(payload_bits, bands, Q_factor=5.0)
+    stego_img = dwt_reconstruct_color(stego_bands)
+    write_image(output_path, stego_img)
+    
+    psnr_val = psnr_color(cover_img, stego_img)
+    print(f"[OK] PSNR: {psnr_val:.2f} dB | Output: {output_path}")
+    
+    return encrypted_aes_key, salt, iv, payload_bit_length
 
 
 def list_peers():
@@ -503,30 +411,7 @@ def send_message(identity):
     
     if not os.path.exists(cover_image):
         print(f"[!] Cover image not found: {cover_image}")
-        # Try some common alternatives
-        alternatives = ["cover.png", "test_lena.png", "lena.png", "sample.png"]
-        found_alternative = None
-        for alt in alternatives:
-            if os.path.exists(alt):
-                found_alternative = alt
-                break
-        
-        if found_alternative:
-            print(f"[*] Using alternative image: {found_alternative}")
-            cover_image = found_alternative
-        else:
-            print("[!] No suitable cover image found. Please ensure you have a cover image available.")
-            return
-    
-    # Display image info
-    try:
-        temp_img = cv2.imread(cover_image)
-        if temp_img is not None:
-            h, w = temp_img.shape[:2]
-            print(f"[*] Cover image: {cover_image} ({w}x{h}) - output will preserve these dimensions")
-        del temp_img
-    except:
-        pass
+        return
     
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     stego_path = f"stego_to_{peer_username}_{timestamp}.png"

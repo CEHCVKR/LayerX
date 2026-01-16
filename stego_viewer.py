@@ -715,7 +715,7 @@ class StegoViewerApp:
         # Simple PIN-based authentication (more reliable than Windows auth)
         password = simpledialog.askstring(
             "LayerX Security",
-            "Enter PIN to reveal hidden message",
+            "Enter PIN to reveal hidden message\n(Default: 1234)",
             show='●'
         )
         
