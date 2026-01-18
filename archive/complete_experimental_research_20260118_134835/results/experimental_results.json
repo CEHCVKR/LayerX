@@ -1,0 +1,1346 @@
+[
+  {
+    "id": "small_256_128B_dwt_Q3.0",
+    "timestamp": "2026-01-18T13:48:50.898171",
+    "image": "small_256",
+    "image_size": [
+      256,
+      256,
+      3
+    ],
+    "payload_size_bytes": 128,
+    "method": "dwt",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_256_128B_dwt_Q5.0",
+    "timestamp": "2026-01-18T13:48:50.950303",
+    "image": "small_256",
+    "image_size": [
+      256,
+      256,
+      3
+    ],
+    "payload_size_bytes": 128,
+    "method": "dwt",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_256_128B_dwt_Q7.0",
+    "timestamp": "2026-01-18T13:48:50.954117",
+    "image": "small_256",
+    "image_size": [
+      256,
+      256,
+      3
+    ],
+    "payload_size_bytes": 128,
+    "method": "dwt",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_256_128B_dwt_Q10.0",
+    "timestamp": "2026-01-18T13:48:50.960159",
+    "image": "small_256",
+    "image_size": [
+      256,
+      256,
+      3
+    ],
+    "payload_size_bytes": 128,
+    "method": "dwt",
+    "q_factor": 10.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_256_128B_dwt+dct_Q3.0",
+    "timestamp": "2026-01-18T13:48:50.970250",
+    "image": "small_256",
+    "image_size": [
+      256,
+      256,
+      3
+    ],
+    "payload_size_bytes": 128,
+    "method": "dwt+dct",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_256_128B_dwt+dct_Q5.0",
+    "timestamp": "2026-01-18T13:48:50.975478",
+    "image": "small_256",
+    "image_size": [
+      256,
+      256,
+      3
+    ],
+    "payload_size_bytes": 128,
+    "method": "dwt+dct",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_256_128B_dwt+dct_Q7.0",
+    "timestamp": "2026-01-18T13:48:50.979502",
+    "image": "small_256",
+    "image_size": [
+      256,
+      256,
+      3
+    ],
+    "payload_size_bytes": 128,
+    "method": "dwt+dct",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_256_128B_dwt+dct_Q10.0",
+    "timestamp": "2026-01-18T13:48:50.983581",
+    "image": "small_256",
+    "image_size": [
+      256,
+      256,
+      3
+    ],
+    "payload_size_bytes": 128,
+    "method": "dwt+dct",
+    "q_factor": 10.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_256_512B_dwt_Q3.0",
+    "timestamp": "2026-01-18T13:48:50.992569",
+    "image": "small_256",
+    "image_size": [
+      256,
+      256,
+      3
+    ],
+    "payload_size_bytes": 512,
+    "method": "dwt",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_256_512B_dwt_Q5.0",
+    "timestamp": "2026-01-18T13:48:50.999795",
+    "image": "small_256",
+    "image_size": [
+      256,
+      256,
+      3
+    ],
+    "payload_size_bytes": 512,
+    "method": "dwt",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_256_512B_dwt_Q7.0",
+    "timestamp": "2026-01-18T13:48:51.003706",
+    "image": "small_256",
+    "image_size": [
+      256,
+      256,
+      3
+    ],
+    "payload_size_bytes": 512,
+    "method": "dwt",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_256_512B_dwt_Q10.0",
+    "timestamp": "2026-01-18T13:48:51.010455",
+    "image": "small_256",
+    "image_size": [
+      256,
+      256,
+      3
+    ],
+    "payload_size_bytes": 512,
+    "method": "dwt",
+    "q_factor": 10.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_256_512B_dwt+dct_Q3.0",
+    "timestamp": "2026-01-18T13:48:51.013948",
+    "image": "small_256",
+    "image_size": [
+      256,
+      256,
+      3
+    ],
+    "payload_size_bytes": 512,
+    "method": "dwt+dct",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_256_512B_dwt+dct_Q5.0",
+    "timestamp": "2026-01-18T13:48:51.022069",
+    "image": "small_256",
+    "image_size": [
+      256,
+      256,
+      3
+    ],
+    "payload_size_bytes": 512,
+    "method": "dwt+dct",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_256_512B_dwt+dct_Q7.0",
+    "timestamp": "2026-01-18T13:48:51.027949",
+    "image": "small_256",
+    "image_size": [
+      256,
+      256,
+      3
+    ],
+    "payload_size_bytes": 512,
+    "method": "dwt+dct",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_256_512B_dwt+dct_Q10.0",
+    "timestamp": "2026-01-18T13:48:51.032991",
+    "image": "small_256",
+    "image_size": [
+      256,
+      256,
+      3
+    ],
+    "payload_size_bytes": 512,
+    "method": "dwt+dct",
+    "q_factor": 10.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_256_1024B_dwt_Q3.0",
+    "timestamp": "2026-01-18T13:48:51.039556",
+    "image": "small_256",
+    "image_size": [
+      256,
+      256,
+      3
+    ],
+    "payload_size_bytes": 1024,
+    "method": "dwt",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 1024,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_256_1024B_dwt_Q5.0",
+    "timestamp": "2026-01-18T13:48:51.043605",
+    "image": "small_256",
+    "image_size": [
+      256,
+      256,
+      3
+    ],
+    "payload_size_bytes": 1024,
+    "method": "dwt",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 1024,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_256_1024B_dwt_Q7.0",
+    "timestamp": "2026-01-18T13:48:51.050497",
+    "image": "small_256",
+    "image_size": [
+      256,
+      256,
+      3
+    ],
+    "payload_size_bytes": 1024,
+    "method": "dwt",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 1024,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_256_1024B_dwt_Q10.0",
+    "timestamp": "2026-01-18T13:48:51.053193",
+    "image": "small_256",
+    "image_size": [
+      256,
+      256,
+      3
+    ],
+    "payload_size_bytes": 1024,
+    "method": "dwt",
+    "q_factor": 10.0,
+    "steps": {
+      "message": {
+        "size_bytes": 1024,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_256_1024B_dwt+dct_Q3.0",
+    "timestamp": "2026-01-18T13:48:51.059116",
+    "image": "small_256",
+    "image_size": [
+      256,
+      256,
+      3
+    ],
+    "payload_size_bytes": 1024,
+    "method": "dwt+dct",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 1024,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_256_1024B_dwt+dct_Q5.0",
+    "timestamp": "2026-01-18T13:48:51.068002",
+    "image": "small_256",
+    "image_size": [
+      256,
+      256,
+      3
+    ],
+    "payload_size_bytes": 1024,
+    "method": "dwt+dct",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 1024,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_256_1024B_dwt+dct_Q7.0",
+    "timestamp": "2026-01-18T13:48:51.071397",
+    "image": "small_256",
+    "image_size": [
+      256,
+      256,
+      3
+    ],
+    "payload_size_bytes": 1024,
+    "method": "dwt+dct",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 1024,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_256_1024B_dwt+dct_Q10.0",
+    "timestamp": "2026-01-18T13:48:51.079704",
+    "image": "small_256",
+    "image_size": [
+      256,
+      256,
+      3
+    ],
+    "payload_size_bytes": 1024,
+    "method": "dwt+dct",
+    "q_factor": 10.0,
+    "steps": {
+      "message": {
+        "size_bytes": 1024,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_256_4096B_dwt_Q3.0",
+    "timestamp": "2026-01-18T13:48:51.083833",
+    "image": "small_256",
+    "image_size": [
+      256,
+      256,
+      3
+    ],
+    "payload_size_bytes": 4096,
+    "method": "dwt",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 4096,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_256_4096B_dwt_Q5.0",
+    "timestamp": "2026-01-18T13:48:51.091687",
+    "image": "small_256",
+    "image_size": [
+      256,
+      256,
+      3
+    ],
+    "payload_size_bytes": 4096,
+    "method": "dwt",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 4096,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_256_4096B_dwt_Q7.0",
+    "timestamp": "2026-01-18T13:48:51.093701",
+    "image": "small_256",
+    "image_size": [
+      256,
+      256,
+      3
+    ],
+    "payload_size_bytes": 4096,
+    "method": "dwt",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 4096,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_256_4096B_dwt_Q10.0",
+    "timestamp": "2026-01-18T13:48:51.102720",
+    "image": "small_256",
+    "image_size": [
+      256,
+      256,
+      3
+    ],
+    "payload_size_bytes": 4096,
+    "method": "dwt",
+    "q_factor": 10.0,
+    "steps": {
+      "message": {
+        "size_bytes": 4096,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_256_4096B_dwt+dct_Q3.0",
+    "timestamp": "2026-01-18T13:48:51.109522",
+    "image": "small_256",
+    "image_size": [
+      256,
+      256,
+      3
+    ],
+    "payload_size_bytes": 4096,
+    "method": "dwt+dct",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 4096,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_256_4096B_dwt+dct_Q5.0",
+    "timestamp": "2026-01-18T13:48:51.115257",
+    "image": "small_256",
+    "image_size": [
+      256,
+      256,
+      3
+    ],
+    "payload_size_bytes": 4096,
+    "method": "dwt+dct",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 4096,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_256_4096B_dwt+dct_Q7.0",
+    "timestamp": "2026-01-18T13:48:51.117179",
+    "image": "small_256",
+    "image_size": [
+      256,
+      256,
+      3
+    ],
+    "payload_size_bytes": 4096,
+    "method": "dwt+dct",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 4096,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_256_4096B_dwt+dct_Q10.0",
+    "timestamp": "2026-01-18T13:48:51.128215",
+    "image": "small_256",
+    "image_size": [
+      256,
+      256,
+      3
+    ],
+    "payload_size_bytes": 4096,
+    "method": "dwt+dct",
+    "q_factor": 10.0,
+    "steps": {
+      "message": {
+        "size_bytes": 4096,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_512_128B_dwt_Q3.0",
+    "timestamp": "2026-01-18T13:48:51.133796",
+    "image": "small_512",
+    "image_size": [
+      512,
+      512,
+      3
+    ],
+    "payload_size_bytes": 128,
+    "method": "dwt",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_512_128B_dwt_Q5.0",
+    "timestamp": "2026-01-18T13:48:51.133796",
+    "image": "small_512",
+    "image_size": [
+      512,
+      512,
+      3
+    ],
+    "payload_size_bytes": 128,
+    "method": "dwt",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_512_128B_dwt_Q7.0",
+    "timestamp": "2026-01-18T13:48:51.141314",
+    "image": "small_512",
+    "image_size": [
+      512,
+      512,
+      3
+    ],
+    "payload_size_bytes": 128,
+    "method": "dwt",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_512_128B_dwt_Q10.0",
+    "timestamp": "2026-01-18T13:48:51.149311",
+    "image": "small_512",
+    "image_size": [
+      512,
+      512,
+      3
+    ],
+    "payload_size_bytes": 128,
+    "method": "dwt",
+    "q_factor": 10.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_512_128B_dwt+dct_Q3.0",
+    "timestamp": "2026-01-18T13:48:51.155130",
+    "image": "small_512",
+    "image_size": [
+      512,
+      512,
+      3
+    ],
+    "payload_size_bytes": 128,
+    "method": "dwt+dct",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_512_128B_dwt+dct_Q5.0",
+    "timestamp": "2026-01-18T13:48:51.159797",
+    "image": "small_512",
+    "image_size": [
+      512,
+      512,
+      3
+    ],
+    "payload_size_bytes": 128,
+    "method": "dwt+dct",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_512_128B_dwt+dct_Q7.0",
+    "timestamp": "2026-01-18T13:48:51.168005",
+    "image": "small_512",
+    "image_size": [
+      512,
+      512,
+      3
+    ],
+    "payload_size_bytes": 128,
+    "method": "dwt+dct",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_512_128B_dwt+dct_Q10.0",
+    "timestamp": "2026-01-18T13:48:51.172036",
+    "image": "small_512",
+    "image_size": [
+      512,
+      512,
+      3
+    ],
+    "payload_size_bytes": 128,
+    "method": "dwt+dct",
+    "q_factor": 10.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_512_512B_dwt_Q3.0",
+    "timestamp": "2026-01-18T13:48:51.177852",
+    "image": "small_512",
+    "image_size": [
+      512,
+      512,
+      3
+    ],
+    "payload_size_bytes": 512,
+    "method": "dwt",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_512_512B_dwt_Q5.0",
+    "timestamp": "2026-01-18T13:48:51.182528",
+    "image": "small_512",
+    "image_size": [
+      512,
+      512,
+      3
+    ],
+    "payload_size_bytes": 512,
+    "method": "dwt",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_512_512B_dwt_Q7.0",
+    "timestamp": "2026-01-18T13:48:51.188630",
+    "image": "small_512",
+    "image_size": [
+      512,
+      512,
+      3
+    ],
+    "payload_size_bytes": 512,
+    "method": "dwt",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_512_512B_dwt_Q10.0",
+    "timestamp": "2026-01-18T13:48:51.195217",
+    "image": "small_512",
+    "image_size": [
+      512,
+      512,
+      3
+    ],
+    "payload_size_bytes": 512,
+    "method": "dwt",
+    "q_factor": 10.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_512_512B_dwt+dct_Q3.0",
+    "timestamp": "2026-01-18T13:48:51.200404",
+    "image": "small_512",
+    "image_size": [
+      512,
+      512,
+      3
+    ],
+    "payload_size_bytes": 512,
+    "method": "dwt+dct",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_512_512B_dwt+dct_Q5.0",
+    "timestamp": "2026-01-18T13:48:51.204509",
+    "image": "small_512",
+    "image_size": [
+      512,
+      512,
+      3
+    ],
+    "payload_size_bytes": 512,
+    "method": "dwt+dct",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_512_512B_dwt+dct_Q7.0",
+    "timestamp": "2026-01-18T13:48:51.210027",
+    "image": "small_512",
+    "image_size": [
+      512,
+      512,
+      3
+    ],
+    "payload_size_bytes": 512,
+    "method": "dwt+dct",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_512_512B_dwt+dct_Q10.0",
+    "timestamp": "2026-01-18T13:48:51.215941",
+    "image": "small_512",
+    "image_size": [
+      512,
+      512,
+      3
+    ],
+    "payload_size_bytes": 512,
+    "method": "dwt+dct",
+    "q_factor": 10.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_512_1024B_dwt_Q3.0",
+    "timestamp": "2026-01-18T13:48:51.221542",
+    "image": "small_512",
+    "image_size": [
+      512,
+      512,
+      3
+    ],
+    "payload_size_bytes": 1024,
+    "method": "dwt",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 1024,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_512_1024B_dwt_Q5.0",
+    "timestamp": "2026-01-18T13:48:51.226433",
+    "image": "small_512",
+    "image_size": [
+      512,
+      512,
+      3
+    ],
+    "payload_size_bytes": 1024,
+    "method": "dwt",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 1024,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_512_1024B_dwt_Q7.0",
+    "timestamp": "2026-01-18T13:48:51.230921",
+    "image": "small_512",
+    "image_size": [
+      512,
+      512,
+      3
+    ],
+    "payload_size_bytes": 1024,
+    "method": "dwt",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 1024,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_512_1024B_dwt_Q10.0",
+    "timestamp": "2026-01-18T13:48:51.237433",
+    "image": "small_512",
+    "image_size": [
+      512,
+      512,
+      3
+    ],
+    "payload_size_bytes": 1024,
+    "method": "dwt",
+    "q_factor": 10.0,
+    "steps": {
+      "message": {
+        "size_bytes": 1024,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_512_1024B_dwt+dct_Q3.0",
+    "timestamp": "2026-01-18T13:48:51.243592",
+    "image": "small_512",
+    "image_size": [
+      512,
+      512,
+      3
+    ],
+    "payload_size_bytes": 1024,
+    "method": "dwt+dct",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 1024,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_512_1024B_dwt+dct_Q5.0",
+    "timestamp": "2026-01-18T13:48:51.247920",
+    "image": "small_512",
+    "image_size": [
+      512,
+      512,
+      3
+    ],
+    "payload_size_bytes": 1024,
+    "method": "dwt+dct",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 1024,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_512_1024B_dwt+dct_Q7.0",
+    "timestamp": "2026-01-18T13:48:51.255499",
+    "image": "small_512",
+    "image_size": [
+      512,
+      512,
+      3
+    ],
+    "payload_size_bytes": 1024,
+    "method": "dwt+dct",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 1024,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_512_1024B_dwt+dct_Q10.0",
+    "timestamp": "2026-01-18T13:48:51.257920",
+    "image": "small_512",
+    "image_size": [
+      512,
+      512,
+      3
+    ],
+    "payload_size_bytes": 1024,
+    "method": "dwt+dct",
+    "q_factor": 10.0,
+    "steps": {
+      "message": {
+        "size_bytes": 1024,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_512_4096B_dwt_Q3.0",
+    "timestamp": "2026-01-18T13:48:51.264237",
+    "image": "small_512",
+    "image_size": [
+      512,
+      512,
+      3
+    ],
+    "payload_size_bytes": 4096,
+    "method": "dwt",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 4096,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_512_4096B_dwt_Q5.0",
+    "timestamp": "2026-01-18T13:48:51.272012",
+    "image": "small_512",
+    "image_size": [
+      512,
+      512,
+      3
+    ],
+    "payload_size_bytes": 4096,
+    "method": "dwt",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 4096,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_512_4096B_dwt_Q7.0",
+    "timestamp": "2026-01-18T13:48:51.273428",
+    "image": "small_512",
+    "image_size": [
+      512,
+      512,
+      3
+    ],
+    "payload_size_bytes": 4096,
+    "method": "dwt",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 4096,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_512_4096B_dwt_Q10.0",
+    "timestamp": "2026-01-18T13:48:51.279545",
+    "image": "small_512",
+    "image_size": [
+      512,
+      512,
+      3
+    ],
+    "payload_size_bytes": 4096,
+    "method": "dwt",
+    "q_factor": 10.0,
+    "steps": {
+      "message": {
+        "size_bytes": 4096,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_512_4096B_dwt+dct_Q3.0",
+    "timestamp": "2026-01-18T13:48:51.287454",
+    "image": "small_512",
+    "image_size": [
+      512,
+      512,
+      3
+    ],
+    "payload_size_bytes": 4096,
+    "method": "dwt+dct",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 4096,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_512_4096B_dwt+dct_Q5.0",
+    "timestamp": "2026-01-18T13:48:51.292778",
+    "image": "small_512",
+    "image_size": [
+      512,
+      512,
+      3
+    ],
+    "payload_size_bytes": 4096,
+    "method": "dwt+dct",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 4096,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_512_4096B_dwt+dct_Q7.0",
+    "timestamp": "2026-01-18T13:48:51.298961",
+    "image": "small_512",
+    "image_size": [
+      512,
+      512,
+      3
+    ],
+    "payload_size_bytes": 4096,
+    "method": "dwt+dct",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 4096,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  },
+  {
+    "id": "small_512_4096B_dwt+dct_Q10.0",
+    "timestamp": "2026-01-18T13:48:51.304883",
+    "image": "small_512",
+    "image_size": [
+      512,
+      512,
+      3
+    ],
+    "payload_size_bytes": 4096,
+    "method": "dwt+dct",
+    "q_factor": 10.0,
+    "steps": {
+      "message": {
+        "size_bytes": 4096,
+        "type": "test_data"
+      }
+    },
+    "success": false,
+    "error": "Encryption failed: 'bytes' object has no attribute 'encode'"
+  }
+]

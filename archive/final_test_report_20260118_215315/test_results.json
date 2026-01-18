@@ -1,0 +1,145 @@
+{
+  "summary": {},
+  "scenarios": {
+    "core_functionality": {
+      "tests": [
+        {
+          "name": "AES Encryption",
+          "status": "PASS",
+          "details": "256-bit AES working"
+        },
+        {
+          "name": "Huffman Compression",
+          "status": "PASS",
+          "details": "Ratio: 47.27%"
+        },
+        {
+          "name": "DWT Embedding",
+          "status": "PASS",
+          "details": "PSNR: 51.28 dB"
+        }
+      ],
+      "pass": 3,
+      "fail": 0
+    },
+    "image_sizes": {
+      "tests": [
+        {
+          "name": "256x256",
+          "status": "FAIL",
+          "error": "Tree ECC decoding failed with all codec strengths"
+        },
+        {
+          "name": "512x512",
+          "status": "PASS",
+          "psnr": 51.13560679480922
+        },
+        {
+          "name": "1024x1024",
+          "status": "PASS",
+          "psnr": 57.14031849223747
+        }
+      ],
+      "pass": 2,
+      "fail": 1
+    },
+    "payload_sizes": {
+      "tests": [
+        {
+          "name": "16B",
+          "status": "PASS",
+          "psnr": 59.06309911108511
+        },
+        {
+          "name": "64B",
+          "status": "PASS",
+          "psnr": 59.03791542725372
+        },
+        {
+          "name": "256B",
+          "status": "PASS",
+          "psnr": 58.26906270150673
+        },
+        {
+          "name": "1024B",
+          "status": "PASS",
+          "psnr": 56.638060753168205
+        },
+        {
+          "name": "4096B",
+          "status": "PASS",
+          "psnr": 52.09893618405794
+        }
+      ],
+      "pass": 5,
+      "fail": 0
+    },
+    "jpeg_robustness": {
+      "tests": [
+        {
+          "name": "Q=95",
+          "status": "PASS",
+          "psnr": 42.28168367749558
+        },
+        {
+          "name": "Q=90",
+          "status": "PASS",
+          "psnr": 36.3362240264061
+        },
+        {
+          "name": "Q=85",
+          "status": "FAIL",
+          "psnr": 32.84229649396097
+        },
+        {
+          "name": "Q=80",
+          "status": "FAIL",
+          "psnr": 30.531559328377508
+        },
+        {
+          "name": "Q=70",
+          "status": "FAIL",
+          "psnr": 27.928828696664674
+        }
+      ],
+      "pass": 2,
+      "fail": 3
+    },
+    "real_world": {
+      "tests": [
+        {
+          "name": "Abstract Art (Internet)",
+          "status": "PASS",
+          "psnr": 56.17539013382267
+        },
+        {
+          "name": "Nature Photo (Internet)",
+          "status": "PASS",
+          "psnr": 55.38085914980642
+        },
+        {
+          "name": "Portrait Photo (Internet)",
+          "status": "PASS",
+          "psnr": 53.90152129690583
+        }
+      ],
+      "pass": 3,
+      "fail": 0
+    },
+    "performance": {
+      "metrics": {
+        "compression_ms": 0.0,
+        "embedding_ms": 121.20699882507324,
+        "extraction_ms": 86.55357360839844,
+        "total_ms": 207.76057243347168
+      }
+    }
+  },
+  "detailed_tests": [],
+  "statistics": {
+    "total_tests": 19,
+    "total_pass": 15,
+    "total_fail": 4,
+    "pass_rate": 78.94736842105263
+  }
+}

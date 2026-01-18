@@ -1,0 +1,30 @@
+{
+  "processing_time_analysis": {
+    "256x256": {
+      "avg_time": 0.3971120455326178,
+      "time_per_megapixel": 6.059448936960111,
+      "time_std": 0.15421970202780316
+    },
+    "512x512": {
+      "avg_time": 0.6711678236303195,
+      "time_per_megapixel": 2.560302061578062,
+      "time_std": 0.5282875449475386
+    },
+    "1024x1024": {
+      "avg_time": 1.7591789030447238,
+      "time_per_megapixel": 1.6776837377974738,
+      "time_std": 2.3235734656345053
+    },
+    "2048x2048": {
+      "avg_time": 5.339196640512218,
+      "time_per_megapixel": 1.272963676574759,
+      "time_std": 7.709607392927678
+    }
+  },
+  "scalability_analysis": {},
+  "efficiency_metrics": {
+    "avg_compression_ratio": 0.5951350137429658,
+    "avg_encryption_overhead": 4779.94014084507,
+    "avg_embedding_rate": 0.007008964466936711
+  }
+}

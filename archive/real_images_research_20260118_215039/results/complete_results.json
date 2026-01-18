@@ -1,0 +1,5942 @@
+[
+  {
+    "id": "Abstract_Art_256x256_128B_DWT_Q3.0",
+    "image": "Abstract_Art_256x256",
+    "image_size": "256x256",
+    "payload_size_bytes": 128,
+    "method": "DWT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 188.6575222015381
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 120,
+        "compression_ratio": 0.8333333333333334,
+        "space_saved_bytes": 24,
+        "space_saved_percent": 16.666666666666664,
+        "time_ms": 2.0139217376708984
+      },
+      "payload": {
+        "payload_bytes": 9252,
+        "payload_bits": 74016,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 120,
+        "final_payload_bytes": 9252,
+        "efficiency_percent": 7228.125
+      },
+      "image_analysis": {
+        "dimensions": "256x256",
+        "total_pixels": 65536,
+        "capacity_bits": 8192,
+        "capacity_bytes": 1024,
+        "payload_bits": 74016,
+        "capacity_usage_percent": 903.515625
+      }
+    },
+    "success": false,
+    "error": "Not enough coefficients. Need 74016, found 60271"
+  },
+  {
+    "id": "Abstract_Art_256x256_128B_DWT_Q5.0",
+    "image": "Abstract_Art_256x256",
+    "image_size": "256x256",
+    "payload_size_bytes": 128,
+    "method": "DWT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 178.59363555908203
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 120,
+        "compression_ratio": 0.8333333333333334,
+        "space_saved_bytes": 24,
+        "space_saved_percent": 16.666666666666664,
+        "time_ms": 0.0
+      },
+      "payload": {
+        "payload_bytes": 9087,
+        "payload_bits": 72696,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 120,
+        "final_payload_bytes": 9087,
+        "efficiency_percent": 7099.21875
+      },
+      "image_analysis": {
+        "dimensions": "256x256",
+        "total_pixels": 65536,
+        "capacity_bits": 8192,
+        "capacity_bytes": 1024,
+        "payload_bits": 72696,
+        "capacity_usage_percent": 887.40234375
+      }
+    },
+    "success": false,
+    "error": "Not enough coefficients. Need 72696, found 60271"
+  },
+  {
+    "id": "Abstract_Art_256x256_128B_DWT_Q7.0",
+    "image": "Abstract_Art_256x256",
+    "image_size": "256x256",
+    "payload_size_bytes": 128,
+    "method": "DWT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 194.5819854736328
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 124,
+        "compression_ratio": 0.8611111111111112,
+        "space_saved_bytes": 20,
+        "space_saved_percent": 13.888888888888884,
+        "time_ms": 2.016305923461914
+      },
+      "payload": {
+        "payload_bytes": 10321,
+        "payload_bits": 82568,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 124,
+        "final_payload_bytes": 10321,
+        "efficiency_percent": 8063.28125
+      },
+      "image_analysis": {
+        "dimensions": "256x256",
+        "total_pixels": 65536,
+        "capacity_bits": 8192,
+        "capacity_bytes": 1024,
+        "payload_bits": 82568,
+        "capacity_usage_percent": 1007.91015625
+      }
+    },
+    "success": false,
+    "error": "Not enough coefficients. Need 82568, found 60271"
+  },
+  {
+    "id": "Abstract_Art_256x256_128B_DWT+DCT_Q3.0",
+    "image": "Abstract_Art_256x256",
+    "image_size": "256x256",
+    "payload_size_bytes": 128,
+    "method": "DWT+DCT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 175.54187774658203
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 122,
+        "compression_ratio": 0.8472222222222222,
+        "space_saved_bytes": 22,
+        "space_saved_percent": 15.277777777777779,
+        "time_ms": 1.7561912536621094
+      },
+      "payload": {
+        "payload_bytes": 9599,
+        "payload_bits": 76792,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 122,
+        "final_payload_bytes": 9599,
+        "efficiency_percent": 7499.21875
+      },
+      "image_analysis": {
+        "dimensions": "256x256",
+        "total_pixels": 65536,
+        "capacity_bits": 8192,
+        "capacity_bytes": 1024,
+        "payload_bits": 76792,
+        "capacity_usage_percent": 937.40234375
+      }
+    },
+    "success": false,
+    "error": "Not enough coefficients. Need 76792, found 60271"
+  },
+  {
+    "id": "Abstract_Art_256x256_128B_DWT+DCT_Q5.0",
+    "image": "Abstract_Art_256x256",
+    "image_size": "256x256",
+    "payload_size_bytes": 128,
+    "method": "DWT+DCT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 161.87357902526855
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 122,
+        "compression_ratio": 0.8472222222222222,
+        "space_saved_bytes": 22,
+        "space_saved_percent": 15.277777777777779,
+        "time_ms": 2.2161006927490234
+      },
+      "payload": {
+        "payload_bytes": 9509,
+        "payload_bits": 76072,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 122,
+        "final_payload_bytes": 9509,
+        "efficiency_percent": 7428.90625
+      },
+      "image_analysis": {
+        "dimensions": "256x256",
+        "total_pixels": 65536,
+        "capacity_bits": 8192,
+        "capacity_bytes": 1024,
+        "payload_bits": 76072,
+        "capacity_usage_percent": 928.61328125
+      }
+    },
+    "success": false,
+    "error": "Not enough coefficients. Need 76072, found 60271"
+  },
+  {
+    "id": "Abstract_Art_256x256_128B_DWT+DCT_Q7.0",
+    "image": "Abstract_Art_256x256",
+    "image_size": "256x256",
+    "payload_size_bytes": 128,
+    "method": "DWT+DCT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 170.80116271972656
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 123,
+        "compression_ratio": 0.8541666666666666,
+        "space_saved_bytes": 21,
+        "space_saved_percent": 14.583333333333337,
+        "time_ms": 0.0
+      },
+      "payload": {
+        "payload_bytes": 9765,
+        "payload_bits": 78120,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 123,
+        "final_payload_bytes": 9765,
+        "efficiency_percent": 7628.90625
+      },
+      "image_analysis": {
+        "dimensions": "256x256",
+        "total_pixels": 65536,
+        "capacity_bits": 8192,
+        "capacity_bytes": 1024,
+        "payload_bits": 78120,
+        "capacity_usage_percent": 953.61328125
+      }
+    },
+    "success": false,
+    "error": "Not enough coefficients. Need 78120, found 60271"
+  },
+  {
+    "id": "Abstract_Art_256x256_512B_DWT_Q3.0",
+    "image": "Abstract_Art_256x256",
+    "image_size": "256x256",
+    "payload_size_bytes": 512,
+    "method": "DWT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 178.90191078186035
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 503,
+        "compression_ratio": 0.9526515151515151,
+        "space_saved_bytes": 25,
+        "space_saved_percent": 4.734848484848486,
+        "time_ms": 4.024028778076172
+      },
+      "payload": {
+        "payload_bytes": 19522,
+        "payload_bits": 156176,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 503,
+        "final_payload_bytes": 19522,
+        "efficiency_percent": 3812.890625
+      },
+      "image_analysis": {
+        "dimensions": "256x256",
+        "total_pixels": 65536,
+        "capacity_bits": 8192,
+        "capacity_bytes": 1024,
+        "payload_bits": 156176,
+        "capacity_usage_percent": 1906.4453125
+      }
+    },
+    "success": false,
+    "error": "Not enough coefficients. Need 156176, found 60271"
+  },
+  {
+    "id": "Abstract_Art_256x256_512B_DWT_Q5.0",
+    "image": "Abstract_Art_256x256",
+    "image_size": "256x256",
+    "payload_size_bytes": 512,
+    "method": "DWT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 168.04981231689453
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 510,
+        "compression_ratio": 0.9659090909090909,
+        "space_saved_bytes": 18,
+        "space_saved_percent": 3.409090909090906,
+        "time_ms": 4.027128219604492
+      },
+      "payload": {
+        "payload_bytes": 20549,
+        "payload_bits": 164392,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 510,
+        "final_payload_bytes": 20549,
+        "efficiency_percent": 4013.4765625
+      },
+      "image_analysis": {
+        "dimensions": "256x256",
+        "total_pixels": 65536,
+        "capacity_bits": 8192,
+        "capacity_bytes": 1024,
+        "payload_bits": 164392,
+        "capacity_usage_percent": 2006.73828125
+      }
+    },
+    "success": false,
+    "error": "Not enough coefficients. Need 164392, found 60271"
+  },
+  {
+    "id": "Abstract_Art_256x256_512B_DWT_Q7.0",
+    "image": "Abstract_Art_256x256",
+    "image_size": "256x256",
+    "payload_size_bytes": 512,
+    "method": "DWT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 176.76973342895508
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 507,
+        "compression_ratio": 0.9602272727272727,
+        "space_saved_bytes": 21,
+        "space_saved_percent": 3.9772727272727293,
+        "time_ms": 4.025459289550781
+      },
+      "payload": {
+        "payload_bytes": 20246,
+        "payload_bits": 161968,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 507,
+        "final_payload_bytes": 20246,
+        "efficiency_percent": 3954.296875
+      },
+      "image_analysis": {
+        "dimensions": "256x256",
+        "total_pixels": 65536,
+        "capacity_bits": 8192,
+        "capacity_bytes": 1024,
+        "payload_bits": 161968,
+        "capacity_usage_percent": 1977.1484375
+      }
+    },
+    "success": false,
+    "error": "Not enough coefficients. Need 161968, found 60271"
+  },
+  {
+    "id": "Abstract_Art_256x256_512B_DWT+DCT_Q3.0",
+    "image": "Abstract_Art_256x256",
+    "image_size": "256x256",
+    "payload_size_bytes": 512,
+    "method": "DWT+DCT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 170.17889022827148
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 505,
+        "compression_ratio": 0.9564393939393939,
+        "space_saved_bytes": 23,
+        "space_saved_percent": 4.356060606060607,
+        "time_ms": 4.218816757202148
+      },
+      "payload": {
+        "payload_bytes": 19779,
+        "payload_bits": 158232,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 505,
+        "final_payload_bytes": 19779,
+        "efficiency_percent": 3863.0859375
+      },
+      "image_analysis": {
+        "dimensions": "256x256",
+        "total_pixels": 65536,
+        "capacity_bits": 8192,
+        "capacity_bytes": 1024,
+        "payload_bits": 158232,
+        "capacity_usage_percent": 1931.54296875
+      }
+    },
+    "success": false,
+    "error": "Not enough coefficients. Need 158232, found 60271"
+  },
+  {
+    "id": "Abstract_Art_256x256_512B_DWT+DCT_Q5.0",
+    "image": "Abstract_Art_256x256",
+    "image_size": "256x256",
+    "payload_size_bytes": 512,
+    "method": "DWT+DCT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 174.4861602783203
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 507,
+        "compression_ratio": 0.9602272727272727,
+        "space_saved_bytes": 21,
+        "space_saved_percent": 3.9772727272727293,
+        "time_ms": 5.444526672363281
+      },
+      "payload": {
+        "payload_bytes": 20036,
+        "payload_bits": 160288,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 507,
+        "final_payload_bytes": 20036,
+        "efficiency_percent": 3913.28125
+      },
+      "image_analysis": {
+        "dimensions": "256x256",
+        "total_pixels": 65536,
+        "capacity_bits": 8192,
+        "capacity_bytes": 1024,
+        "payload_bits": 160288,
+        "capacity_usage_percent": 1956.640625
+      }
+    },
+    "success": false,
+    "error": "Not enough coefficients. Need 160288, found 60271"
+  },
+  {
+    "id": "Abstract_Art_256x256_512B_DWT+DCT_Q7.0",
+    "image": "Abstract_Art_256x256",
+    "image_size": "256x256",
+    "payload_size_bytes": 512,
+    "method": "DWT+DCT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 172.96886444091797
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 504,
+        "compression_ratio": 0.9545454545454546,
+        "space_saved_bytes": 24,
+        "space_saved_percent": 4.545454545454541,
+        "time_ms": 4.024505615234375
+      },
+      "payload": {
+        "payload_bytes": 19778,
+        "payload_bits": 158224,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 504,
+        "final_payload_bytes": 19778,
+        "efficiency_percent": 3862.890625
+      },
+      "image_analysis": {
+        "dimensions": "256x256",
+        "total_pixels": 65536,
+        "capacity_bits": 8192,
+        "capacity_bytes": 1024,
+        "payload_bits": 158224,
+        "capacity_usage_percent": 1931.4453125
+      }
+    },
+    "success": false,
+    "error": "Not enough coefficients. Need 158224, found 60271"
+  },
+  {
+    "id": "Abstract_Art_256x256_2048B_DWT_Q3.0",
+    "image": "Abstract_Art_256x256",
+    "image_size": "256x256",
+    "payload_size_bytes": 2048,
+    "method": "DWT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 171.00834846496582
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2053,
+        "compression_ratio": 0.9946705426356589,
+        "space_saved_bytes": 11,
+        "space_saved_percent": 0.5329457364341095,
+        "time_ms": 6.035566329956055
+      },
+      "payload": {
+        "payload_bytes": 25881,
+        "payload_bits": 207048,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2053,
+        "final_payload_bytes": 25881,
+        "efficiency_percent": 1263.720703125
+      },
+      "image_analysis": {
+        "dimensions": "256x256",
+        "total_pixels": 65536,
+        "capacity_bits": 8192,
+        "capacity_bytes": 1024,
+        "payload_bits": 207048,
+        "capacity_usage_percent": 2527.44140625
+      }
+    },
+    "success": false,
+    "error": "Not enough coefficients. Need 207048, found 60271"
+  },
+  {
+    "id": "Abstract_Art_256x256_2048B_DWT_Q5.0",
+    "image": "Abstract_Art_256x256",
+    "image_size": "256x256",
+    "payload_size_bytes": 2048,
+    "method": "DWT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 164.6401882171631
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2048,
+        "compression_ratio": 0.9922480620155039,
+        "space_saved_bytes": 16,
+        "space_saved_percent": 0.7751937984496138,
+        "time_ms": 6.967782974243164
+      },
+      "payload": {
+        "payload_bytes": 25876,
+        "payload_bits": 207008,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2048,
+        "final_payload_bytes": 25876,
+        "efficiency_percent": 1263.4765625
+      },
+      "image_analysis": {
+        "dimensions": "256x256",
+        "total_pixels": 65536,
+        "capacity_bits": 8192,
+        "capacity_bytes": 1024,
+        "payload_bits": 207008,
+        "capacity_usage_percent": 2526.953125
+      }
+    },
+    "success": false,
+    "error": "Not enough coefficients. Need 207008, found 60271"
+  },
+  {
+    "id": "Abstract_Art_256x256_2048B_DWT_Q7.0",
+    "image": "Abstract_Art_256x256",
+    "image_size": "256x256",
+    "payload_size_bytes": 2048,
+    "method": "DWT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 168.42317581176758
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2050,
+        "compression_ratio": 0.9932170542635659,
+        "space_saved_bytes": 14,
+        "space_saved_percent": 0.6782945736434121,
+        "time_ms": 5.842924118041992
+      },
+      "payload": {
+        "payload_bytes": 25878,
+        "payload_bits": 207024,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2050,
+        "final_payload_bytes": 25878,
+        "efficiency_percent": 1263.57421875
+      },
+      "image_analysis": {
+        "dimensions": "256x256",
+        "total_pixels": 65536,
+        "capacity_bits": 8192,
+        "capacity_bytes": 1024,
+        "payload_bits": 207024,
+        "capacity_usage_percent": 2527.1484375
+      }
+    },
+    "success": false,
+    "error": "Not enough coefficients. Need 207024, found 60271"
+  },
+  {
+    "id": "Abstract_Art_256x256_2048B_DWT+DCT_Q3.0",
+    "image": "Abstract_Art_256x256",
+    "image_size": "256x256",
+    "payload_size_bytes": 2048,
+    "method": "DWT+DCT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 176.8333911895752
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2048,
+        "compression_ratio": 0.9922480620155039,
+        "space_saved_bytes": 16,
+        "space_saved_percent": 0.7751937984496138,
+        "time_ms": 4.64320182800293
+      },
+      "payload": {
+        "payload_bytes": 25876,
+        "payload_bits": 207008,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2048,
+        "final_payload_bytes": 25876,
+        "efficiency_percent": 1263.4765625
+      },
+      "image_analysis": {
+        "dimensions": "256x256",
+        "total_pixels": 65536,
+        "capacity_bits": 8192,
+        "capacity_bytes": 1024,
+        "payload_bits": 207008,
+        "capacity_usage_percent": 2526.953125
+      }
+    },
+    "success": false,
+    "error": "Not enough coefficients. Need 207008, found 60271"
+  },
+  {
+    "id": "Abstract_Art_256x256_2048B_DWT+DCT_Q5.0",
+    "image": "Abstract_Art_256x256",
+    "image_size": "256x256",
+    "payload_size_bytes": 2048,
+    "method": "DWT+DCT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 182.54518508911133
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2047,
+        "compression_ratio": 0.9917635658914729,
+        "space_saved_bytes": 17,
+        "space_saved_percent": 0.8236434108527146,
+        "time_ms": 7.139444351196289
+      },
+      "payload": {
+        "payload_bytes": 25875,
+        "payload_bits": 207000,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2047,
+        "final_payload_bytes": 25875,
+        "efficiency_percent": 1263.427734375
+      },
+      "image_analysis": {
+        "dimensions": "256x256",
+        "total_pixels": 65536,
+        "capacity_bits": 8192,
+        "capacity_bytes": 1024,
+        "payload_bits": 207000,
+        "capacity_usage_percent": 2526.85546875
+      }
+    },
+    "success": false,
+    "error": "Not enough coefficients. Need 207000, found 60271"
+  },
+  {
+    "id": "Abstract_Art_256x256_2048B_DWT+DCT_Q7.0",
+    "image": "Abstract_Art_256x256",
+    "image_size": "256x256",
+    "payload_size_bytes": 2048,
+    "method": "DWT+DCT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 164.3986701965332
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2048,
+        "compression_ratio": 0.9922480620155039,
+        "space_saved_bytes": 16,
+        "space_saved_percent": 0.7751937984496138,
+        "time_ms": 6.385087966918945
+      },
+      "payload": {
+        "payload_bytes": 25831,
+        "payload_bits": 206648,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2048,
+        "final_payload_bytes": 25831,
+        "efficiency_percent": 1261.279296875
+      },
+      "image_analysis": {
+        "dimensions": "256x256",
+        "total_pixels": 65536,
+        "capacity_bits": 8192,
+        "capacity_bytes": 1024,
+        "payload_bits": 206648,
+        "capacity_usage_percent": 2522.55859375
+      }
+    },
+    "success": false,
+    "error": "Not enough coefficients. Need 206648, found 60271"
+  },
+  {
+    "id": "Abstract_Art_512x512_128B_DWT_Q3.0",
+    "image": "Abstract_Art_512x512",
+    "image_size": "512x512",
+    "payload_size_bytes": 128,
+    "method": "DWT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 172.19305038452148
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 123,
+        "compression_ratio": 0.8541666666666666,
+        "space_saved_bytes": 21,
+        "space_saved_percent": 14.583333333333337,
+        "time_ms": 2.0134449005126953
+      },
+      "payload": {
+        "payload_bytes": 9855,
+        "payload_bits": 78840,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 123,
+        "final_payload_bytes": 9855,
+        "efficiency_percent": 7699.21875
+      },
+      "image_analysis": {
+        "dimensions": "512x512",
+        "total_pixels": 262144,
+        "capacity_bits": 32768,
+        "capacity_bytes": 4096,
+        "payload_bits": 78840,
+        "capacity_usage_percent": 240.6005859375
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_512x512_128B_DWT_Q5.0",
+    "image": "Abstract_Art_512x512",
+    "image_size": "512x512",
+    "payload_size_bytes": 128,
+    "method": "DWT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 167.7875518798828
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 122,
+        "compression_ratio": 0.8472222222222222,
+        "space_saved_bytes": 22,
+        "space_saved_percent": 15.277777777777779,
+        "time_ms": 2.013683319091797
+      },
+      "payload": {
+        "payload_bytes": 9599,
+        "payload_bits": 76792,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 122,
+        "final_payload_bytes": 9599,
+        "efficiency_percent": 7499.21875
+      },
+      "image_analysis": {
+        "dimensions": "512x512",
+        "total_pixels": 262144,
+        "capacity_bits": 32768,
+        "capacity_bytes": 4096,
+        "payload_bits": 76792,
+        "capacity_usage_percent": 234.3505859375
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_512x512_128B_DWT_Q7.0",
+    "image": "Abstract_Art_512x512",
+    "image_size": "512x512",
+    "payload_size_bytes": 128,
+    "method": "DWT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 178.757905960083
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 122,
+        "compression_ratio": 0.8472222222222222,
+        "space_saved_bytes": 22,
+        "space_saved_percent": 15.277777777777779,
+        "time_ms": 0.0
+      },
+      "payload": {
+        "payload_bytes": 9599,
+        "payload_bits": 76792,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 122,
+        "final_payload_bytes": 9599,
+        "efficiency_percent": 7499.21875
+      },
+      "image_analysis": {
+        "dimensions": "512x512",
+        "total_pixels": 262144,
+        "capacity_bits": 32768,
+        "capacity_bytes": 4096,
+        "payload_bits": 76792,
+        "capacity_usage_percent": 234.3505859375
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_512x512_128B_DWT+DCT_Q3.0",
+    "image": "Abstract_Art_512x512",
+    "image_size": "512x512",
+    "payload_size_bytes": 128,
+    "method": "DWT+DCT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 170.41397094726562
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 122,
+        "compression_ratio": 0.8472222222222222,
+        "space_saved_bytes": 22,
+        "space_saved_percent": 15.277777777777779,
+        "time_ms": 1.087188720703125
+      },
+      "payload": {
+        "payload_bytes": 9599,
+        "payload_bits": 76792,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 122,
+        "final_payload_bytes": 9599,
+        "efficiency_percent": 7499.21875
+      },
+      "image_analysis": {
+        "dimensions": "512x512",
+        "total_pixels": 262144,
+        "capacity_bits": 32768,
+        "capacity_bytes": 4096,
+        "payload_bits": 76792,
+        "capacity_usage_percent": 234.3505859375
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_512x512_128B_DWT+DCT_Q5.0",
+    "image": "Abstract_Art_512x512",
+    "image_size": "512x512",
+    "payload_size_bytes": 128,
+    "method": "DWT+DCT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 164.92390632629395
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 121,
+        "compression_ratio": 0.8402777777777778,
+        "space_saved_bytes": 23,
+        "space_saved_percent": 15.972222222222221,
+        "time_ms": 2.0139217376708984
+      },
+      "payload": {
+        "payload_bytes": 9343,
+        "payload_bits": 74744,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 121,
+        "final_payload_bytes": 9343,
+        "efficiency_percent": 7299.21875
+      },
+      "image_analysis": {
+        "dimensions": "512x512",
+        "total_pixels": 262144,
+        "capacity_bits": 32768,
+        "capacity_bytes": 4096,
+        "payload_bits": 74744,
+        "capacity_usage_percent": 228.1005859375
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_512x512_128B_DWT+DCT_Q7.0",
+    "image": "Abstract_Art_512x512",
+    "image_size": "512x512",
+    "payload_size_bytes": 128,
+    "method": "DWT+DCT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 179.58664894104004
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 124,
+        "compression_ratio": 0.8611111111111112,
+        "space_saved_bytes": 20,
+        "space_saved_percent": 13.888888888888884,
+        "time_ms": 1.947641372680664
+      },
+      "payload": {
+        "payload_bytes": 10066,
+        "payload_bits": 80528,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 124,
+        "final_payload_bytes": 10066,
+        "efficiency_percent": 7864.0625
+      },
+      "image_analysis": {
+        "dimensions": "512x512",
+        "total_pixels": 262144,
+        "capacity_bits": 32768,
+        "capacity_bytes": 4096,
+        "payload_bits": 80528,
+        "capacity_usage_percent": 245.751953125
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_512x512_512B_DWT_Q3.0",
+    "image": "Abstract_Art_512x512",
+    "image_size": "512x512",
+    "payload_size_bytes": 512,
+    "method": "DWT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 179.88014221191406
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 508,
+        "compression_ratio": 0.9621212121212122,
+        "space_saved_bytes": 20,
+        "space_saved_percent": 3.7878787878787845,
+        "time_ms": 2.0101070404052734
+      },
+      "payload": {
+        "payload_bytes": 20082,
+        "payload_bits": 160656,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 508,
+        "final_payload_bytes": 20082,
+        "efficiency_percent": 3922.265625
+      },
+      "image_analysis": {
+        "dimensions": "512x512",
+        "total_pixels": 262144,
+        "capacity_bits": 32768,
+        "capacity_bytes": 4096,
+        "payload_bits": 160656,
+        "capacity_usage_percent": 490.283203125
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_512x512_512B_DWT_Q5.0",
+    "image": "Abstract_Art_512x512",
+    "image_size": "512x512",
+    "payload_size_bytes": 512,
+    "method": "DWT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 168.29752922058105
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 501,
+        "compression_ratio": 0.9488636363636364,
+        "space_saved_bytes": 27,
+        "space_saved_percent": 5.113636363636365,
+        "time_ms": 2.015352249145508
+      },
+      "payload": {
+        "payload_bytes": 18965,
+        "payload_bits": 151720,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 501,
+        "final_payload_bytes": 18965,
+        "efficiency_percent": 3704.1015625
+      },
+      "image_analysis": {
+        "dimensions": "512x512",
+        "total_pixels": 262144,
+        "capacity_bits": 32768,
+        "capacity_bytes": 4096,
+        "payload_bits": 151720,
+        "capacity_usage_percent": 463.0126953125
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_512x512_512B_DWT_Q7.0",
+    "image": "Abstract_Art_512x512",
+    "image_size": "512x512",
+    "payload_size_bytes": 512,
+    "method": "DWT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 166.85724258422852
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 504,
+        "compression_ratio": 0.9545454545454546,
+        "space_saved_bytes": 24,
+        "space_saved_percent": 4.545454545454541,
+        "time_ms": 4.029273986816406
+      },
+      "payload": {
+        "payload_bytes": 19523,
+        "payload_bits": 156184,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 504,
+        "final_payload_bytes": 19523,
+        "efficiency_percent": 3813.0859375
+      },
+      "image_analysis": {
+        "dimensions": "512x512",
+        "total_pixels": 262144,
+        "capacity_bits": 32768,
+        "capacity_bytes": 4096,
+        "payload_bits": 156184,
+        "capacity_usage_percent": 476.6357421875
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_512x512_512B_DWT+DCT_Q3.0",
+    "image": "Abstract_Art_512x512",
+    "image_size": "512x512",
+    "payload_size_bytes": 512,
+    "method": "DWT+DCT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 170.10831832885742
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 506,
+        "compression_ratio": 0.9583333333333334,
+        "space_saved_bytes": 22,
+        "space_saved_percent": 4.1666666666666625,
+        "time_ms": 2.012968063354492
+      },
+      "payload": {
+        "payload_bytes": 19825,
+        "payload_bits": 158600,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 506,
+        "final_payload_bytes": 19825,
+        "efficiency_percent": 3872.0703125
+      },
+      "image_analysis": {
+        "dimensions": "512x512",
+        "total_pixels": 262144,
+        "capacity_bits": 32768,
+        "capacity_bytes": 4096,
+        "payload_bits": 158600,
+        "capacity_usage_percent": 484.0087890625
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_512x512_512B_DWT+DCT_Q5.0",
+    "image": "Abstract_Art_512x512",
+    "image_size": "512x512",
+    "payload_size_bytes": 512,
+    "method": "DWT+DCT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 174.13020133972168
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 505,
+        "compression_ratio": 0.9564393939393939,
+        "space_saved_bytes": 23,
+        "space_saved_percent": 4.356060606060607,
+        "time_ms": 4.667997360229492
+      },
+      "payload": {
+        "payload_bytes": 20079,
+        "payload_bits": 160632,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 505,
+        "final_payload_bytes": 20079,
+        "efficiency_percent": 3921.6796875
+      },
+      "image_analysis": {
+        "dimensions": "512x512",
+        "total_pixels": 262144,
+        "capacity_bits": 32768,
+        "capacity_bytes": 4096,
+        "payload_bits": 160632,
+        "capacity_usage_percent": 490.2099609375
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_512x512_512B_DWT+DCT_Q7.0",
+    "image": "Abstract_Art_512x512",
+    "image_size": "512x512",
+    "payload_size_bytes": 512,
+    "method": "DWT+DCT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 174.85880851745605
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 510,
+        "compression_ratio": 0.9659090909090909,
+        "space_saved_bytes": 18,
+        "space_saved_percent": 3.409090909090906,
+        "time_ms": 2.2237300872802734
+      },
+      "payload": {
+        "payload_bytes": 20804,
+        "payload_bits": 166432,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 510,
+        "final_payload_bytes": 20804,
+        "efficiency_percent": 4063.28125
+      },
+      "image_analysis": {
+        "dimensions": "512x512",
+        "total_pixels": 262144,
+        "capacity_bits": 32768,
+        "capacity_bytes": 4096,
+        "payload_bits": 166432,
+        "capacity_usage_percent": 507.91015625
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_512x512_2048B_DWT_Q3.0",
+    "image": "Abstract_Art_512x512",
+    "image_size": "512x512",
+    "payload_size_bytes": 2048,
+    "method": "DWT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 218.6131477355957
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2051,
+        "compression_ratio": 0.9937015503875969,
+        "space_saved_bytes": 13,
+        "space_saved_percent": 0.6298449612403112,
+        "time_ms": 6.877899169921875
+      },
+      "payload": {
+        "payload_bytes": 25879,
+        "payload_bits": 207032,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2051,
+        "final_payload_bytes": 25879,
+        "efficiency_percent": 1263.623046875
+      },
+      "image_analysis": {
+        "dimensions": "512x512",
+        "total_pixels": 262144,
+        "capacity_bits": 32768,
+        "capacity_bytes": 4096,
+        "payload_bits": 207032,
+        "capacity_usage_percent": 631.8115234375
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_512x512_2048B_DWT_Q5.0",
+    "image": "Abstract_Art_512x512",
+    "image_size": "512x512",
+    "payload_size_bytes": 2048,
+    "method": "DWT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 175.35686492919922
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2054,
+        "compression_ratio": 0.9951550387596899,
+        "space_saved_bytes": 10,
+        "space_saved_percent": 0.4844961240310086,
+        "time_ms": 5.490303039550781
+      },
+      "payload": {
+        "payload_bytes": 25882,
+        "payload_bits": 207056,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2054,
+        "final_payload_bytes": 25882,
+        "efficiency_percent": 1263.76953125
+      },
+      "image_analysis": {
+        "dimensions": "512x512",
+        "total_pixels": 262144,
+        "capacity_bits": 32768,
+        "capacity_bytes": 4096,
+        "payload_bits": 207056,
+        "capacity_usage_percent": 631.884765625
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_512x512_2048B_DWT_Q7.0",
+    "image": "Abstract_Art_512x512",
+    "image_size": "512x512",
+    "payload_size_bytes": 2048,
+    "method": "DWT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 167.7713394165039
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2052,
+        "compression_ratio": 0.9941860465116279,
+        "space_saved_bytes": 12,
+        "space_saved_percent": 0.5813953488372103,
+        "time_ms": 8.165121078491211
+      },
+      "payload": {
+        "payload_bytes": 25880,
+        "payload_bits": 207040,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2052,
+        "final_payload_bytes": 25880,
+        "efficiency_percent": 1263.671875
+      },
+      "image_analysis": {
+        "dimensions": "512x512",
+        "total_pixels": 262144,
+        "capacity_bits": 32768,
+        "capacity_bytes": 4096,
+        "payload_bits": 207040,
+        "capacity_usage_percent": 631.8359375
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_512x512_2048B_DWT+DCT_Q3.0",
+    "image": "Abstract_Art_512x512",
+    "image_size": "512x512",
+    "payload_size_bytes": 2048,
+    "method": "DWT+DCT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 165.67492485046387
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2050,
+        "compression_ratio": 0.9932170542635659,
+        "space_saved_bytes": 14,
+        "space_saved_percent": 0.6782945736434121,
+        "time_ms": 5.795001983642578
+      },
+      "payload": {
+        "payload_bytes": 25878,
+        "payload_bits": 207024,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2050,
+        "final_payload_bytes": 25878,
+        "efficiency_percent": 1263.57421875
+      },
+      "image_analysis": {
+        "dimensions": "512x512",
+        "total_pixels": 262144,
+        "capacity_bits": 32768,
+        "capacity_bytes": 4096,
+        "payload_bits": 207024,
+        "capacity_usage_percent": 631.787109375
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_512x512_2048B_DWT+DCT_Q5.0",
+    "image": "Abstract_Art_512x512",
+    "image_size": "512x512",
+    "payload_size_bytes": 2048,
+    "method": "DWT+DCT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 171.3409423828125
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2057,
+        "compression_ratio": 0.9966085271317829,
+        "space_saved_bytes": 7,
+        "space_saved_percent": 0.33914728682170603,
+        "time_ms": 6.040811538696289
+      },
+      "payload": {
+        "payload_bytes": 25885,
+        "payload_bits": 207080,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2057,
+        "final_payload_bytes": 25885,
+        "efficiency_percent": 1263.916015625
+      },
+      "image_analysis": {
+        "dimensions": "512x512",
+        "total_pixels": 262144,
+        "capacity_bits": 32768,
+        "capacity_bytes": 4096,
+        "payload_bits": 207080,
+        "capacity_usage_percent": 631.9580078125
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_512x512_2048B_DWT+DCT_Q7.0",
+    "image": "Abstract_Art_512x512",
+    "image_size": "512x512",
+    "payload_size_bytes": 2048,
+    "method": "DWT+DCT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 166.37897491455078
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2045,
+        "compression_ratio": 0.9907945736434108,
+        "space_saved_bytes": 19,
+        "space_saved_percent": 0.9205426356589164,
+        "time_ms": 10.391950607299805
+      },
+      "payload": {
+        "payload_bytes": 25873,
+        "payload_bits": 206984,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2045,
+        "final_payload_bytes": 25873,
+        "efficiency_percent": 1263.330078125
+      },
+      "image_analysis": {
+        "dimensions": "512x512",
+        "total_pixels": 262144,
+        "capacity_bits": 32768,
+        "capacity_bytes": 4096,
+        "payload_bits": 206984,
+        "capacity_usage_percent": 631.6650390625
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_640x480_128B_DWT_Q3.0",
+    "image": "Abstract_Art_640x480",
+    "image_size": "640x480",
+    "payload_size_bytes": 128,
+    "method": "DWT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 171.78821563720703
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 122,
+        "compression_ratio": 0.8472222222222222,
+        "space_saved_bytes": 22,
+        "space_saved_percent": 15.277777777777779,
+        "time_ms": 1.5597343444824219
+      },
+      "payload": {
+        "payload_bytes": 9509,
+        "payload_bits": 76072,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 122,
+        "final_payload_bytes": 9509,
+        "efficiency_percent": 7428.90625
+      },
+      "image_analysis": {
+        "dimensions": "640x480",
+        "total_pixels": 307200,
+        "capacity_bits": 38400,
+        "capacity_bytes": 4800,
+        "payload_bits": 76072,
+        "capacity_usage_percent": 198.10416666666666
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_640x480_128B_DWT_Q5.0",
+    "image": "Abstract_Art_640x480",
+    "image_size": "640x480",
+    "payload_size_bytes": 128,
+    "method": "DWT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 256.6549777984619
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 125,
+        "compression_ratio": 0.8680555555555556,
+        "space_saved_bytes": 19,
+        "space_saved_percent": 13.194444444444443,
+        "time_ms": 2.012968063354492
+      },
+      "payload": {
+        "payload_bytes": 10532,
+        "payload_bits": 84256,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 125,
+        "final_payload_bytes": 10532,
+        "efficiency_percent": 8228.125
+      },
+      "image_analysis": {
+        "dimensions": "640x480",
+        "total_pixels": 307200,
+        "capacity_bits": 38400,
+        "capacity_bytes": 4800,
+        "payload_bits": 84256,
+        "capacity_usage_percent": 219.41666666666669
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_640x480_128B_DWT_Q7.0",
+    "image": "Abstract_Art_640x480",
+    "image_size": "640x480",
+    "payload_size_bytes": 128,
+    "method": "DWT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 170.35460472106934
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 121,
+        "compression_ratio": 0.8402777777777778,
+        "space_saved_bytes": 23,
+        "space_saved_percent": 15.972222222222221,
+        "time_ms": 2.020120620727539
+      },
+      "payload": {
+        "payload_bytes": 9253,
+        "payload_bits": 74024,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 121,
+        "final_payload_bytes": 9253,
+        "efficiency_percent": 7228.90625
+      },
+      "image_analysis": {
+        "dimensions": "640x480",
+        "total_pixels": 307200,
+        "capacity_bits": 38400,
+        "capacity_bytes": 4800,
+        "payload_bits": 74024,
+        "capacity_usage_percent": 192.77083333333334
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_640x480_128B_DWT+DCT_Q3.0",
+    "image": "Abstract_Art_640x480",
+    "image_size": "640x480",
+    "payload_size_bytes": 128,
+    "method": "DWT+DCT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 176.97596549987793
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 123,
+        "compression_ratio": 0.8541666666666666,
+        "space_saved_bytes": 21,
+        "space_saved_percent": 14.583333333333337,
+        "time_ms": 2.013683319091797
+      },
+      "payload": {
+        "payload_bytes": 9600,
+        "payload_bits": 76800,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 123,
+        "final_payload_bytes": 9600,
+        "efficiency_percent": 7500.0
+      },
+      "image_analysis": {
+        "dimensions": "640x480",
+        "total_pixels": 307200,
+        "capacity_bits": 38400,
+        "capacity_bytes": 4800,
+        "payload_bits": 76800,
+        "capacity_usage_percent": 200.0
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_640x480_128B_DWT+DCT_Q5.0",
+    "image": "Abstract_Art_640x480",
+    "image_size": "640x480",
+    "payload_size_bytes": 128,
+    "method": "DWT+DCT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 183.78829956054688
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 122,
+        "compression_ratio": 0.8472222222222222,
+        "space_saved_bytes": 22,
+        "space_saved_percent": 15.277777777777779,
+        "time_ms": 2.014636993408203
+      },
+      "payload": {
+        "payload_bytes": 9344,
+        "payload_bits": 74752,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 122,
+        "final_payload_bytes": 9344,
+        "efficiency_percent": 7300.0
+      },
+      "image_analysis": {
+        "dimensions": "640x480",
+        "total_pixels": 307200,
+        "capacity_bits": 38400,
+        "capacity_bytes": 4800,
+        "payload_bits": 74752,
+        "capacity_usage_percent": 194.66666666666669
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_640x480_128B_DWT+DCT_Q7.0",
+    "image": "Abstract_Art_640x480",
+    "image_size": "640x480",
+    "payload_size_bytes": 128,
+    "method": "DWT+DCT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 161.0124111175537
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 122,
+        "compression_ratio": 0.8472222222222222,
+        "space_saved_bytes": 22,
+        "space_saved_percent": 15.277777777777779,
+        "time_ms": 2.015352249145508
+      },
+      "payload": {
+        "payload_bytes": 9554,
+        "payload_bits": 76432,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 122,
+        "final_payload_bytes": 9554,
+        "efficiency_percent": 7464.0625
+      },
+      "image_analysis": {
+        "dimensions": "640x480",
+        "total_pixels": 307200,
+        "capacity_bits": 38400,
+        "capacity_bytes": 4800,
+        "payload_bits": 76432,
+        "capacity_usage_percent": 199.04166666666669
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_640x480_512B_DWT_Q3.0",
+    "image": "Abstract_Art_640x480",
+    "image_size": "640x480",
+    "payload_size_bytes": 512,
+    "method": "DWT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 166.15796089172363
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 507,
+        "compression_ratio": 0.9602272727272727,
+        "space_saved_bytes": 21,
+        "space_saved_percent": 3.9772727272727293,
+        "time_ms": 8.32223892211914
+      },
+      "payload": {
+        "payload_bytes": 20336,
+        "payload_bits": 162688,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 507,
+        "final_payload_bytes": 20336,
+        "efficiency_percent": 3971.875
+      },
+      "image_analysis": {
+        "dimensions": "640x480",
+        "total_pixels": 307200,
+        "capacity_bits": 38400,
+        "capacity_bytes": 4800,
+        "payload_bits": 162688,
+        "capacity_usage_percent": 423.66666666666663
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_640x480_512B_DWT_Q5.0",
+    "image": "Abstract_Art_640x480",
+    "image_size": "640x480",
+    "payload_size_bytes": 512,
+    "method": "DWT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 171.36311531066895
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 506,
+        "compression_ratio": 0.9583333333333334,
+        "space_saved_bytes": 22,
+        "space_saved_percent": 4.1666666666666625,
+        "time_ms": 4.027843475341797
+      },
+      "payload": {
+        "payload_bytes": 20035,
+        "payload_bits": 160280,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 506,
+        "final_payload_bytes": 20035,
+        "efficiency_percent": 3913.0859375
+      },
+      "image_analysis": {
+        "dimensions": "640x480",
+        "total_pixels": 307200,
+        "capacity_bits": 38400,
+        "capacity_bytes": 4800,
+        "payload_bits": 160280,
+        "capacity_usage_percent": 417.3958333333333
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_640x480_512B_DWT_Q7.0",
+    "image": "Abstract_Art_640x480",
+    "image_size": "640x480",
+    "payload_size_bytes": 512,
+    "method": "DWT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 179.2449951171875
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 505,
+        "compression_ratio": 0.9564393939393939,
+        "space_saved_bytes": 23,
+        "space_saved_percent": 4.356060606060607,
+        "time_ms": 7.671117782592773
+      },
+      "payload": {
+        "payload_bytes": 19989,
+        "payload_bits": 159912,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 505,
+        "final_payload_bytes": 19989,
+        "efficiency_percent": 3904.1015625
+      },
+      "image_analysis": {
+        "dimensions": "640x480",
+        "total_pixels": 307200,
+        "capacity_bits": 38400,
+        "capacity_bytes": 4800,
+        "payload_bits": 159912,
+        "capacity_usage_percent": 416.4375
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_640x480_512B_DWT+DCT_Q3.0",
+    "image": "Abstract_Art_640x480",
+    "image_size": "640x480",
+    "payload_size_bytes": 512,
+    "method": "DWT+DCT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 175.2023696899414
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 506,
+        "compression_ratio": 0.9583333333333334,
+        "space_saved_bytes": 22,
+        "space_saved_percent": 4.1666666666666625,
+        "time_ms": 7.967233657836914
+      },
+      "payload": {
+        "payload_bytes": 19315,
+        "payload_bits": 154520,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 506,
+        "final_payload_bytes": 19315,
+        "efficiency_percent": 3772.4609375
+      },
+      "image_analysis": {
+        "dimensions": "640x480",
+        "total_pixels": 307200,
+        "capacity_bits": 38400,
+        "capacity_bytes": 4800,
+        "payload_bits": 154520,
+        "capacity_usage_percent": 402.39583333333337
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_640x480_512B_DWT+DCT_Q5.0",
+    "image": "Abstract_Art_640x480",
+    "image_size": "640x480",
+    "payload_size_bytes": 512,
+    "method": "DWT+DCT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 172.93286323547363
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 503,
+        "compression_ratio": 0.9526515151515151,
+        "space_saved_bytes": 25,
+        "space_saved_percent": 4.734848484848486,
+        "time_ms": 6.06846809387207
+      },
+      "payload": {
+        "payload_bytes": 19777,
+        "payload_bits": 158216,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 503,
+        "final_payload_bytes": 19777,
+        "efficiency_percent": 3862.6953125
+      },
+      "image_analysis": {
+        "dimensions": "640x480",
+        "total_pixels": 307200,
+        "capacity_bits": 38400,
+        "capacity_bytes": 4800,
+        "payload_bits": 158216,
+        "capacity_usage_percent": 412.0208333333333
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_640x480_512B_DWT+DCT_Q7.0",
+    "image": "Abstract_Art_640x480",
+    "image_size": "640x480",
+    "payload_size_bytes": 512,
+    "method": "DWT+DCT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 170.8240509033203
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 502,
+        "compression_ratio": 0.9507575757575758,
+        "space_saved_bytes": 26,
+        "space_saved_percent": 4.92424242424242,
+        "time_ms": 4.031658172607422
+      },
+      "payload": {
+        "payload_bytes": 19011,
+        "payload_bits": 152088,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 502,
+        "final_payload_bytes": 19011,
+        "efficiency_percent": 3713.0859375
+      },
+      "image_analysis": {
+        "dimensions": "640x480",
+        "total_pixels": 307200,
+        "capacity_bits": 38400,
+        "capacity_bytes": 4800,
+        "payload_bits": 152088,
+        "capacity_usage_percent": 396.0625
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_640x480_2048B_DWT_Q3.0",
+    "image": "Abstract_Art_640x480",
+    "image_size": "640x480",
+    "payload_size_bytes": 2048,
+    "method": "DWT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 179.50916290283203
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2048,
+        "compression_ratio": 0.9922480620155039,
+        "space_saved_bytes": 16,
+        "space_saved_percent": 0.7751937984496138,
+        "time_ms": 6.032705307006836
+      },
+      "payload": {
+        "payload_bytes": 25876,
+        "payload_bits": 207008,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2048,
+        "final_payload_bytes": 25876,
+        "efficiency_percent": 1263.4765625
+      },
+      "image_analysis": {
+        "dimensions": "640x480",
+        "total_pixels": 307200,
+        "capacity_bits": 38400,
+        "capacity_bytes": 4800,
+        "payload_bits": 207008,
+        "capacity_usage_percent": 539.0833333333333
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_640x480_2048B_DWT_Q5.0",
+    "image": "Abstract_Art_640x480",
+    "image_size": "640x480",
+    "payload_size_bytes": 2048,
+    "method": "DWT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 169.1443920135498
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2050,
+        "compression_ratio": 0.9932170542635659,
+        "space_saved_bytes": 14,
+        "space_saved_percent": 0.6782945736434121,
+        "time_ms": 7.230043411254883
+      },
+      "payload": {
+        "payload_bytes": 25878,
+        "payload_bits": 207024,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2050,
+        "final_payload_bytes": 25878,
+        "efficiency_percent": 1263.57421875
+      },
+      "image_analysis": {
+        "dimensions": "640x480",
+        "total_pixels": 307200,
+        "capacity_bits": 38400,
+        "capacity_bytes": 4800,
+        "payload_bits": 207024,
+        "capacity_usage_percent": 539.125
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_640x480_2048B_DWT_Q7.0",
+    "image": "Abstract_Art_640x480",
+    "image_size": "640x480",
+    "payload_size_bytes": 2048,
+    "method": "DWT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 185.2729320526123
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2051,
+        "compression_ratio": 0.9937015503875969,
+        "space_saved_bytes": 13,
+        "space_saved_percent": 0.6298449612403112,
+        "time_ms": 5.774736404418945
+      },
+      "payload": {
+        "payload_bytes": 25879,
+        "payload_bits": 207032,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2051,
+        "final_payload_bytes": 25879,
+        "efficiency_percent": 1263.623046875
+      },
+      "image_analysis": {
+        "dimensions": "640x480",
+        "total_pixels": 307200,
+        "capacity_bits": 38400,
+        "capacity_bytes": 4800,
+        "payload_bits": 207032,
+        "capacity_usage_percent": 539.1458333333334
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_640x480_2048B_DWT+DCT_Q3.0",
+    "image": "Abstract_Art_640x480",
+    "image_size": "640x480",
+    "payload_size_bytes": 2048,
+    "method": "DWT+DCT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 166.79692268371582
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2050,
+        "compression_ratio": 0.9932170542635659,
+        "space_saved_bytes": 14,
+        "space_saved_percent": 0.6782945736434121,
+        "time_ms": 8.82411003112793
+      },
+      "payload": {
+        "payload_bytes": 25878,
+        "payload_bits": 207024,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2050,
+        "final_payload_bytes": 25878,
+        "efficiency_percent": 1263.57421875
+      },
+      "image_analysis": {
+        "dimensions": "640x480",
+        "total_pixels": 307200,
+        "capacity_bits": 38400,
+        "capacity_bytes": 4800,
+        "payload_bits": 207024,
+        "capacity_usage_percent": 539.125
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_640x480_2048B_DWT+DCT_Q5.0",
+    "image": "Abstract_Art_640x480",
+    "image_size": "640x480",
+    "payload_size_bytes": 2048,
+    "method": "DWT+DCT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 159.89041328430176
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2049,
+        "compression_ratio": 0.9927325581395349,
+        "space_saved_bytes": 15,
+        "space_saved_percent": 0.7267441860465129,
+        "time_ms": 9.700298309326172
+      },
+      "payload": {
+        "payload_bytes": 25877,
+        "payload_bits": 207016,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2049,
+        "final_payload_bytes": 25877,
+        "efficiency_percent": 1263.525390625
+      },
+      "image_analysis": {
+        "dimensions": "640x480",
+        "total_pixels": 307200,
+        "capacity_bits": 38400,
+        "capacity_bytes": 4800,
+        "payload_bits": 207016,
+        "capacity_usage_percent": 539.1041666666666
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_640x480_2048B_DWT+DCT_Q7.0",
+    "image": "Abstract_Art_640x480",
+    "image_size": "640x480",
+    "payload_size_bytes": 2048,
+    "method": "DWT+DCT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 168.7161922454834
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2049,
+        "compression_ratio": 0.9927325581395349,
+        "space_saved_bytes": 15,
+        "space_saved_percent": 0.7267441860465129,
+        "time_ms": 6.037235260009766
+      },
+      "payload": {
+        "payload_bytes": 25877,
+        "payload_bits": 207016,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2049,
+        "final_payload_bytes": 25877,
+        "efficiency_percent": 1263.525390625
+      },
+      "image_analysis": {
+        "dimensions": "640x480",
+        "total_pixels": 307200,
+        "capacity_bits": 38400,
+        "capacity_bytes": 4800,
+        "payload_bits": 207016,
+        "capacity_usage_percent": 539.1041666666666
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_800x600_128B_DWT_Q3.0",
+    "image": "Abstract_Art_800x600",
+    "image_size": "800x600",
+    "payload_size_bytes": 128,
+    "method": "DWT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 165.40837287902832
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 119,
+        "compression_ratio": 0.8263888888888888,
+        "space_saved_bytes": 25,
+        "space_saved_percent": 17.361111111111114,
+        "time_ms": 2.0148754119873047
+      },
+      "payload": {
+        "payload_bytes": 8831,
+        "payload_bits": 70648,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 119,
+        "final_payload_bytes": 8831,
+        "efficiency_percent": 6899.21875
+      },
+      "image_analysis": {
+        "dimensions": "800x600",
+        "total_pixels": 480000,
+        "capacity_bits": 60000,
+        "capacity_bytes": 7500,
+        "payload_bits": 70648,
+        "capacity_usage_percent": 117.74666666666667
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_800x600_128B_DWT_Q5.0",
+    "image": "Abstract_Art_800x600",
+    "image_size": "800x600",
+    "payload_size_bytes": 128,
+    "method": "DWT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 177.37150192260742
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 123,
+        "compression_ratio": 0.8541666666666666,
+        "space_saved_bytes": 21,
+        "space_saved_percent": 14.583333333333337,
+        "time_ms": 2.01416015625
+      },
+      "payload": {
+        "payload_bytes": 9810,
+        "payload_bits": 78480,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 123,
+        "final_payload_bytes": 9810,
+        "efficiency_percent": 7664.0625
+      },
+      "image_analysis": {
+        "dimensions": "800x600",
+        "total_pixels": 480000,
+        "capacity_bits": 60000,
+        "capacity_bytes": 7500,
+        "payload_bits": 78480,
+        "capacity_usage_percent": 130.8
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_800x600_128B_DWT_Q7.0",
+    "image": "Abstract_Art_800x600",
+    "image_size": "800x600",
+    "payload_size_bytes": 128,
+    "method": "DWT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 161.76843643188477
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 122,
+        "compression_ratio": 0.8472222222222222,
+        "space_saved_bytes": 22,
+        "space_saved_percent": 15.277777777777779,
+        "time_ms": 2.0160675048828125
+      },
+      "payload": {
+        "payload_bytes": 9509,
+        "payload_bits": 76072,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 122,
+        "final_payload_bytes": 9509,
+        "efficiency_percent": 7428.90625
+      },
+      "image_analysis": {
+        "dimensions": "800x600",
+        "total_pixels": 480000,
+        "capacity_bits": 60000,
+        "capacity_bytes": 7500,
+        "payload_bits": 76072,
+        "capacity_usage_percent": 126.78666666666668
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_800x600_128B_DWT+DCT_Q3.0",
+    "image": "Abstract_Art_800x600",
+    "image_size": "800x600",
+    "payload_size_bytes": 128,
+    "method": "DWT+DCT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 165.64559936523438
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 122,
+        "compression_ratio": 0.8472222222222222,
+        "space_saved_bytes": 22,
+        "space_saved_percent": 15.277777777777779,
+        "time_ms": 3.6640167236328125
+      },
+      "payload": {
+        "payload_bytes": 9599,
+        "payload_bits": 76792,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 122,
+        "final_payload_bytes": 9599,
+        "efficiency_percent": 7499.21875
+      },
+      "image_analysis": {
+        "dimensions": "800x600",
+        "total_pixels": 480000,
+        "capacity_bits": 60000,
+        "capacity_bytes": 7500,
+        "payload_bits": 76792,
+        "capacity_usage_percent": 127.98666666666666
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_800x600_128B_DWT+DCT_Q5.0",
+    "image": "Abstract_Art_800x600",
+    "image_size": "800x600",
+    "payload_size_bytes": 128,
+    "method": "DWT+DCT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 180.37962913513184
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 123,
+        "compression_ratio": 0.8541666666666666,
+        "space_saved_bytes": 21,
+        "space_saved_percent": 14.583333333333337,
+        "time_ms": 2.0151138305664062
+      },
+      "payload": {
+        "payload_bytes": 9855,
+        "payload_bits": 78840,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 123,
+        "final_payload_bytes": 9855,
+        "efficiency_percent": 7699.21875
+      },
+      "image_analysis": {
+        "dimensions": "800x600",
+        "total_pixels": 480000,
+        "capacity_bits": 60000,
+        "capacity_bytes": 7500,
+        "payload_bits": 78840,
+        "capacity_usage_percent": 131.4
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_800x600_128B_DWT+DCT_Q7.0",
+    "image": "Abstract_Art_800x600",
+    "image_size": "800x600",
+    "payload_size_bytes": 128,
+    "method": "DWT+DCT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 178.36761474609375
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 121,
+        "compression_ratio": 0.8402777777777778,
+        "space_saved_bytes": 23,
+        "space_saved_percent": 15.972222222222221,
+        "time_ms": 0.0
+      },
+      "payload": {
+        "payload_bytes": 9298,
+        "payload_bits": 74384,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 121,
+        "final_payload_bytes": 9298,
+        "efficiency_percent": 7264.0625
+      },
+      "image_analysis": {
+        "dimensions": "800x600",
+        "total_pixels": 480000,
+        "capacity_bits": 60000,
+        "capacity_bytes": 7500,
+        "payload_bits": 74384,
+        "capacity_usage_percent": 123.97333333333333
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_800x600_512B_DWT_Q3.0",
+    "image": "Abstract_Art_800x600",
+    "image_size": "800x600",
+    "payload_size_bytes": 512,
+    "method": "DWT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 164.6113395690918
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 506,
+        "compression_ratio": 0.9583333333333334,
+        "space_saved_bytes": 22,
+        "space_saved_percent": 4.1666666666666625,
+        "time_ms": 4.028797149658203
+      },
+      "payload": {
+        "payload_bytes": 19735,
+        "payload_bits": 157880,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 506,
+        "final_payload_bytes": 19735,
+        "efficiency_percent": 3854.4921875
+      },
+      "image_analysis": {
+        "dimensions": "800x600",
+        "total_pixels": 480000,
+        "capacity_bits": 60000,
+        "capacity_bytes": 7500,
+        "payload_bits": 157880,
+        "capacity_usage_percent": 263.1333333333333
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_800x600_512B_DWT_Q5.0",
+    "image": "Abstract_Art_800x600",
+    "image_size": "800x600",
+    "payload_size_bytes": 512,
+    "method": "DWT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 181.33115768432617
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 505,
+        "compression_ratio": 0.9564393939393939,
+        "space_saved_bytes": 23,
+        "space_saved_percent": 4.356060606060607,
+        "time_ms": 4.027843475341797
+      },
+      "payload": {
+        "payload_bytes": 19734,
+        "payload_bits": 157872,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 505,
+        "final_payload_bytes": 19734,
+        "efficiency_percent": 3854.296875
+      },
+      "image_analysis": {
+        "dimensions": "800x600",
+        "total_pixels": 480000,
+        "capacity_bits": 60000,
+        "capacity_bytes": 7500,
+        "payload_bits": 157872,
+        "capacity_usage_percent": 263.12
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_800x600_512B_DWT_Q7.0",
+    "image": "Abstract_Art_800x600",
+    "image_size": "800x600",
+    "payload_size_bytes": 512,
+    "method": "DWT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 165.1601791381836
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 503,
+        "compression_ratio": 0.9526515151515151,
+        "space_saved_bytes": 25,
+        "space_saved_percent": 4.734848484848486,
+        "time_ms": 2.015829086303711
+      },
+      "payload": {
+        "payload_bytes": 19522,
+        "payload_bits": 156176,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 503,
+        "final_payload_bytes": 19522,
+        "efficiency_percent": 3812.890625
+      },
+      "image_analysis": {
+        "dimensions": "800x600",
+        "total_pixels": 480000,
+        "capacity_bits": 60000,
+        "capacity_bytes": 7500,
+        "payload_bits": 156176,
+        "capacity_usage_percent": 260.29333333333335
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_800x600_512B_DWT+DCT_Q3.0",
+    "image": "Abstract_Art_800x600",
+    "image_size": "800x600",
+    "payload_size_bytes": 512,
+    "method": "DWT+DCT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 168.3824062347412
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 501,
+        "compression_ratio": 0.9488636363636364,
+        "space_saved_bytes": 27,
+        "space_saved_percent": 5.113636363636365,
+        "time_ms": 6.043195724487305
+      },
+      "payload": {
+        "payload_bytes": 19010,
+        "payload_bits": 152080,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 501,
+        "final_payload_bytes": 19010,
+        "efficiency_percent": 3712.890625
+      },
+      "image_analysis": {
+        "dimensions": "800x600",
+        "total_pixels": 480000,
+        "capacity_bits": 60000,
+        "capacity_bytes": 7500,
+        "payload_bits": 152080,
+        "capacity_usage_percent": 253.4666666666667
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_800x600_512B_DWT+DCT_Q5.0",
+    "image": "Abstract_Art_800x600",
+    "image_size": "800x600",
+    "payload_size_bytes": 512,
+    "method": "DWT+DCT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 167.13809967041016
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 506,
+        "compression_ratio": 0.9583333333333334,
+        "space_saved_bytes": 22,
+        "space_saved_percent": 4.1666666666666625,
+        "time_ms": 4.159212112426758
+      },
+      "payload": {
+        "payload_bytes": 20035,
+        "payload_bits": 160280,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 506,
+        "final_payload_bytes": 20035,
+        "efficiency_percent": 3913.0859375
+      },
+      "image_analysis": {
+        "dimensions": "800x600",
+        "total_pixels": 480000,
+        "capacity_bits": 60000,
+        "capacity_bytes": 7500,
+        "payload_bits": 160280,
+        "capacity_usage_percent": 267.1333333333333
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_800x600_512B_DWT+DCT_Q7.0",
+    "image": "Abstract_Art_800x600",
+    "image_size": "800x600",
+    "payload_size_bytes": 512,
+    "method": "DWT+DCT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 200.00290870666504
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 507,
+        "compression_ratio": 0.9602272727272727,
+        "space_saved_bytes": 21,
+        "space_saved_percent": 3.9772727272727293,
+        "time_ms": 4.028081893920898
+      },
+      "payload": {
+        "payload_bytes": 19991,
+        "payload_bits": 159928,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 507,
+        "final_payload_bytes": 19991,
+        "efficiency_percent": 3904.4921875
+      },
+      "image_analysis": {
+        "dimensions": "800x600",
+        "total_pixels": 480000,
+        "capacity_bits": 60000,
+        "capacity_bytes": 7500,
+        "payload_bits": 159928,
+        "capacity_usage_percent": 266.5466666666667
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_800x600_2048B_DWT_Q3.0",
+    "image": "Abstract_Art_800x600",
+    "image_size": "800x600",
+    "payload_size_bytes": 2048,
+    "method": "DWT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 164.78252410888672
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2049,
+        "compression_ratio": 0.9927325581395349,
+        "space_saved_bytes": 15,
+        "space_saved_percent": 0.7267441860465129,
+        "time_ms": 8.025407791137695
+      },
+      "payload": {
+        "payload_bytes": 25877,
+        "payload_bits": 207016,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2049,
+        "final_payload_bytes": 25877,
+        "efficiency_percent": 1263.525390625
+      },
+      "image_analysis": {
+        "dimensions": "800x600",
+        "total_pixels": 480000,
+        "capacity_bits": 60000,
+        "capacity_bytes": 7500,
+        "payload_bits": 207016,
+        "capacity_usage_percent": 345.0266666666667
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_800x600_2048B_DWT_Q5.0",
+    "image": "Abstract_Art_800x600",
+    "image_size": "800x600",
+    "payload_size_bytes": 2048,
+    "method": "DWT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 162.6298427581787
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2048,
+        "compression_ratio": 0.9922480620155039,
+        "space_saved_bytes": 16,
+        "space_saved_percent": 0.7751937984496138,
+        "time_ms": 8.054494857788086
+      },
+      "payload": {
+        "payload_bytes": 25876,
+        "payload_bits": 207008,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2048,
+        "final_payload_bytes": 25876,
+        "efficiency_percent": 1263.4765625
+      },
+      "image_analysis": {
+        "dimensions": "800x600",
+        "total_pixels": 480000,
+        "capacity_bits": 60000,
+        "capacity_bytes": 7500,
+        "payload_bits": 207008,
+        "capacity_usage_percent": 345.0133333333333
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_800x600_2048B_DWT_Q7.0",
+    "image": "Abstract_Art_800x600",
+    "image_size": "800x600",
+    "payload_size_bytes": 2048,
+    "method": "DWT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 169.47317123413086
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2052,
+        "compression_ratio": 0.9941860465116279,
+        "space_saved_bytes": 12,
+        "space_saved_percent": 0.5813953488372103,
+        "time_ms": 9.704113006591797
+      },
+      "payload": {
+        "payload_bytes": 25880,
+        "payload_bits": 207040,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2052,
+        "final_payload_bytes": 25880,
+        "efficiency_percent": 1263.671875
+      },
+      "image_analysis": {
+        "dimensions": "800x600",
+        "total_pixels": 480000,
+        "capacity_bits": 60000,
+        "capacity_bytes": 7500,
+        "payload_bits": 207040,
+        "capacity_usage_percent": 345.06666666666666
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_800x600_2048B_DWT+DCT_Q3.0",
+    "image": "Abstract_Art_800x600",
+    "image_size": "800x600",
+    "payload_size_bytes": 2048,
+    "method": "DWT+DCT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 222.23877906799316
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2047,
+        "compression_ratio": 0.9917635658914729,
+        "space_saved_bytes": 17,
+        "space_saved_percent": 0.8236434108527146,
+        "time_ms": 7.329463958740234
+      },
+      "payload": {
+        "payload_bytes": 25875,
+        "payload_bits": 207000,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2047,
+        "final_payload_bytes": 25875,
+        "efficiency_percent": 1263.427734375
+      },
+      "image_analysis": {
+        "dimensions": "800x600",
+        "total_pixels": 480000,
+        "capacity_bits": 60000,
+        "capacity_bytes": 7500,
+        "payload_bits": 207000,
+        "capacity_usage_percent": 345.0
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_800x600_2048B_DWT+DCT_Q5.0",
+    "image": "Abstract_Art_800x600",
+    "image_size": "800x600",
+    "payload_size_bytes": 2048,
+    "method": "DWT+DCT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 170.5758571624756
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2049,
+        "compression_ratio": 0.9927325581395349,
+        "space_saved_bytes": 15,
+        "space_saved_percent": 0.7267441860465129,
+        "time_ms": 5.859851837158203
+      },
+      "payload": {
+        "payload_bytes": 25877,
+        "payload_bits": 207016,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2049,
+        "final_payload_bytes": 25877,
+        "efficiency_percent": 1263.525390625
+      },
+      "image_analysis": {
+        "dimensions": "800x600",
+        "total_pixels": 480000,
+        "capacity_bits": 60000,
+        "capacity_bytes": 7500,
+        "payload_bits": 207016,
+        "capacity_usage_percent": 345.0266666666667
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_800x600_2048B_DWT+DCT_Q7.0",
+    "image": "Abstract_Art_800x600",
+    "image_size": "800x600",
+    "payload_size_bytes": 2048,
+    "method": "DWT+DCT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 167.6645278930664
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2049,
+        "compression_ratio": 0.9927325581395349,
+        "space_saved_bytes": 15,
+        "space_saved_percent": 0.7267441860465129,
+        "time_ms": 6.04701042175293
+      },
+      "payload": {
+        "payload_bytes": 25877,
+        "payload_bits": 207016,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2049,
+        "final_payload_bytes": 25877,
+        "efficiency_percent": 1263.525390625
+      },
+      "image_analysis": {
+        "dimensions": "800x600",
+        "total_pixels": 480000,
+        "capacity_bits": 60000,
+        "capacity_bytes": 7500,
+        "payload_bits": 207016,
+        "capacity_usage_percent": 345.0266666666667
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1024x768_128B_DWT_Q3.0",
+    "image": "Abstract_Art_1024x768",
+    "image_size": "1024x768",
+    "payload_size_bytes": 128,
+    "method": "DWT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 170.20726203918457
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 121,
+        "compression_ratio": 0.8402777777777778,
+        "space_saved_bytes": 23,
+        "space_saved_percent": 15.972222222222221,
+        "time_ms": 0.0
+      },
+      "payload": {
+        "payload_bytes": 9298,
+        "payload_bits": 74384,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 121,
+        "final_payload_bytes": 9298,
+        "efficiency_percent": 7264.0625
+      },
+      "image_analysis": {
+        "dimensions": "1024x768",
+        "total_pixels": 786432,
+        "capacity_bits": 98304,
+        "capacity_bytes": 12288,
+        "payload_bits": 74384,
+        "capacity_usage_percent": 75.66731770833334
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1024x768_128B_DWT_Q5.0",
+    "image": "Abstract_Art_1024x768",
+    "image_size": "1024x768",
+    "payload_size_bytes": 128,
+    "method": "DWT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 173.03872108459473
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 123,
+        "compression_ratio": 0.8541666666666666,
+        "space_saved_bytes": 21,
+        "space_saved_percent": 14.583333333333337,
+        "time_ms": 2.012014389038086
+      },
+      "payload": {
+        "payload_bytes": 9765,
+        "payload_bits": 78120,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 123,
+        "final_payload_bytes": 9765,
+        "efficiency_percent": 7628.90625
+      },
+      "image_analysis": {
+        "dimensions": "1024x768",
+        "total_pixels": 786432,
+        "capacity_bits": 98304,
+        "capacity_bytes": 12288,
+        "payload_bits": 78120,
+        "capacity_usage_percent": 79.4677734375
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1024x768_128B_DWT_Q7.0",
+    "image": "Abstract_Art_1024x768",
+    "image_size": "1024x768",
+    "payload_size_bytes": 128,
+    "method": "DWT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 184.6294403076172
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 123,
+        "compression_ratio": 0.8541666666666666,
+        "space_saved_bytes": 21,
+        "space_saved_percent": 14.583333333333337,
+        "time_ms": 0.0
+      },
+      "payload": {
+        "payload_bytes": 9765,
+        "payload_bits": 78120,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 123,
+        "final_payload_bytes": 9765,
+        "efficiency_percent": 7628.90625
+      },
+      "image_analysis": {
+        "dimensions": "1024x768",
+        "total_pixels": 786432,
+        "capacity_bits": 98304,
+        "capacity_bytes": 12288,
+        "payload_bits": 78120,
+        "capacity_usage_percent": 79.4677734375
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1024x768_128B_DWT+DCT_Q3.0",
+    "image": "Abstract_Art_1024x768",
+    "image_size": "1024x768",
+    "payload_size_bytes": 128,
+    "method": "DWT+DCT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 196.0759162902832
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 122,
+        "compression_ratio": 0.8472222222222222,
+        "space_saved_bytes": 22,
+        "space_saved_percent": 15.277777777777779,
+        "time_ms": 2.1317005157470703
+      },
+      "payload": {
+        "payload_bytes": 9554,
+        "payload_bits": 76432,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 122,
+        "final_payload_bytes": 9554,
+        "efficiency_percent": 7464.0625
+      },
+      "image_analysis": {
+        "dimensions": "1024x768",
+        "total_pixels": 786432,
+        "capacity_bits": 98304,
+        "capacity_bytes": 12288,
+        "payload_bits": 76432,
+        "capacity_usage_percent": 77.75065104166666
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1024x768_128B_DWT+DCT_Q5.0",
+    "image": "Abstract_Art_1024x768",
+    "image_size": "1024x768",
+    "payload_size_bytes": 128,
+    "method": "DWT+DCT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 172.16086387634277
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 122,
+        "compression_ratio": 0.8472222222222222,
+        "space_saved_bytes": 22,
+        "space_saved_percent": 15.277777777777779,
+        "time_ms": 2.0139217376708984
+      },
+      "payload": {
+        "payload_bytes": 9599,
+        "payload_bits": 76792,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 122,
+        "final_payload_bytes": 9599,
+        "efficiency_percent": 7499.21875
+      },
+      "image_analysis": {
+        "dimensions": "1024x768",
+        "total_pixels": 786432,
+        "capacity_bits": 98304,
+        "capacity_bytes": 12288,
+        "payload_bits": 76792,
+        "capacity_usage_percent": 78.11686197916666
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1024x768_128B_DWT+DCT_Q7.0",
+    "image": "Abstract_Art_1024x768",
+    "image_size": "1024x768",
+    "payload_size_bytes": 128,
+    "method": "DWT+DCT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 175.45747756958008
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 122,
+        "compression_ratio": 0.8472222222222222,
+        "space_saved_bytes": 22,
+        "space_saved_percent": 15.277777777777779,
+        "time_ms": 2.016782760620117
+      },
+      "payload": {
+        "payload_bytes": 9554,
+        "payload_bits": 76432,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 122,
+        "final_payload_bytes": 9554,
+        "efficiency_percent": 7464.0625
+      },
+      "image_analysis": {
+        "dimensions": "1024x768",
+        "total_pixels": 786432,
+        "capacity_bits": 98304,
+        "capacity_bytes": 12288,
+        "payload_bits": 76432,
+        "capacity_usage_percent": 77.75065104166666
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1024x768_512B_DWT_Q3.0",
+    "image": "Abstract_Art_1024x768",
+    "image_size": "1024x768",
+    "payload_size_bytes": 512,
+    "method": "DWT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 165.0247573852539
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 505,
+        "compression_ratio": 0.9564393939393939,
+        "space_saved_bytes": 23,
+        "space_saved_percent": 4.356060606060607,
+        "time_ms": 5.4988861083984375
+      },
+      "payload": {
+        "payload_bytes": 19779,
+        "payload_bits": 158232,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 505,
+        "final_payload_bytes": 19779,
+        "efficiency_percent": 3863.0859375
+      },
+      "image_analysis": {
+        "dimensions": "1024x768",
+        "total_pixels": 786432,
+        "capacity_bits": 98304,
+        "capacity_bytes": 12288,
+        "payload_bits": 158232,
+        "capacity_usage_percent": 160.9619140625
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1024x768_512B_DWT_Q5.0",
+    "image": "Abstract_Art_1024x768",
+    "image_size": "1024x768",
+    "payload_size_bytes": 512,
+    "method": "DWT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 174.73936080932617
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 502,
+        "compression_ratio": 0.9507575757575758,
+        "space_saved_bytes": 26,
+        "space_saved_percent": 4.92424242424242,
+        "time_ms": 4.023075103759766
+      },
+      "payload": {
+        "payload_bytes": 19266,
+        "payload_bits": 154128,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 502,
+        "final_payload_bytes": 19266,
+        "efficiency_percent": 3762.890625
+      },
+      "image_analysis": {
+        "dimensions": "1024x768",
+        "total_pixels": 786432,
+        "capacity_bits": 98304,
+        "capacity_bytes": 12288,
+        "payload_bits": 154128,
+        "capacity_usage_percent": 156.787109375
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1024x768_512B_DWT_Q7.0",
+    "image": "Abstract_Art_1024x768",
+    "image_size": "1024x768",
+    "payload_size_bytes": 512,
+    "method": "DWT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 167.62495040893555
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 506,
+        "compression_ratio": 0.9583333333333334,
+        "space_saved_bytes": 22,
+        "space_saved_percent": 4.1666666666666625,
+        "time_ms": 4.029035568237305
+      },
+      "payload": {
+        "payload_bytes": 19570,
+        "payload_bits": 156560,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 506,
+        "final_payload_bytes": 19570,
+        "efficiency_percent": 3822.265625
+      },
+      "image_analysis": {
+        "dimensions": "1024x768",
+        "total_pixels": 786432,
+        "capacity_bits": 98304,
+        "capacity_bytes": 12288,
+        "payload_bits": 156560,
+        "capacity_usage_percent": 159.26106770833331
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1024x768_512B_DWT+DCT_Q3.0",
+    "image": "Abstract_Art_1024x768",
+    "image_size": "1024x768",
+    "payload_size_bytes": 512,
+    "method": "DWT+DCT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 164.22414779663086
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 504,
+        "compression_ratio": 0.9545454545454546,
+        "space_saved_bytes": 24,
+        "space_saved_percent": 4.545454545454541,
+        "time_ms": 6.043910980224609
+      },
+      "payload": {
+        "payload_bytes": 19733,
+        "payload_bits": 157864,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 504,
+        "final_payload_bytes": 19733,
+        "efficiency_percent": 3854.1015625
+      },
+      "image_analysis": {
+        "dimensions": "1024x768",
+        "total_pixels": 786432,
+        "capacity_bits": 98304,
+        "capacity_bytes": 12288,
+        "payload_bits": 157864,
+        "capacity_usage_percent": 160.58756510416669
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1024x768_512B_DWT+DCT_Q5.0",
+    "image": "Abstract_Art_1024x768",
+    "image_size": "1024x768",
+    "payload_size_bytes": 512,
+    "method": "DWT+DCT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 163.53702545166016
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 505,
+        "compression_ratio": 0.9564393939393939,
+        "space_saved_bytes": 23,
+        "space_saved_percent": 4.356060606060607,
+        "time_ms": 4.027366638183594
+      },
+      "payload": {
+        "payload_bytes": 19824,
+        "payload_bits": 158592,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 505,
+        "final_payload_bytes": 19824,
+        "efficiency_percent": 3871.875
+      },
+      "image_analysis": {
+        "dimensions": "1024x768",
+        "total_pixels": 786432,
+        "capacity_bits": 98304,
+        "capacity_bytes": 12288,
+        "payload_bits": 158592,
+        "capacity_usage_percent": 161.328125
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1024x768_512B_DWT+DCT_Q7.0",
+    "image": "Abstract_Art_1024x768",
+    "image_size": "1024x768",
+    "payload_size_bytes": 512,
+    "method": "DWT+DCT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 155.7028293609619
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 504,
+        "compression_ratio": 0.9545454545454546,
+        "space_saved_bytes": 24,
+        "space_saved_percent": 4.545454545454541,
+        "time_ms": 2.3145675659179688
+      },
+      "payload": {
+        "payload_bytes": 20033,
+        "payload_bits": 160264,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 504,
+        "final_payload_bytes": 20033,
+        "efficiency_percent": 3912.6953125
+      },
+      "image_analysis": {
+        "dimensions": "1024x768",
+        "total_pixels": 786432,
+        "capacity_bits": 98304,
+        "capacity_bytes": 12288,
+        "payload_bits": 160264,
+        "capacity_usage_percent": 163.02897135416669
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1024x768_2048B_DWT_Q3.0",
+    "image": "Abstract_Art_1024x768",
+    "image_size": "1024x768",
+    "payload_size_bytes": 2048,
+    "method": "DWT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 162.12177276611328
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2048,
+        "compression_ratio": 0.9922480620155039,
+        "space_saved_bytes": 16,
+        "space_saved_percent": 0.7751937984496138,
+        "time_ms": 7.598638534545898
+      },
+      "payload": {
+        "payload_bytes": 25876,
+        "payload_bits": 207008,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2048,
+        "final_payload_bytes": 25876,
+        "efficiency_percent": 1263.4765625
+      },
+      "image_analysis": {
+        "dimensions": "1024x768",
+        "total_pixels": 786432,
+        "capacity_bits": 98304,
+        "capacity_bytes": 12288,
+        "payload_bits": 207008,
+        "capacity_usage_percent": 210.57942708333334
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1024x768_2048B_DWT_Q5.0",
+    "image": "Abstract_Art_1024x768",
+    "image_size": "1024x768",
+    "payload_size_bytes": 2048,
+    "method": "DWT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 165.7431125640869
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2049,
+        "compression_ratio": 0.9927325581395349,
+        "space_saved_bytes": 15,
+        "space_saved_percent": 0.7267441860465129,
+        "time_ms": 6.28352165222168
+      },
+      "payload": {
+        "payload_bytes": 25877,
+        "payload_bits": 207016,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2049,
+        "final_payload_bytes": 25877,
+        "efficiency_percent": 1263.525390625
+      },
+      "image_analysis": {
+        "dimensions": "1024x768",
+        "total_pixels": 786432,
+        "capacity_bits": 98304,
+        "capacity_bytes": 12288,
+        "payload_bits": 207016,
+        "capacity_usage_percent": 210.58756510416666
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1024x768_2048B_DWT_Q7.0",
+    "image": "Abstract_Art_1024x768",
+    "image_size": "1024x768",
+    "payload_size_bytes": 2048,
+    "method": "DWT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 161.47637367248535
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2052,
+        "compression_ratio": 0.9941860465116279,
+        "space_saved_bytes": 12,
+        "space_saved_percent": 0.5813953488372103,
+        "time_ms": 6.14476203918457
+      },
+      "payload": {
+        "payload_bytes": 25880,
+        "payload_bits": 207040,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2052,
+        "final_payload_bytes": 25880,
+        "efficiency_percent": 1263.671875
+      },
+      "image_analysis": {
+        "dimensions": "1024x768",
+        "total_pixels": 786432,
+        "capacity_bits": 98304,
+        "capacity_bytes": 12288,
+        "payload_bits": 207040,
+        "capacity_usage_percent": 210.61197916666666
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1024x768_2048B_DWT+DCT_Q3.0",
+    "image": "Abstract_Art_1024x768",
+    "image_size": "1024x768",
+    "payload_size_bytes": 2048,
+    "method": "DWT+DCT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 174.4694709777832
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2051,
+        "compression_ratio": 0.9937015503875969,
+        "space_saved_bytes": 13,
+        "space_saved_percent": 0.6298449612403112,
+        "time_ms": 6.48188591003418
+      },
+      "payload": {
+        "payload_bytes": 25879,
+        "payload_bits": 207032,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2051,
+        "final_payload_bytes": 25879,
+        "efficiency_percent": 1263.623046875
+      },
+      "image_analysis": {
+        "dimensions": "1024x768",
+        "total_pixels": 786432,
+        "capacity_bits": 98304,
+        "capacity_bytes": 12288,
+        "payload_bits": 207032,
+        "capacity_usage_percent": 210.60384114583334
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1024x768_2048B_DWT+DCT_Q5.0",
+    "image": "Abstract_Art_1024x768",
+    "image_size": "1024x768",
+    "payload_size_bytes": 2048,
+    "method": "DWT+DCT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 168.81799697875977
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2051,
+        "compression_ratio": 0.9937015503875969,
+        "space_saved_bytes": 13,
+        "space_saved_percent": 0.6298449612403112,
+        "time_ms": 6.037473678588867
+      },
+      "payload": {
+        "payload_bytes": 25879,
+        "payload_bits": 207032,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2051,
+        "final_payload_bytes": 25879,
+        "efficiency_percent": 1263.623046875
+      },
+      "image_analysis": {
+        "dimensions": "1024x768",
+        "total_pixels": 786432,
+        "capacity_bits": 98304,
+        "capacity_bytes": 12288,
+        "payload_bits": 207032,
+        "capacity_usage_percent": 210.60384114583334
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1024x768_2048B_DWT+DCT_Q7.0",
+    "image": "Abstract_Art_1024x768",
+    "image_size": "1024x768",
+    "payload_size_bytes": 2048,
+    "method": "DWT+DCT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 162.42384910583496
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2051,
+        "compression_ratio": 0.9937015503875969,
+        "space_saved_bytes": 13,
+        "space_saved_percent": 0.6298449612403112,
+        "time_ms": 7.558584213256836
+      },
+      "payload": {
+        "payload_bytes": 25879,
+        "payload_bits": 207032,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2051,
+        "final_payload_bytes": 25879,
+        "efficiency_percent": 1263.623046875
+      },
+      "image_analysis": {
+        "dimensions": "1024x768",
+        "total_pixels": 786432,
+        "capacity_bits": 98304,
+        "capacity_bytes": 12288,
+        "payload_bits": 207032,
+        "capacity_usage_percent": 210.60384114583334
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1280x720_128B_DWT_Q3.0",
+    "image": "Abstract_Art_1280x720",
+    "image_size": "1280x720",
+    "payload_size_bytes": 128,
+    "method": "DWT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 200.60253143310547
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 123,
+        "compression_ratio": 0.8541666666666666,
+        "space_saved_bytes": 21,
+        "space_saved_percent": 14.583333333333337,
+        "time_ms": 2.0236968994140625
+      },
+      "payload": {
+        "payload_bytes": 9855,
+        "payload_bits": 78840,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 123,
+        "final_payload_bytes": 9855,
+        "efficiency_percent": 7699.21875
+      },
+      "image_analysis": {
+        "dimensions": "1280x720",
+        "total_pixels": 921600,
+        "capacity_bits": 115200,
+        "capacity_bytes": 14400,
+        "payload_bits": 78840,
+        "capacity_usage_percent": 68.4375
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1280x720_128B_DWT_Q5.0",
+    "image": "Abstract_Art_1280x720",
+    "image_size": "1280x720",
+    "payload_size_bytes": 128,
+    "method": "DWT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 189.8965835571289
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 122,
+        "compression_ratio": 0.8472222222222222,
+        "space_saved_bytes": 22,
+        "space_saved_percent": 15.277777777777779,
+        "time_ms": 2.014636993408203
+      },
+      "payload": {
+        "payload_bytes": 9509,
+        "payload_bits": 76072,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 122,
+        "final_payload_bytes": 9509,
+        "efficiency_percent": 7428.90625
+      },
+      "image_analysis": {
+        "dimensions": "1280x720",
+        "total_pixels": 921600,
+        "capacity_bits": 115200,
+        "capacity_bytes": 14400,
+        "payload_bits": 76072,
+        "capacity_usage_percent": 66.03472222222221
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1280x720_128B_DWT_Q7.0",
+    "image": "Abstract_Art_1280x720",
+    "image_size": "1280x720",
+    "payload_size_bytes": 128,
+    "method": "DWT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 184.00049209594727
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 122,
+        "compression_ratio": 0.8472222222222222,
+        "space_saved_bytes": 22,
+        "space_saved_percent": 15.277777777777779,
+        "time_ms": 3.1747817993164062
+      },
+      "payload": {
+        "payload_bytes": 9344,
+        "payload_bits": 74752,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 122,
+        "final_payload_bytes": 9344,
+        "efficiency_percent": 7300.0
+      },
+      "image_analysis": {
+        "dimensions": "1280x720",
+        "total_pixels": 921600,
+        "capacity_bits": 115200,
+        "capacity_bytes": 14400,
+        "payload_bits": 74752,
+        "capacity_usage_percent": 64.88888888888889
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1280x720_128B_DWT+DCT_Q3.0",
+    "image": "Abstract_Art_1280x720",
+    "image_size": "1280x720",
+    "payload_size_bytes": 128,
+    "method": "DWT+DCT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 117.25735664367676
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 119,
+        "compression_ratio": 0.8263888888888888,
+        "space_saved_bytes": 25,
+        "space_saved_percent": 17.361111111111114,
+        "time_ms": 2.5568008422851562
+      },
+      "payload": {
+        "payload_bytes": 8831,
+        "payload_bits": 70648,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 119,
+        "final_payload_bytes": 8831,
+        "efficiency_percent": 6899.21875
+      },
+      "image_analysis": {
+        "dimensions": "1280x720",
+        "total_pixels": 921600,
+        "capacity_bits": 115200,
+        "capacity_bytes": 14400,
+        "payload_bits": 70648,
+        "capacity_usage_percent": 61.32638888888889
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1280x720_128B_DWT+DCT_Q5.0",
+    "image": "Abstract_Art_1280x720",
+    "image_size": "1280x720",
+    "payload_size_bytes": 128,
+    "method": "DWT+DCT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 126.74927711486816
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 121,
+        "compression_ratio": 0.8402777777777778,
+        "space_saved_bytes": 23,
+        "space_saved_percent": 15.972222222222221,
+        "time_ms": 2.173185348510742
+      },
+      "payload": {
+        "payload_bytes": 9343,
+        "payload_bits": 74744,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 121,
+        "final_payload_bytes": 9343,
+        "efficiency_percent": 7299.21875
+      },
+      "image_analysis": {
+        "dimensions": "1280x720",
+        "total_pixels": 921600,
+        "capacity_bits": 115200,
+        "capacity_bytes": 14400,
+        "payload_bits": 74744,
+        "capacity_usage_percent": 64.88194444444444
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1280x720_128B_DWT+DCT_Q7.0",
+    "image": "Abstract_Art_1280x720",
+    "image_size": "1280x720",
+    "payload_size_bytes": 128,
+    "method": "DWT+DCT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 128,
+        "size_bits": 1024,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 128,
+        "output_bytes": 144,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 12.5,
+        "time_ms": 131.49046897888184
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 144,
+        "compressed_bytes": 121,
+        "compression_ratio": 0.8402777777777778,
+        "space_saved_bytes": 23,
+        "space_saved_percent": 15.972222222222221,
+        "time_ms": 3.4956932067871094
+      },
+      "payload": {
+        "payload_bytes": 9343,
+        "payload_bits": 74744,
+        "original_bytes": 128,
+        "encrypted_bytes": 144,
+        "compressed_bytes": 121,
+        "final_payload_bytes": 9343,
+        "efficiency_percent": 7299.21875
+      },
+      "image_analysis": {
+        "dimensions": "1280x720",
+        "total_pixels": 921600,
+        "capacity_bits": 115200,
+        "capacity_bytes": 14400,
+        "payload_bits": 74744,
+        "capacity_usage_percent": 64.88194444444444
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1280x720_512B_DWT_Q3.0",
+    "image": "Abstract_Art_1280x720",
+    "image_size": "1280x720",
+    "payload_size_bytes": 512,
+    "method": "DWT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 175.03595352172852
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 505,
+        "compression_ratio": 0.9564393939393939,
+        "space_saved_bytes": 23,
+        "space_saved_percent": 4.356060606060607,
+        "time_ms": 5.050897598266602
+      },
+      "payload": {
+        "payload_bytes": 19524,
+        "payload_bits": 156192,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 505,
+        "final_payload_bytes": 19524,
+        "efficiency_percent": 3813.28125
+      },
+      "image_analysis": {
+        "dimensions": "1280x720",
+        "total_pixels": 921600,
+        "capacity_bits": 115200,
+        "capacity_bytes": 14400,
+        "payload_bits": 156192,
+        "capacity_usage_percent": 135.58333333333331
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1280x720_512B_DWT_Q5.0",
+    "image": "Abstract_Art_1280x720",
+    "image_size": "1280x720",
+    "payload_size_bytes": 512,
+    "method": "DWT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 142.81606674194336
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 507,
+        "compression_ratio": 0.9602272727272727,
+        "space_saved_bytes": 21,
+        "space_saved_percent": 3.9772727272727293,
+        "time_ms": 5.157470703125
+      },
+      "payload": {
+        "payload_bytes": 20081,
+        "payload_bits": 160648,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 507,
+        "final_payload_bytes": 20081,
+        "efficiency_percent": 3922.0703125
+      },
+      "image_analysis": {
+        "dimensions": "1280x720",
+        "total_pixels": 921600,
+        "capacity_bits": 115200,
+        "capacity_bytes": 14400,
+        "payload_bits": 160648,
+        "capacity_usage_percent": 139.45138888888889
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1280x720_512B_DWT_Q7.0",
+    "image": "Abstract_Art_1280x720",
+    "image_size": "1280x720",
+    "payload_size_bytes": 512,
+    "method": "DWT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 116.61434173583984
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 505,
+        "compression_ratio": 0.9564393939393939,
+        "space_saved_bytes": 23,
+        "space_saved_percent": 4.356060606060607,
+        "time_ms": 2.0804405212402344
+      },
+      "payload": {
+        "payload_bytes": 19569,
+        "payload_bits": 156552,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 505,
+        "final_payload_bytes": 19569,
+        "efficiency_percent": 3822.0703125
+      },
+      "image_analysis": {
+        "dimensions": "1280x720",
+        "total_pixels": 921600,
+        "capacity_bits": 115200,
+        "capacity_bytes": 14400,
+        "payload_bits": 156552,
+        "capacity_usage_percent": 135.89583333333331
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1280x720_512B_DWT+DCT_Q3.0",
+    "image": "Abstract_Art_1280x720",
+    "image_size": "1280x720",
+    "payload_size_bytes": 512,
+    "method": "DWT+DCT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 97.0923900604248
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 506,
+        "compression_ratio": 0.9583333333333334,
+        "space_saved_bytes": 22,
+        "space_saved_percent": 4.1666666666666625,
+        "time_ms": 2.577543258666992
+      },
+      "payload": {
+        "payload_bytes": 19825,
+        "payload_bits": 158600,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 506,
+        "final_payload_bytes": 19825,
+        "efficiency_percent": 3872.0703125
+      },
+      "image_analysis": {
+        "dimensions": "1280x720",
+        "total_pixels": 921600,
+        "capacity_bits": 115200,
+        "capacity_bytes": 14400,
+        "payload_bits": 158600,
+        "capacity_usage_percent": 137.67361111111111
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1280x720_512B_DWT+DCT_Q5.0",
+    "image": "Abstract_Art_1280x720",
+    "image_size": "1280x720",
+    "payload_size_bytes": 512,
+    "method": "DWT+DCT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 109.38477516174316
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 502,
+        "compression_ratio": 0.9507575757575758,
+        "space_saved_bytes": 26,
+        "space_saved_percent": 4.92424242424242,
+        "time_ms": 4.050731658935547
+      },
+      "payload": {
+        "payload_bytes": 19476,
+        "payload_bits": 155808,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 502,
+        "final_payload_bytes": 19476,
+        "efficiency_percent": 3803.90625
+      },
+      "image_analysis": {
+        "dimensions": "1280x720",
+        "total_pixels": 921600,
+        "capacity_bits": 115200,
+        "capacity_bytes": 14400,
+        "payload_bits": 155808,
+        "capacity_usage_percent": 135.25
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1280x720_512B_DWT+DCT_Q7.0",
+    "image": "Abstract_Art_1280x720",
+    "image_size": "1280x720",
+    "payload_size_bytes": 512,
+    "method": "DWT+DCT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 512,
+        "size_bits": 4096,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 512,
+        "output_bytes": 528,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 3.125,
+        "time_ms": 108.19101333618164
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 528,
+        "compressed_bytes": 504,
+        "compression_ratio": 0.9545454545454546,
+        "space_saved_bytes": 24,
+        "space_saved_percent": 4.545454545454541,
+        "time_ms": 2.0143985748291016
+      },
+      "payload": {
+        "payload_bytes": 19523,
+        "payload_bits": 156184,
+        "original_bytes": 512,
+        "encrypted_bytes": 528,
+        "compressed_bytes": 504,
+        "final_payload_bytes": 19523,
+        "efficiency_percent": 3813.0859375
+      },
+      "image_analysis": {
+        "dimensions": "1280x720",
+        "total_pixels": 921600,
+        "capacity_bits": 115200,
+        "capacity_bytes": 14400,
+        "payload_bits": 156184,
+        "capacity_usage_percent": 135.57638888888889
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1280x720_2048B_DWT_Q3.0",
+    "image": "Abstract_Art_1280x720",
+    "image_size": "1280x720",
+    "payload_size_bytes": 2048,
+    "method": "DWT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 107.91778564453125
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2050,
+        "compression_ratio": 0.9932170542635659,
+        "space_saved_bytes": 14,
+        "space_saved_percent": 0.6782945736434121,
+        "time_ms": 5.553007125854492
+      },
+      "payload": {
+        "payload_bytes": 25878,
+        "payload_bits": 207024,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2050,
+        "final_payload_bytes": 25878,
+        "efficiency_percent": 1263.57421875
+      },
+      "image_analysis": {
+        "dimensions": "1280x720",
+        "total_pixels": 921600,
+        "capacity_bits": 115200,
+        "capacity_bytes": 14400,
+        "payload_bits": 207024,
+        "capacity_usage_percent": 179.70833333333334
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1280x720_2048B_DWT_Q5.0",
+    "image": "Abstract_Art_1280x720",
+    "image_size": "1280x720",
+    "payload_size_bytes": 2048,
+    "method": "DWT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 127.1207332611084
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2051,
+        "compression_ratio": 0.9937015503875969,
+        "space_saved_bytes": 13,
+        "space_saved_percent": 0.6298449612403112,
+        "time_ms": 5.164623260498047
+      },
+      "payload": {
+        "payload_bytes": 25879,
+        "payload_bits": 207032,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2051,
+        "final_payload_bytes": 25879,
+        "efficiency_percent": 1263.623046875
+      },
+      "image_analysis": {
+        "dimensions": "1280x720",
+        "total_pixels": 921600,
+        "capacity_bits": 115200,
+        "capacity_bytes": 14400,
+        "payload_bits": 207032,
+        "capacity_usage_percent": 179.71527777777777
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1280x720_2048B_DWT_Q7.0",
+    "image": "Abstract_Art_1280x720",
+    "image_size": "1280x720",
+    "payload_size_bytes": 2048,
+    "method": "DWT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 110.48030853271484
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2047,
+        "compression_ratio": 0.9917635658914729,
+        "space_saved_bytes": 17,
+        "space_saved_percent": 0.8236434108527146,
+        "time_ms": 2.012968063354492
+      },
+      "payload": {
+        "payload_bytes": 25875,
+        "payload_bits": 207000,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2047,
+        "final_payload_bytes": 25875,
+        "efficiency_percent": 1263.427734375
+      },
+      "image_analysis": {
+        "dimensions": "1280x720",
+        "total_pixels": 921600,
+        "capacity_bits": 115200,
+        "capacity_bytes": 14400,
+        "payload_bits": 207000,
+        "capacity_usage_percent": 179.6875
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1280x720_2048B_DWT+DCT_Q3.0",
+    "image": "Abstract_Art_1280x720",
+    "image_size": "1280x720",
+    "payload_size_bytes": 2048,
+    "method": "DWT+DCT",
+    "q_factor": 3.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 132.66515731811523
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2050,
+        "compression_ratio": 0.9932170542635659,
+        "space_saved_bytes": 14,
+        "space_saved_percent": 0.6782945736434121,
+        "time_ms": 4.034280776977539
+      },
+      "payload": {
+        "payload_bytes": 25878,
+        "payload_bits": 207024,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2050,
+        "final_payload_bytes": 25878,
+        "efficiency_percent": 1263.57421875
+      },
+      "image_analysis": {
+        "dimensions": "1280x720",
+        "total_pixels": 921600,
+        "capacity_bits": 115200,
+        "capacity_bytes": 14400,
+        "payload_bits": 207024,
+        "capacity_usage_percent": 179.70833333333334
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1280x720_2048B_DWT+DCT_Q5.0",
+    "image": "Abstract_Art_1280x720",
+    "image_size": "1280x720",
+    "payload_size_bytes": 2048,
+    "method": "DWT+DCT",
+    "q_factor": 5.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 111.83738708496094
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2050,
+        "compression_ratio": 0.9932170542635659,
+        "space_saved_bytes": 14,
+        "space_saved_percent": 0.6782945736434121,
+        "time_ms": 4.025936126708984
+      },
+      "payload": {
+        "payload_bytes": 25878,
+        "payload_bits": 207024,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2050,
+        "final_payload_bytes": 25878,
+        "efficiency_percent": 1263.57421875
+      },
+      "image_analysis": {
+        "dimensions": "1280x720",
+        "total_pixels": 921600,
+        "capacity_bits": 115200,
+        "capacity_bytes": 14400,
+        "payload_bits": 207024,
+        "capacity_usage_percent": 179.70833333333334
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  },
+  {
+    "id": "Abstract_Art_1280x720_2048B_DWT+DCT_Q7.0",
+    "image": "Abstract_Art_1280x720",
+    "image_size": "1280x720",
+    "payload_size_bytes": 2048,
+    "method": "DWT+DCT",
+    "q_factor": 7.0,
+    "steps": {
+      "message": {
+        "size_bytes": 2048,
+        "size_bits": 16384,
+        "type": "plaintext"
+      },
+      "encryption": {
+        "algorithm": "AES-256-CBC",
+        "key_derivation": "PBKDF2",
+        "iterations": 100000,
+        "input_bytes": 2048,
+        "output_bytes": 2064,
+        "salt_bytes": 16,
+        "iv_bytes": 16,
+        "overhead_bytes": 16,
+        "overhead_percent": 0.78125,
+        "time_ms": 104.23445701599121
+      },
+      "compression": {
+        "algorithm": "Huffman + RS-ECC",
+        "input_bytes": 2064,
+        "compressed_bytes": 2049,
+        "compression_ratio": 0.9927325581395349,
+        "space_saved_bytes": 15,
+        "space_saved_percent": 0.7267441860465129,
+        "time_ms": 6.003618240356445
+      },
+      "payload": {
+        "payload_bytes": 25877,
+        "payload_bits": 207016,
+        "original_bytes": 2048,
+        "encrypted_bytes": 2064,
+        "compressed_bytes": 2049,
+        "final_payload_bytes": 25877,
+        "efficiency_percent": 1263.525390625
+      },
+      "image_analysis": {
+        "dimensions": "1280x720",
+        "total_pixels": 921600,
+        "capacity_bits": 115200,
+        "capacity_bytes": 14400,
+        "payload_bits": 207016,
+        "capacity_usage_percent": 179.70138888888889
+      }
+    },
+    "success": false,
+    "error": "'dict' object has no attribute 'shape'"
+  }
+]

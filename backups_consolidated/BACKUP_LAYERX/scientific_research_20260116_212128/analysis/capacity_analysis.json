@@ -1,0 +1,30 @@
+{
+  "image_size_analysis": {
+    "256x256": {
+      "max_successful_payload": 10000,
+      "avg_successful_payload": 1023.5897435897435,
+      "success_rate": 1.0,
+      "total_experiments": 39
+    },
+    "512x512": {
+      "max_successful_payload": 50000,
+      "avg_successful_payload": 3817.5352112676055,
+      "success_rate": 1.0,
+      "total_experiments": 71
+    },
+    "1024x1024": {
+      "max_successful_payload": 250000,
+      "avg_successful_payload": 13244.451219512195,
+      "success_rate": 1.0,
+      "total_experiments": 82
+    },
+    "2048x2048": {
+      "max_successful_payload": 1000000,
+      "avg_successful_payload": 32185.271739130436,
+      "success_rate": 1.0,
+      "total_experiments": 92
+    }
+  },
+  "payload_limits": {},
+  "capacity_utilization": {}
+}

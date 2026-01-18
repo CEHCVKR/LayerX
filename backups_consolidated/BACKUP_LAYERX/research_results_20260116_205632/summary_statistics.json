@@ -1,0 +1,25 @@
+{
+  "experiment_summary": {
+    "total_experiments": 48,
+    "successful_experiments": 24,
+    "integrity_verified": 24,
+    "success_rate": 50.0,
+    "integrity_rate": 100.0
+  },
+  "psnr_analysis": {
+    "average": 52.76496431505891,
+    "min": 49.13544420312056,
+    "max": 59.080021708602374,
+    "std_dev": 2.879089027451263
+  },
+  "timing_analysis": {
+    "average_total_time": 0.4525268077850342,
+    "min_time": 0.3988816738128662,
+    "max_time": 0.5871593952178955
+  },
+  "compression_analysis": {
+    "average_ratio": 0.2018759916070003,
+    "min_ratio": 0.026200873362445413,
+    "max_ratio": 0.4565537555228277
+  }
+}

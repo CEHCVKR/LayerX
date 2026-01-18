@@ -1,0 +1,145 @@
+{
+  "summary": {},
+  "scenarios": {
+    "core_functionality": {
+      "tests": [
+        {
+          "name": "AES Encryption",
+          "status": "FAIL",
+          "error": "decrypt_message() missing 2 required positional arguments: 'salt' and 'iv'"
+        },
+        {
+          "name": "Huffman Compression",
+          "status": "PASS",
+          "details": "Ratio: 47.27%"
+        },
+        {
+          "name": "DWT Embedding",
+          "status": "PASS",
+          "details": "PSNR: 51.19 dB"
+        }
+      ],
+      "pass": 2,
+      "fail": 1
+    },
+    "image_sizes": {
+      "tests": [
+        {
+          "name": "256x256",
+          "status": "FAIL",
+          "error": "Tree ECC decoding failed with all codec strengths"
+        },
+        {
+          "name": "512x512",
+          "status": "PASS",
+          "psnr": 51.195618442076196
+        },
+        {
+          "name": "1024x1024",
+          "status": "PASS",
+          "psnr": 57.18043139872729
+        }
+      ],
+      "pass": 2,
+      "fail": 1
+    },
+    "payload_sizes": {
+      "tests": [
+        {
+          "name": "16B",
+          "status": "PASS",
+          "psnr": 59.206509785687615
+        },
+        {
+          "name": "64B",
+          "status": "PASS",
+          "psnr": 59.188084566074835
+        },
+        {
+          "name": "256B",
+          "status": "PASS",
+          "psnr": 58.564872893024074
+        },
+        {
+          "name": "1024B",
+          "status": "PASS",
+          "psnr": 56.654657339964096
+        },
+        {
+          "name": "4096B",
+          "status": "PASS",
+          "psnr": 52.12092750263057
+        }
+      ],
+      "pass": 5,
+      "fail": 0
+    },
+    "jpeg_robustness": {
+      "tests": [
+        {
+          "name": "Q=95",
+          "status": "PASS",
+          "psnr": 42.26918530498759
+        },
+        {
+          "name": "Q=90",
+          "status": "PASS",
+          "psnr": 36.356528757017244
+        },
+        {
+          "name": "Q=85",
+          "status": "FAIL",
+          "psnr": 32.83648633751223
+        },
+        {
+          "name": "Q=80",
+          "status": "FAIL",
+          "psnr": 30.5189621547127
+        },
+        {
+          "name": "Q=70",
+          "status": "FAIL",
+          "psnr": 27.91793642870968
+        }
+      ],
+      "pass": 2,
+      "fail": 3
+    },
+    "real_world": {
+      "tests": [
+        {
+          "name": "Natural Gradient",
+          "status": "PASS",
+          "psnr": 51.19518228048682
+        },
+        {
+          "name": "Textured Pattern",
+          "status": "PASS",
+          "psnr": 51.20815162022062
+        },
+        {
+          "name": "Edge-rich Image",
+          "status": "FAIL",
+          "error": "Payload corrupted: tree data incomplete"
+        }
+      ],
+      "pass": 2,
+      "fail": 1
+    },
+    "performance": {
+      "metrics": {
+        "compression_ms": 0.0,
+        "embedding_ms": 66.74456596374512,
+        "extraction_ms": 54.555654525756836,
+        "total_ms": 121.30022048950195
+      }
+    }
+  },
+  "detailed_tests": [],
+  "statistics": {
+    "total_tests": 19,
+    "total_pass": 13,
+    "total_fail": 6,
+    "pass_rate": 68.42105263157895
+  }
+}

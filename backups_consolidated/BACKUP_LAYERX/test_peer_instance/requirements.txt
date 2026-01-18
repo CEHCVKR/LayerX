@@ -1,0 +1,31 @@
+# LayerX - P2P Encrypted Steganography System
+# Install with: pip install -r requirements.txt
+
+# ============================================
+# CORE DEPENDENCIES
+# ============================================
+
+# Cryptography (ECC, AES-256, Digital Signatures)
+cryptography>=41.0.0
+
+# Image Processing & Steganography
+opencv-python>=4.8.0
+Pillow>=10.0.0
+numpy>=1.24.0
+PyWavelets>=1.4.1
+
+# Signal Processing (DCT/IDCT, Statistical Analysis)
+scipy>=1.10.0
+
+# GUI Framework (tkinter is bundled with Python - no install needed)
+
+# ============================================
+# INSTALLATION
+# ============================================
+# 
+# Install all dependencies:
+#   pip install -r requirements.txt
+#
+# Verify installation:
+#   python -c "import cv2, pywt, cryptography; print('✓ All dependencies installed')"
+#

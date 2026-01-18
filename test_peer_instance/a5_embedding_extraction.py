@@ -95,8 +95,9 @@ def embed_in_dwt_bands(payload_bits: str, bands: Dict[str, np.ndarray],
     
     # Coefficient selection based on optimization method
     # Use more bands including mid-frequency LL2 for higher capacity (30%+ target)
-    # Ordered by robustness: LH/HL (edges) > HH (texture) > LL2 (low-freq details)
-    embed_bands = ['LH1', 'HL1', 'LH2', 'HL2', 'HH1', 'HH2', 'LL2']
+    # ROBUSTNESS FIX: Ordered by ROBUSTNESS (low freq first, high freq last)
+    # LL2 most robust (survives JPEG), HH1 least robust (destroyed first)
+    embed_bands = ['LL2', 'HL2', 'LH2', 'HL1', 'LH1', 'HH2', 'HH1']
     
     if optimization == 'chaos' or optimization == 'aco':
         # Use Module 6 optimization
@@ -237,7 +238,8 @@ def extract_from_dwt_bands(bands: Dict[str, np.ndarray], payload_bit_length: int
     
     # Use SAME coefficient selection as embedding - CRITICAL for correct extraction!
     # MUST match embedding band list exactly!
-    embed_bands = ['LH1', 'HL1', 'LH2', 'HL2', 'HH1', 'HH2', 'LL2']
+    # ROBUSTNESS FIX: Same order as embedding (low freq first)
+    embed_bands = ['LL2', 'HL2', 'LH2', 'HL1', 'LH1', 'HH2', 'HH1']
     
     if optimization == 'chaos' or optimization == 'aco':
         # Use Module 6 optimization (must match embedding exactly!)
@@ -533,7 +535,8 @@ def embed_in_dwt_bands_color(payload_bits: str, bands: Dict[str, np.ndarray],
     Returns:
         dict: Modified bands with embedded data
     """
-    embed_bands_list = ['LH1', 'HL1', 'LH2', 'HL2', 'HH1', 'HH2', 'LL2']
+    # ROBUSTNESS FIX: Low frequency first (same as grayscale)
+    embed_bands_list = ['LL2', 'HL2', 'LH2', 'HL1', 'LH1', 'HH2', 'HH1']
     
     # Collect all embedding positions across all channels (deterministic order)
     positions = []
@@ -604,7 +607,8 @@ def extract_from_dwt_bands_color(bands: Dict[str, np.ndarray], payload_bit_lengt
     Returns:
         str: Extracted bit string
     """
-    embed_bands_list = ['LH1', 'HL1', 'LH2', 'HL2', 'HH1', 'HH2', 'LL2']
+    # ROBUSTNESS FIX: Low frequency first (same as embedding)
+    embed_bands_list = ['LL2', 'HL2', 'LH2', 'HL1', 'LH1', 'HH2', 'HH1']
     
     # Collect extraction positions (EXACT SAME ORDER as embedding)
     positions = []

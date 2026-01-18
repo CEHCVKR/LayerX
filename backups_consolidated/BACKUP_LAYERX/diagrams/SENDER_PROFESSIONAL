@@ -1,0 +1,56 @@
+digraph LAYERX_Sender {
+	dpi=300 rankdir=TB size="10,12"
+	node [fontname=Arial fontsize=11 shape=box style="rounded,filled"]
+	edge [fontname=Arial fontsize=10]
+	fontname="Arial Bold" fontsize=16 label="LAYERX Steganography - Sender Side
+Pure DWT Method (56.44 dB PSNR, 100% Reliability)" labelloc=t
+	msg [label="Secret Message
+(Plain Text)" fillcolor="#FFE5CC" shape=note]
+	cover [label="Cover Image
+(RGB Color)" fillcolor="#FFFFCC" shape=cylinder]
+	huff [label="Huffman Compression
+(15-30% reduction)" fillcolor="#E5F5FF"]
+	aes [label="AES-256 Encryption
+(PBKDF2 100K iterations)" fillcolor="#FFE5E5"]
+	rs [label="Reed-Solomon ECC
+(10 parity symbols)" fillcolor="#E5FFE5"]
+	payload [label="Encrypted Payload
+Ready for Embedding" fillcolor="#F0F0F0"]
+	dwt [label="2-Level Haar DWT
+7 Frequency Bands
+(LH1, HL1, HH1, LH2, HL2, HH2, LL2)" fillcolor="#CCE5FF" style="filled,bold"]
+	aco [label="ACO Position Selection
+Optimizes Coefficient Locations" fillcolor="#FFCCFF"]
+	embed [label="Quantization Embedding
+Q = 4.0 - 5.0
+(Single Quantization)" fillcolor="#FFE5CC" style="filled,bold"]
+	idwt [label="Inverse DWT Reconstruction
+Rebuilds Spatial Domain" fillcolor="#CCE5FF"]
+	pubkey [label="Receiver's
+ECC Public Key
+(SECP256R1)" fillcolor="#FFE5FF"]
+	ecdh [label="ECC Key Exchange
+Generate Session Key" fillcolor="#FFE5FF"]
+	stego [label="Stego Image
+(PNG, RGB)" fillcolor="#90EE90" shape=cylinder]
+	perf [label="Performance:
+• PSNR: 56.44 dB avg
+• Speed: 123-509 ms
+• Capacity: 0.22%
+• Success: 100%" fillcolor=lightyellow shape=box3d]
+	msg -> huff [label=Input]
+	huff -> aes [label=Compressed]
+	aes -> rs [label=Encrypted]
+	rs -> payload [label=Protected]
+	cover -> dwt [label=Transform]
+	dwt -> aco [label="7 Bands"]
+	payload -> aco [label="Payload Bits"]
+	aco -> embed [label=Positions]
+	embed -> idwt [label="Modified Bands"]
+	idwt -> stego [label=Output]
+	pubkey -> ecdh [label="Public Key"]
+	ecdh -> aes [label="Session Key" style=dashed]
+	note [label="✓ NO DCT LAYER
+✓ Direct DWT Embedding
+✓ Single Quantization Step" fillcolor=lightgreen shape=box style="filled,bold"]
+}

@@ -1,0 +1,12 @@
+{
+  "experiment_summary": {
+    "total_experiments": 48,
+    "successful_experiments": 0,
+    "integrity_verified": 0,
+    "success_rate": 0.0,
+    "integrity_rate": 0
+  },
+  "psnr_analysis": {},
+  "timing_analysis": {},
+  "compression_analysis": {}
+}

@@ -222,8 +222,11 @@ def get_rs_codec(data_size: int) -> RSCodec:
 
 def create_payload(message_bytes: bytes, tree_bytes: bytes, compressed: bytes) -> bytes:
     """
-    Create payload with adaptive Reed-Solomon error correction on tree data.
-    Format: [msg_len:4bytes][tree_len_ecc:4bytes][tree_with_ecc][compressed]
+    Create payload with adaptive Reed-Solomon error correction on FULL DATA.
+    Format: [msg_len:4bytes][tree_rs:1byte][comp_rs:1byte][tree_len_ecc:4bytes][comp_len_ecc:4bytes][tree_with_ecc][compressed_with_ecc]
+    
+    ROBUSTNESS FIX: Now protects BOTH tree AND compressed data with RS ECC!
+    Stores RS codec strength to ensure correct decoding.
     
     Args:
         message_bytes (bytes): Original message (for length)
@@ -231,29 +234,42 @@ def create_payload(message_bytes: bytes, tree_bytes: bytes, compressed: bytes) -
         compressed (bytes): Compressed data
         
     Returns:
-        bytes: Complete payload with adaptive ECC protection for tree
+        bytes: Complete payload with FULL ECC protection
     """
     msg_len = len(message_bytes)
     
-    # Select appropriate ECC codec based on tree size
-    rs_codec = get_rs_codec(len(tree_bytes))
+    # Select appropriate ECC codec based on data sizes
+    tree_rs_strength = 30 if len(tree_bytes) < 500 else (60 if len(tree_bytes) < 2000 else 120)
+    comp_rs_strength = 30 if len(compressed) < 500 else (60 if len(compressed) < 2000 else 120)
     
-    # Apply adaptive Reed-Solomon error correction to tree
-    tree_with_ecc = rs_codec.encode(tree_bytes)
+    tree_rs_codec = RSCodec(tree_rs_strength)
+    comp_rs_codec = RSCodec(comp_rs_strength)
+    
+    # Apply adaptive Reed-Solomon error correction to BOTH tree AND compressed data
+    tree_with_ecc = tree_rs_codec.encode(tree_bytes)
+    compressed_with_ecc = comp_rs_codec.encode(compressed)  # NEW: Protect compressed data!
+    
     tree_ecc_len = len(tree_with_ecc)
+    comp_ecc_len = len(compressed_with_ecc)
     
     payload = struct.pack('I', msg_len)  # 4 bytes message length
+    payload += struct.pack('B', tree_rs_strength)  # 1 byte tree RS strength
+    payload += struct.pack('B', comp_rs_strength)  # 1 byte compressed RS strength
     payload += struct.pack('I', tree_ecc_len)  # 4 bytes ECC-protected tree length
+    payload += struct.pack('I', comp_ecc_len)  # 4 bytes ECC-protected compressed length
     payload += tree_with_ecc
-    payload += compressed
+    payload += compressed_with_ecc  # Now with ECC protection!
     
     return payload
 
 
 def parse_payload(payload: bytes) -> Tuple[int, bytes, bytes]:
     """
-    Parse payload with Reed-Solomon error correction decoding.
-    Format: [msg_len:4bytes][tree_len_ecc:4bytes][tree_with_ecc][compressed]
+    Parse payload with Reed-Solomon error correction decoding for FULL DATA.
+    Format: [msg_len:4bytes][tree_rs:1byte][comp_rs:1byte][tree_len_ecc:4bytes][comp_len_ecc:4bytes][tree_with_ecc][compressed_with_ecc]
+    
+    ROBUSTNESS FIX: Now decodes RS ECC for BOTH tree AND compressed data!
+    Uses stored RS codec strength for correct decoding.
     
     Args:
         payload (bytes): Complete payload
@@ -261,35 +277,63 @@ def parse_payload(payload: bytes) -> Tuple[int, bytes, bytes]:
     Returns:
         tuple: (message_length, tree_bytes, compressed_bytes)
     """
-    if len(payload) < 8:
+    if len(payload) < 14:  # 4+1+1+4+4 = 14 bytes header
         raise ValueError("Payload too short")
     
-    # Extract lengths
+    # Extract header values
     msg_len = struct.unpack('I', payload[0:4])[0]
-    tree_ecc_len = struct.unpack('I', payload[4:8])[0]
+    tree_rs_strength = struct.unpack('B', payload[4:5])[0]  # Stored tree RS strength
+    comp_rs_strength = struct.unpack('B', payload[5:6])[0]  # Stored compressed RS strength
+    tree_ecc_len = struct.unpack('I', payload[6:10])[0]
+    comp_ecc_len = struct.unpack('I', payload[10:14])[0]
     
     # Extract ECC-protected tree and compressed data
-    tree_start = 8
+    tree_start = 14  # Updated offset for new header format
     tree_end = tree_start + tree_ecc_len
+    comp_end = tree_end + comp_ecc_len
     
     if len(payload) < tree_end:
         raise ValueError("Payload corrupted: tree data incomplete")
     
-    tree_with_ecc = payload[tree_start:tree_end]
+    if len(payload) < comp_end:
+        raise ValueError("Payload corrupted: compressed data incomplete")
     
-    # Try decoding with different ECC strengths (we don't know which was used)
-    # Try from strongest to weakest
-    for codec_strength in [120, 60, 30]:
-        try:
-            rs_codec = RSCodec(codec_strength)
-            tree_bytes = rs_codec.decode(tree_with_ecc)[0]
-            break  # Success!
-        except Exception:
-            continue  # Try next strength
-    else:
+    tree_with_ecc = payload[tree_start:tree_end]
+    compressed_with_ecc = payload[tree_end:comp_end]
+    
+    # Decode TREE with stored RS strength (primary) or fallback
+    tree_bytes = None
+    try:
+        rs_codec = RSCodec(tree_rs_strength)
+        tree_bytes = bytes(rs_codec.decode(tree_with_ecc)[0])
+    except Exception:
+        # Fallback: try other strengths if stored fails (for error recovery)
+        for codec_strength in [30, 60, 120]:
+            try:
+                tree_bytes = bytes(RSCodec(codec_strength).decode(tree_with_ecc)[0])
+                break
+            except Exception:
+                continue
+    
+    if tree_bytes is None:
         raise ValueError("Tree ECC decoding failed with all codec strengths")
     
-    compressed = payload[tree_end:]
+    # Decode COMPRESSED DATA with stored RS strength (primary) or fallback
+    compressed = None
+    try:
+        rs_codec = RSCodec(comp_rs_strength)
+        compressed = bytes(rs_codec.decode(compressed_with_ecc)[0])
+    except Exception:
+        # Fallback: try other strengths if stored fails (for error recovery)
+        for codec_strength in [30, 60, 120]:
+            try:
+                compressed = bytes(RSCodec(codec_strength).decode(compressed_with_ecc)[0])
+                break
+            except Exception:
+                continue
+    
+    if compressed is None:
+        raise ValueError("Compressed data ECC decoding failed with all codec strengths")
     
     return msg_len, tree_bytes, compressed
 
