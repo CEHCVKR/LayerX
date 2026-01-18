@@ -94,9 +94,9 @@ def embed_in_dwt_bands(payload_bits: str, bands: Dict[str, np.ndarray],
         print(f"      [Adaptive Mode: DWT-only for {payload_bytes} bytes payload]")
     
     # Coefficient selection based on optimization method
-    # CRITICAL FIX: Reversed band priority for ROBUSTNESS over invisibility
-    # Ordered by robustness: LL2 (most robust) > LH2/HL2 (mid) > LH1/HL1 (vulnerable) > HH1/HH2 (most vulnerable)
-    embed_bands = ['LL2', 'LH2', 'HL2', 'LH1', 'HL1', 'HH2', 'HH1']
+    # Use more bands including mid-frequency LL2 for higher capacity (30%+ target)
+    # Ordered by robustness: LH/HL (edges) > HH (texture) > LL2 (low-freq details)
+    embed_bands = ['LH1', 'HL1', 'LH2', 'HL2', 'HH1', 'HH2', 'LL2']
     
     if optimization == 'chaos' or optimization == 'aco':
         # Use Module 6 optimization
