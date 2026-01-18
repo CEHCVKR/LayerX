@@ -1,0 +1,20 @@
+{
+  "sample_sizes": {
+    "DWT_DCT_grayscale": 148,
+    "DWT_DCT_color": 136
+  },
+  "significance_tests": {
+    "psnr_normality": {
+      "shapiro_stat": 0.9821541021882056,
+      "p_value": 0.0012931297458405574,
+      "is_normal": false
+    }
+  },
+  "confidence_intervals": {
+    "psnr_95_ci": {
+      "lower": 52.561204888091495,
+      "upper": 54.167351140664834,
+      "mean": 53.364278014378165
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "experiment_info": {
+    "experiment_id": "20260116_211247",
+    "date": "2026-01-16T21:14:16.349157",
+    "total_images": 6,
+    "total_messages": 5,
+    "total_methods": 4
+  },
+  "experiment_summary": {
+    "total_experiments": 120,
+    "successful_experiments": 110,
+    "integrity_verified": 110,
+    "success_rate": 91.66666666666666,
+    "integrity_rate": 100.0
+  },
+  "quality_metrics": {
+    "psnr_average": 52.923214759546546,
+    "psnr_min": 44.93939532073096,
+    "psnr_max": 62.81343276204035,
+    "psnr_std_dev": 4.589814874454433,
+    "psnr_median": 52.71969541806367
+  },
+  "performance_metrics": {
+    "avg_total_time": 0.5194118304686113,
+    "min_time": 0.33690690994262695,
+    "max_time": 0.7141008377075195,
+    "time_std_dev": 0.08038950026459428
+  },
+  "capacity_metrics": {
+    "embedding_rates": {
+      "average": 0.035176964962121214,
+      "min": 0.0026041666666666665,
+      "max": 0.12548828125
+    },
+    "compression": {
+      "average_ratio": 0.2096519589637571,
+      "best_ratio": 0.5329619312906221,
+      "worst_ratio": 0.016304347826086956
+    }
+  },
+  "method_comparison": {},
+  "image_analysis": {},
+  "message_analysis": {}
+}

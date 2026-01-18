@@ -1,0 +1,96 @@
+{
+  "timestamp": "2026-01-18T11:56:18.598901",
+  "image_path": "demo_test_image.png",
+  "original_payload": "This is a comprehensive test payload for LayerX steganography research. It demonstrates the complete process including encryption, compression, embedding, extraction, and quality analysis with detailed metrics at each step.",
+  "q_factor": 5.0,
+  "process_steps": {
+    "step1_load": {
+      "time_seconds": 0.04802250862121582,
+      "image_dimensions": [
+        512,
+        512
+      ],
+      "image_pixels": 262144,
+      "file_size_mb": 0.06326866149902344
+    },
+    "step2_encrypt": {
+      "time_seconds": 0.17099881172180176,
+      "original_size_bytes": 223,
+      "encrypted_size_bytes": 224,
+      "encryption_overhead_bytes": 1,
+      "encryption_ratio": 1.0044843049327354,
+      "key_size_bytes": 32
+    },
+    "step3_compress": {
+      "time_seconds": 0.002000570297241211,
+      "encrypted_size_bytes": 224,
+      "compressed_size_bytes": 199,
+      "compression_saved_bytes": 25,
+      "compression_ratio": 0.8883928571428571,
+      "compression_efficiency": 0.1116071428571429
+    },
+    "step4_transform": {
+      "time_seconds": 0.032001495361328125,
+      "dwt_bands_created": 9,
+      "dct_applied": true,
+      "total_bands": 10
+    },
+    "step5_capacity": {
+      "time_seconds": 0.0,
+      "payload_bits_required": 1592,
+      "available_capacity_bits": 54396,
+      "capacity_utilization": 0.02926685785719538,
+      "capacity_utilization_percent": 2.9266857857195383,
+      "embedding_bands": [
+        "HH1",
+        "HL1",
+        "LH1",
+        "HH2",
+        "HL2",
+        "LH2",
+        "LL2_DCT"
+      ]
+    },
+    "step6_embed": {
+      "time_seconds": 0.0480194091796875,
+      "bits_embedded": 1592,
+      "bands_modified": 7,
+      "embedding_efficiency_bits_per_sec": 33153.260883381
+    },
+    "step7_reconstruct": {
+      "time_seconds": 0.011995792388916016,
+      "output_image_shape": [
+        512,
+        512
+      ],
+      "reconstruction_method": "Inverse DCT + Inverse DWT"
+    },
+    "step8_quality": {
+      "time_seconds": 0.0029859542846679688,
+      "psnr_db": 59.31764468115305,
+      "quality_rating": "Excellent",
+      "quality_threshold_50db": true,
+      "quality_threshold_45db": true
+    },
+    "step9_extract": {
+      "time_seconds": 0.04601907730102539,
+      "extraction_success": true,
+      "extracted_bits": 1592,
+      "bit_accuracy": true
+    },
+    "step10_verify": {
+      "time_seconds": 0.11398053169250488,
+      "pipeline_success": true,
+      "final_message_match": true,
+      "recovered_message_length": 223
+    }
+  },
+  "summary": {
+    "total_time_seconds": 0.48799848556518555,
+    "overall_success": true,
+    "final_psnr_db": 59.31764468115305,
+    "final_quality_rating": "Excellent",
+    "total_payload_overhead": 0.8923766816143498,
+    "process_efficiency": 3262.305206042171
+  }
+}
